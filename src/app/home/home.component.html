@@ -1,0 +1,12 @@
+<div class="container map-sec">
+  <div class="btn-div">
+    <button [ngClass]="(activeComponent===0)?'mar-r bttn active':'mar-r bttn'" (click)="loadComponent(0)">
+      <!--<img src="../assets/16.png" class="r-icon ">-->
+      Dashboard</button>
+    <button [ngClass]="(activeComponent===1)?'mar-r bttn active':'mar-r bttn'" (click)="loadComponent(1)">
+      <!--<img src="../assets/17.png" class="r-icon">-->
+      Details</button>
+  </div>
+  <!--<app-bar-chart></app-bar-chart>-->
+  <app-ad-banner [ads]="ads" [activeComponent]="activeComponent" class="map"></app-ad-banner>
+</div>

@@ -1,0 +1,35 @@
+
+.bttn{
+  padding: 8px 19px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 5px;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: #dddddd;
+}
+
+.bttn:hover,.btn-div .active{
+  background-color: #44e7a0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color:#fff;
+}
+.btn-div{
+  text-align: right;
+  margin: 10px 0px;
+  padding-right: 5px;
+}
+
+.mar-r{
+  margin-right: -4px;
+}
+
+
