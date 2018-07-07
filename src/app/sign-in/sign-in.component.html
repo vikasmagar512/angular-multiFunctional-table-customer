@@ -66,16 +66,16 @@
         <h3>Welcome to
           <br>SIECONNECT</h3>
         <div class="input">
-          <button class="tablink img-rounded active" id="defaultOpen" onclick="openCity(event, 'first')">Mobile Bank ID</button>
+          <button [ngClass]="defaultSignInMethod == 0 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(0)">Mobile Bank ID</button>
           <span> OR</span>
-          <button class="tablink img-rounded" onclick="openCity(event, 'second')"> Email & Password</button>
+          <button [ngClass]="defaultSignInMethod == 1 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(1)"> Email & Password</button>
 
-          <div class="tabcontent" id="first">
+          <div class="tabcontent" *ngIf="defaultSignInMethod==0">
             <input type="text" name="" placeholder="YYYYDDMMXXXX" class="inputType">
             <br>
           </div>
 
-          <div class="tabcontent" id="second">
+          <div class="tabcontent" *ngIf="defaultSignInMethod==1">
             <span class="glyphicon glyphicon-envelope glyphy"></span>
             <input type="email" class="inputType mar-l">
             <span class="glyphicon glyphicon-lock glyphy"></span>

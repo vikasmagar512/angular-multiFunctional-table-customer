@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  public defaultSignInMethod :number;
   public frm: FormGroup;
   public isBusy = false;
   public hasFailed = false;
@@ -27,7 +28,13 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.defaultSignInMethod = 0;
+  }
+  openCity(type) {
+    console.log(type)
+    this.defaultSignInMethod = type;
+  }
 
   public doSignIn() {
 
