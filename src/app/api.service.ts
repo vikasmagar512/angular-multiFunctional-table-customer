@@ -26,8 +26,7 @@ export class ApiService {
     };
     console.log(url)
     return this.http
-      // .post(API_URL + '/sign-in', {
-      .post(url, {
+      .post(API_URL + '/users/signin', {
         username,
         password
       // },httpOptions)
