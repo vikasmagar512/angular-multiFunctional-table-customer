@@ -16,9 +16,9 @@ server.use(bodyParser.json());
 
 // Handle sign-in requests
 server.post('/sign-in', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  if(username === 'demo' && password === 'demo') {
+  const username = req.body.username
+  const password = req.body.password
+  if(username === 'admin' && password === 'admin') {
     res.status(200).json({
       name: 'SitePoint Reader',
       token: jwtToken
@@ -30,13 +30,13 @@ server.post('/sign-in', (req, res) => {
 // Protect other routes
 server.use((req, res, next) => {
   if (isAuthorized(req)) {
-    console.log('Access granted');
-    next();
-  } else {
-    console.log('Access denied, invalid JWT');
-    res.sendStatus(401);
-  }
-    // next();
+  console.log('Access granted');
+  next();
+} else {
+  console.log('Access denied, invalid JWT');
+  res.sendStatus(401);
+}
+// next();
 });
 
 // API routes

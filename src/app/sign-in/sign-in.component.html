@@ -76,17 +76,41 @@
           </div>
 
           <div class="tabcontent" *ngIf="defaultSignInMethod==1">
+            <form [formGroup]="frm">
+
             <span class="glyphicon glyphicon-envelope glyphy"></span>
-            <input type="email" class="inputType mar-l">
-            <span class="glyphicon glyphicon-lock glyphy"></span>
-            <input type="password" class="inputType mar-l">
-          </div>
+            <input type="email" class="inputType mar-l" formControlName="username">
+
+            <div class="input-errors" *ngIf="(frm.get('username').invalid && frm.get('username').touched) || showInputErrors">
+              <div *ngIf="frm.get('username').hasError('required')">
+                Please enter your username
+              </div>
+            </div>
+
+              <span class="glyphicon glyphicon-lock glyphy"></span>
+            <input type="password" formControlName="password" class="inputType mar-l">
+            <div class="input-errors" *ngIf="(frm.get('password').invalid && frm.get('password').touched) || showInputErrors">
+              <div *ngIf="frm.get('password').hasError('required')">
+                Please enter your password
+              </div>
+            </div>
+            <div class="sign-in-error" *ngIf="hasFailed">
+              Invalid username and password.
+            </div>
           <div class="log-btn">
-            <input type="button" name="" value="LOGIN" class="img-rounded" onclick="login()">
+            <!--<input type="button" name="" value="LOGIN" class="img-rounded" onclick="login()">-->
+            <button class="img-rounded" (click)="doSignIn()" [disabled]="isBusy">
+              <ng-template [ngIf]="!isBusy">Sign in</ng-template>
+              <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
+            </button>
+
             <span class="clr-w mart-10 cursor" data-toggle="modal" data-target="#myModal">Forget Password?
 							</span>
           </div>
+
+            </form>
         </div>
+      </div>
       </div>
 
     </div>
@@ -95,7 +119,6 @@
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
     <div class="modal-content" style="background-color: #f6f3f3;">
       <div class="model-pass" >
         <img src="../../assets/siemens logo.png" class="wd-10p">
