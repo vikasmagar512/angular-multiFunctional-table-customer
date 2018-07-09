@@ -11,8 +11,9 @@ export class AuthService {
   }
 
   public isSignedIn() {
-    return true;
-    // return !!this.session.accessToken;
+
+    return !!this.session.accessToken;
+
   }
 
   public doSignOut() {

@@ -16,11 +16,20 @@ export class ApiService {
   constructor( private http: HttpClient,
                private session: SessionService) { }
   public signIn(username: string, password: string) {
+    debugger
+    // const url = API_URL + '/sign-in'
+    const url = API_URL+'/users/signin'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    console.log(url)
     return this.http
-      .post(API_URL + '/sign-in', {
-      // .post(API_URL + 'users/signin', {
+      .post(API_URL + '/users/signin', {
         username,
         password
+      // },httpOptions)
       })
       .map(response => {
         console.log(response)
@@ -45,6 +54,12 @@ export class ApiService {
     console.log('options is ',options)
     return this.http
       .get<Todo[]>(API_URL + '/todos', options)
+  }
+  public getLoggedInUserData() {
+    const options = this.getRequestOptions();
+    console.log('options is ',options)
+    return this.http
+      .get(API_URL + '/users/me', options)
   }
   private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
