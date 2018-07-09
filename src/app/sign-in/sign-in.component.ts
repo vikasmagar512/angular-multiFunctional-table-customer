@@ -56,7 +56,7 @@ export class SignInComponent implements OnInit {
     this.api
       .signIn(username, password)
       .subscribe(
-        (response) => {
+        (response:any) => {
           console.log('response is ',response)
           this.auth.doSignIn(
             response.token,

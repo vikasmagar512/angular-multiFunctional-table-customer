@@ -17,8 +17,8 @@ export class ApiService {
                private session: SessionService) { }
   public signIn(username: string, password: string) {
     return this.http
-      // .post(API_URL + '/sign-in', {
-      .post(API_URL + 'users/signin', {
+      .post(API_URL + '/sign-in', {
+      // .post(API_URL + 'users/signin', {
         username,
         password
       })
