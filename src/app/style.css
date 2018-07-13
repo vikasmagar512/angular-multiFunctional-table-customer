@@ -447,3 +447,7 @@ padding: 12px;
 .tb{
   display: none;
 }
+
+input:focus, button:focus{
+  outline: none;
+}

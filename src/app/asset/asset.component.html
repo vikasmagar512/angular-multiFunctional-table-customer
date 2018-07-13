@@ -8,11 +8,11 @@
             <thead>
             <tr>
               <th>Asset Name</th>
-              <td>Canon RW2014</td>
+              <td>{{asset.name}}</td>
             </tr>
             <tr>
               <th>Location</th>
-              <td>Bromma</td>
+              <td>{{asset.location}}</td>
             </tr>
             </thead>
           </table>
@@ -44,6 +44,7 @@
 											</span>
                 </td>
               </tr>
+
               </tbody>
             </table>
           </div>
@@ -62,7 +63,7 @@
         </div>
       </div>
     </div>
-    <div class="col=col-sm-6">
+    <div class="col-sm-6">
       <h4 class="fb-15 mar-lb">Product Request</h4>
       <div class="table-container">
         <div class="table-responsive box-border">
@@ -118,13 +119,19 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>A4 Paper</td>
-                <td>2000</td>
-                <td>3000</td>
-                <td></td>
-
+              <tr *ngFor="let metric of asset.metrics">
+                <td>{{asset.name}}</td>
+                <td>{{metric.unit}}</td>
+                <td>{{metric.category}}</td>
+                <td>{{asset.location}}</td>
               </tr>
+              <!--  <tr>
+                 <td>A4 Paper</td>
+                 <td>2000</td>
+                 <td>3000</td>
+                 <td></td>
+
+               </tr> -->
               </tbody>
             </table>
           </div>

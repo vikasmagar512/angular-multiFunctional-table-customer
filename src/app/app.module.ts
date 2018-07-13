@@ -4,9 +4,8 @@ import { AppComponent }         from './app.component';
 import { AdBannerComponent }    from './ad-banner.component';
 import { AdDirective }          from './ad.directive';
 import { AdService }            from './ad.service';
-import {PostModule} from './post/post.module';
 
-  import { DataTablesModule } from 'angular-datatables';
+import { DataTablesModule } from 'angular-datatables';
 import { DetailsComponent } from './details/details.component';
 import { AssetComponent } from './asset/asset.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -21,11 +20,19 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {ApiService} from './api.service';
 import {AuthService} from './auth.service';
 import {SessionService} from './session.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CanActivateRoutesGuard} from './can-activate-routes.guard';
 import { MainComponent } from './main/main.component';
-const appRoutes: Routes = [
+import {ModalModule, ProgressbarModule, TooltipModule} from 'ngx-bootstrap';
+import {LoaderServiceService} from './loader-service.service';
+// import { MaterialModule } from '@angular/material';
+import {CustomHttpService} from './custom-http-service.service';
+import {MatProgressBar} from '@angular/material';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {LoaderModule} from './loader/loader.module';
 
+
+const appRoutes: Routes = [
   {
     path: '',
     redirectTo: 'sign-in',
@@ -46,22 +53,35 @@ const appRoutes: Routes = [
       { path: 'agreementNo/:id',  component:AgreementComponent}
     ]
   },
-  /*{ path: 'asset/:id', canActivate: [
-      CanActivateRoutesGuard
-    ],component: AssetComponent},
-  { path: 'agreementNo/:id',  canActivate: [
-      CanActivateRoutesGuard
-    ], component: AgreementComponent},*/
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
-  imports: [ BrowserModule,PostModule, DataTablesModule,ChartsAllModule,ChartsModule,  ReactiveFormsModule,HttpClientModule,
+  imports: [ BrowserModule, DataTablesModule,ChartsAllModule,ChartsModule,  ReactiveFormsModule,
+    HttpClientModule,
+    ModalModule.forRoot(),
+    TooltipModule.forRoot(),
+    MatProgressBarModule,
+    ProgressbarModule,
+    LoaderModule,
+    MatProgressBarModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
    ],
-  providers: [AdService,ApiService,AuthService,SessionService,CanActivateRoutesGuard],
+  providers: [
+    AdService,
+    CustomHttpService,
+    ApiService,
+    AuthService,
+    SessionService,
+    CanActivateRoutesGuard,
+    LoaderServiceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpService,
+      multi: true,
+    }],
   declarations: [
     AppComponent,
     AdBannerComponent,
@@ -74,7 +94,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     SignInComponent,
     MainComponent,
-],
+  ],
   exports:[],
   entryComponents: [ DetailsComponent,DashboardComponent],
   bootstrap: [ AppComponent ]

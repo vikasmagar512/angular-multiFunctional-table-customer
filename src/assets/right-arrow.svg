@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="28px" viewBox="0 0 30 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>right-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Chat-box-" transform="translate(-1200.000000, -819.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="right-arrow" transform="translate(1200.000000, 819.000000)">
+                <path d="M29.3785863,13.0210955 L1.5221102,0.0971054846 C1.07854939,-0.10537036 0.549276342,0.0152535476 0.240712299,0.398665252 C-0.0699945497,0.782076957 -0.080708579,1.32703854 0.214998629,1.72122023 L9.37549365,13.9990108 L0.214998629,26.2768013 C-0.080708579,26.670983 -0.0699945497,27.2180986 0.238569493,27.5993563 C0.446421661,27.8599901 0.75712851,28 1.07212097,28 C1.22426019,28 1.3763994,27.96769 1.51996739,27.9009161 L29.3764435,14.976926 C29.7578629,14.8002982 30,14.4190405 30,13.9990108 C30,13.5789811 29.7578629,13.1977234 29.3785863,13.0210955 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

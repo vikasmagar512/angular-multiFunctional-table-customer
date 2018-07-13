@@ -1,31 +1,32 @@
-<div class="mar-t5">
-  <div class="row marginLRZero">
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="asset-div">
-            <img src="../../../assets/machine.svg" class="img-responsive">
+<div class="mar-t1">
+  <div class="row marginLRZero" style="justify-content: center;">
+    <div *ngFor="let asset of assetDetail">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="asset-div">
+              <img src={{asset.img}} class="img-responsive">
+            </div>
           </div>
-        </div>
-        <div class="col-md-8 shiftleft">
-          <p class="fsw-18">Coffee Machine</p>
-          <div class="asset-table">
-            <table class="table table-bordered">
-              <tr>
-                <td>Usage</td>
-                <td>300 cups</td>
-              </tr>
-              <tr>
-                <td>Uptime</td>
-                <td>80%</td>
-              </tr>
-            </table>
+          <div class="col-md-8 shiftleft">
+            <p class="fsw-18">{{category[asset.category]}}</p>
+            <div class="asset-table">
+              <table class="table table-bordered">
+                <tr>
+                  <td>Usage</td>
+                  <td>{{asset.metrics[0].usage}}</td>
+                </tr>
+                <tr>
+                  <td>Uptime</td>
+                  <td>{{asset.metrics[0].uptime}}</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <div class="row">
         <div class="col-md-4">
           <div class="asset-div">
@@ -75,10 +76,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <div class="finan mar-t3">
+  <div class="finan mar-t1">
     <div class="row">
       <div class="col-md-8 shiftleft">
         <h4 class="float-l fsw-18">Financials</h4>

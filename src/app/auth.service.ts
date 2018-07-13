@@ -5,15 +5,16 @@ import {SessionService} from './session.service';
   providedIn: 'root'
 }*/)
 export class AuthService {
+  public token:string;
+  // public accessToken: string;
+  // public name: string;
   constructor(
     private session: SessionService,
   ) {
   }
 
   public isSignedIn() {
-
     return !!this.session.accessToken;
-
   }
 
   public doSignOut() {
@@ -24,7 +25,11 @@ export class AuthService {
     if ((!accessToken) || (!name)) {
       return;
     }
+    // store username and jwt token in local storage to keep user logged in between page refreshes
+    localStorage.setItem('userData', JSON.stringify({ name, accessToken}));
+    // return true to indicate successful login
+    // this.session.accessToken = accessToken;
     this.session.accessToken = accessToken;
-    this.session.name = name;
+    this.session.name= name;
   }
 }

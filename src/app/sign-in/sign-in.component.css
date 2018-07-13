@@ -1,21 +1,3 @@
-html{
-  font-size: 16px;
-  color:#000;
-}
-
-p{
-  margin: 0px;
-}
-
-body{
-  box-sizing: border-box;
-  margin: 0;
-  font-family: Arial, Gadget, sans-serif;
-  width: 1367px;
-  /*height: 663;
-    overflow: hidden;*/
-
-}
 
 .section{
   margin: 0px;
@@ -62,6 +44,7 @@ body{
 .logo h3{
   position: relative;
   float: left;
+  color: rgb(0, 0, 0);
   left: 50%;
   top: 41%;
   font-size: 21px;
@@ -86,8 +69,6 @@ body{
   padding-top: 20px;
   margin-left: 2%;
   box-shadow: 4px 0 3px #cac6c6, -4px 0 3px #cac6c6;
-  /* margin-top: 9%; */
-  /* float: left; */
   top: -400px;
 }
 
@@ -123,31 +104,46 @@ body{
 .input span{
   margin:0 4px;
 }
+.mar-t23{
+  margin-top: 23px;
+}
 
+.mar-t15{
+  margin-top: 15px;
+}
 .input .inputType{
   text-decoration: none;
   background-color: #44e7a0;
   border: none;
-  margin-top: 23px;
   margin-left: 10px;
   font-size: 15px;
   color: white;
   border-bottom: 1px solid #FFFFFF;
   padding: 4px;
-  width: 87%;
+  width: 80%;
 }
 
 .inputType.mar-l{margin-left: -19px;}
 
 .log-btn{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-content: center;
-  position: fixed;
-  bottom: 99px;
+  align-content: center; */
+  position: absolute;
+  bottom: 20px;
   margin-left: 74px;
 }
-.input input[type="button"]{
+.mart-10{margin-top: 20px;}
+.btn-style{
+  text-decoration: none;
+  padding: 12px;
+  font-size: 12px;
+  background-color: #FFFFFE;
+  border: none;
+  width: 100px;
+  color: #b9b6b6;
+}
+/* .input input[type="button"]{
   text-decoration: none;
   padding: 16px;
   font-size: 10px;
@@ -155,7 +151,7 @@ body{
   border: none;
   width: 100%;
   color: #b9b6b6;
-}
+} */
 
 .input .img-rounded {
   border-radius: 29px;
@@ -221,11 +217,27 @@ input:focus, button:focus{
 .id{
   display: none;
 }
+.war-div{
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  margin-top: 5px;
+}
+.war-img{
+  width: 10%;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-
+.war-font{
+  /* font-size: 13px; */
+  color: #e20101;
+  font-weight: 600;
+}
 
 /************************************second page**************************************/
-.marginLRZero{
+/* .marginLRZero{
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
@@ -313,10 +325,6 @@ input:focus, button:focus{
 
 .main-container .container-fluid
 {
-  /*padding-right: 0px;
-  padding-left: 0px;*/
-  /*margin-right: 6%;
-  margin-left: 6%;*/
   margin-right: 17px;
   margin-left: 24px;
 }
@@ -379,13 +387,7 @@ input:focus, button:focus{
   font-size: 16px;
 }
 
-.btn-div{
-  /*text-align: right;
-  margin: 0 15px;
-  padding: 0px 10px;
-  margin-top: 20px;
-  margin-bottom: 7px;*/
-}
+.btn-div{}
 
 .mar-r{
   margin-right: 5px;
@@ -429,7 +431,6 @@ input:focus, button:focus{
 }
 
 .popup{
-  /*display: none;*/
   position: absolute;
   border-radius: 11px;
   position: absolute;
@@ -464,3 +465,4 @@ input:focus, button:focus{
   background-color:transparent;
   border: none;
 }
+ */

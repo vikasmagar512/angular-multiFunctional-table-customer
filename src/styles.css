@@ -66,3 +66,107 @@ nav a.active {
   font-family: Arial, Helvetica, sans-serif;
 }
 */
+/*
+
+html{
+  font-size: 16px;
+  color:#000;
+}
+
+p{
+  margin: 0px;
+}
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Gadget, sans-serif;
+  width: 1367px;
+}
+
+!********************margins style************************!
+.mar-t1{margin-top: 1%}
+.m-t20{margin-top: -25px}
+!*    *!
+.mar-t{margin-top: 1%}
+.mar-r{margin-right: 5px;}
+.mar-t3{margin-top: 3%}
+.mar-top{margin-top: -10px;}
+.mart-10{margin-top: 10px;}
+.mbot-2p{margin-bottom: 2%;}
+.ml-21{margin-left: 21px;}
+.m-tb{
+  margin-top: 5px;
+  margin-bottom: 4px;
+}
+.mt113{margin-top: 133px;
+  margin-left: -13px;}
+.m-top{margin-top: 2%;}
+.mar-lb{
+  margin-left: 19px;
+  margin-bottom: 17px;
+}
+.mt-60{margin-top: 60px;}
+
+.mt-20{margin-top: 20%}
+
+.mt-29{margin-top:29px; }
+.marginLRZero{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+!********************Background color************************!
+.bgl-grey{ background-color: #6f6b6b;}
+.bg-yellow{background-color: yellow}
+.bg-blue{background-color: blue}
+.bg-green{background-color: green}
+.bgGrey{background-color: lightgrey}
+.bg-aqua{background-color:#4be6d8}
+.bg-lgrey{background-color:#8b8989;}
+!***************width*********************!
+.wd-10p{width: 10%}
+.wd-28{width: 28px}
+.wd-85{width: 85%;}
+.wd-10{width: 10%;}
+.wd-14{width: 14%;}
+.wd-34p{width: 34px;}
+.wd-24{width: 22px;
+  height: 27px;}
+!**************font size and weight*********************!
+.fsw-18{
+  font-size: 18px;
+  font-weight: 700;
+}
+.fsw-16{
+  font-size: 16px;
+  font-weight: normal;
+}
+.fs-11{font-size: 11px}
+.fs-13{font-size: 13px;}
+.fw-600{font-weight: 600;}
+.fb-15{
+  font-size: 21px;
+  font-weight: 700;
+}
+.fw-600{font-weight: 600;}
+!**************font color*********************!
+
+!************cursor***************!
+.cursor{cursor: pointer;}
+
+!****************outline*************************!
+button:hover, button:focus{
+  outline: none;
+}
+*/
+.bgl-grey{ background-color: #6f6b6b;}
+.bg-yellow{background-color: yellow}
+.bg-blue{background-color: blue}
+.bg-green{background-color: green}
+.bgGrey{background-color: lightgrey}
+.bg-aqua{background-color:#4be6d8}
+.bg-lgrey{background-color:#8b8989;}
+
+
+.clr-w{color:#ffffff;}

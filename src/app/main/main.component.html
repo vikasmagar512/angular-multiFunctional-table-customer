@@ -1,3 +1,4 @@
+
 <div class="mainContainer">
   <nav class="navbar navbar-inverse custom noTopBottomMargin">
     <div class="container-fluid">
@@ -25,8 +26,12 @@
           <img src="../assets/03.png" class="img-responsive rlogo">
           </a>
         </li>
-      </ul> 
+      </ul>
     </div>
   </nav>
-  <router-outlet></router-outlet>
+  <!--<mat-progress-bar></mat-progress-bar>-->
+  <!--<progressbar class="progress-striped active"  [value]="136" type="danger"><i>136 / 150</i></progressbar>-->
+  <router-outlet>
+    <app-loader></app-loader>
+  </router-outlet>
 </div>

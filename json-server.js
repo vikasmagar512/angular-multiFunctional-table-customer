@@ -20,7 +20,7 @@ server.post('/sign-in', (req, res) => {
   const password = req.body.password
   if(username === 'admin' && password === 'admin') {
     res.status(200).json({
-      name: 'SitePoint Reader',
+      name: 'admin',
       token: jwtToken
     });
   }

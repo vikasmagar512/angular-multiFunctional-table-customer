@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {ApiService} from '../api.service';
 import {Router} from '@angular/router';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-sign-in',
@@ -20,14 +21,19 @@ export class SignInComponent implements OnInit {
     private api: ApiService,
     private auth: AuthService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private modalService: BsModalService
   ) {
     this.frm = fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
+  public modalRef: BsModalRef; // {1}
 
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template); // {3}
+  }
   ngOnInit() {
     this.defaultSignInMethod = 0;
   }

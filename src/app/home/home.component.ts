@@ -19,16 +19,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.ads = this.adService.getAds();
-    this.activeComponent = 1;
-    this.getTodos();
-    this.getUserData();
+    this.activeComponent = 0;
+    setInterval(()=>
+      this.getTodos(),5000
+    )
+    // this.getUserData();
   }
   getTodos(): void {
     this.api.getAllTodos().subscribe(todos => this.todos= todos);
   }
   getUserData(): void {
     this.api.getLoggedInUserData().subscribe(user => {
-      debugger
       this.user = user
     });
 
