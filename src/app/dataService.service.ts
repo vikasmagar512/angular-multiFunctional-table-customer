@@ -19,6 +19,7 @@ export class dataService {
       "id": "01",
       "category": "Coffee_Machine",
       "name": "Coffee Machine",
+      "status":0,
       "location": "Bromma",
       "serialno": "CM12190",
       "supplier":"Siemens LLP",
@@ -46,6 +47,7 @@ export class dataService {
       "id": "02",
       "category": "Printer",
       "name": "Canon SW2014",
+      "status":1,
       "location": "Bromma",
       "serialno": "SR12190",
       "supplier":"ATOS LLP",
@@ -65,6 +67,7 @@ export class dataService {
       "id": "03",
       "category": "Vaccum",
       "name": "Vaccum",
+      "status":2,
       "location": "Bromma",
       "serialno": "VC12190",
       "supplier":"ATOS LLP",
@@ -81,7 +84,7 @@ export class dataService {
       ]
     }
   ];
-  
+
   Agreement: Array<Agreement> = [
     {
       "id":"AGR01",
@@ -115,9 +118,9 @@ export class dataService {
     return this.Agreement;
   }
   getAssets():Asset[] {
-    return this.Assets; 
-  } 
+    return this.Assets;
+  }
   getAssetCategory() {
-    return this.assetCategory; 
+    return this.assetCategory;
   }
 }

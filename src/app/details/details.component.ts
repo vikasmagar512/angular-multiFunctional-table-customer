@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {dataService} from '../dataService.service';
 import {Agreement} from '../agreement';
 import {Asset} from '../asset';
+import {TableData} from '../tableData';
+import {Metric} from '../metric';
+import any = jasmine.any;
 
 @Component({
   selector: 'app-details',
@@ -13,7 +16,10 @@ export class DetailsComponent implements OnInit {
   assetDetail: Array<Asset>;
   agreements: Array<Agreement>;
   category: Object;
-  constructor(private dataService: dataService) { }
+  consumptionData: Array<any>;
+  assetData: Array<any>;
+
+  constructor(private dataService: dataService) {}
 
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets();
@@ -21,6 +27,59 @@ export class DetailsComponent implements OnInit {
     this.category = this.dataService.getAssetCategory();
 
     console.log(this.assetDetail);
+    const mData = [];
+    this.assetDetail.map((asset: Asset) => {
+      asset.metrics.map((metric: Metric) => {
+        mData.push({
+          "name": asset.name,
+          "unit": metric.unit,
+          "category": metric.category,
+          "location": asset.location,
+          "available": metric.available,
+          "required": metric.required
+        });
+      });
+    })
+    this.consumptionData = mData;
+
+    const mAssetData=[];
+    this.assetDetail.map((asset: Asset) => {
+      mAssetData.push({
+        // "id":  asset.id,
+        // "name":  asset.name,
+        "name":  '<a routerLink="asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
+        "status": '<img src="../../assets/'+ (!asset.status ? '09.png' : (asset.status ===1 ? '10.png' : '12.png')) +'" class="ass-size">',
+        "location": asset.location,
+        "action": "zxc",
+      });
+    });
+    this.assetData = mAssetData;
   }
+  public consumptionColumns:Array<any> = [
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
+    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by position'}},
+    {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
+    {title: 'Available', className: 'text-warning', name: 'available'},
+    {title: 'Required', className: 'text-warning', name: 'required'},
+  ];
+  public consumptionConfig:any = {
+    paging: true,
+    sorting: {columns: this.consumptionColumns},
+    filtering: {filterString: ''},
+    className: ['table-striped', 'table-bordered']
+  };
+  public assetColumns:Array<any> = [
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
+    {title: 'Status',name: 'status',sort: false,filtering: {filterString: '', placeholder: 'Filter by position'}},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
+    {title: 'Action', className: 'text-warning', name: 'action'},
+  ];
+  public assetConfig:any = {
+    paging: true,
+    sorting: {columns: this.assetColumns},
+    filtering: {filterString: ''},
+    className: ['table-striped', 'table-bordered']
+  };
 
 }

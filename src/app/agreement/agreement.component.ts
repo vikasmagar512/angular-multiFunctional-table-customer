@@ -18,7 +18,6 @@ export class AgreementComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dataService: dataService) { }
   ngOnInit() {
     this.agreements = this.dataService.getAgreement()
-
     this.assetsService = this.dataService.getAssets()
     this.id = this.route.snapshot.paramMap.get('id');
     this.agreement = this.agreements.find((agr) => agr.id == this.id)

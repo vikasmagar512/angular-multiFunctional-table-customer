@@ -16,6 +16,8 @@
     </div>
     <div class="table-container">
       <div class="table-responsive">
+        <app-table-demo [data]="assetData" [config]="assetConfig" [columns]="assetColumns"></app-table-demo>
+
         <table class="third-t s-table">
           <thead>
           <tr class="t-head clr-w bg-black">
@@ -162,18 +164,7 @@
           </tbody>
         </table>
       </div>
-      <div class="paginate">
-        <a href="#">&#10094;&#10094;</a>
-        <a href="#" class="mright-18">&#10094;</a>
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#" class="mleft-18">&#10095;</a>
-        <a href="#">&#10095;&#10095;</a>
-      </div>
+
     </div>
 
     <h3 class="ml-21 fb-15">Agreement Status</h3>
@@ -227,7 +218,6 @@
           <tbody>
           <tr *ngFor="let agreement of agreements">
             <td>
-              <!-- [routerLink]="['/product-details', product.id]" -->
               <a routerLink="agreementNo/{{agreement.id}}" routerLinkActive="active">{{agreement.agreement_no}}</a>
             </td>
             <td>Bromma</td>
@@ -250,18 +240,7 @@
           </tbody>
         </table>
       </div>
-      <div class="paginate">
-        <a href="#">&#10094;&#10094;</a>
-        <a href="#" class="mright-18">&#10094;</a>
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#" class="mleft-18">&#10095;</a>
-        <a href="#">&#10095;&#10095;</a>
-      </div>
+
     </div>
 
   </div>
@@ -280,8 +259,10 @@
 
     <div class="mt113">
       <h3 class="ml-21 fb-15">Consumption Status</h3>
-      <div class="table-container tb" id="table1">
+      <div class="table-container tb">
         <div class="table-responsive">
+          <app-table-demo [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
+<!--
           <table class="third-t s-table">
             <thead>
             <tr class="t-head  clr-w bg-black">
@@ -357,20 +338,9 @@
               </tr>
             </ng-container>
             </tbody>
-          </table>
+          </table>-->
         </div>
-        <div class="paginate">
-          <a href="#">&#10094;&#10094;</a>
-          <a href="#" class="mright-18">&#10094;</a>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#" class="mleft-18">&#10095;</a>
-          <a href="#">&#10095;&#10095;</a>
-        </div>
+
       </div>
     </div>
   </div>

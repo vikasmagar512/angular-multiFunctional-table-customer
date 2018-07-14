@@ -8,6 +8,7 @@ export interface Asset{
       "serialno": string;
       "supplier":string;
       "img":string;
+      "status":Number;
       "metrics": Array<Metric>;
     }
 
@@ -30,4 +31,3 @@ export interface Asset{
         }
       ]
     }, */
-    

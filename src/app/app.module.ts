@@ -30,6 +30,8 @@ import {CustomHttpService} from './custom-http-service.service';
 import {MatProgressBar} from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {LoaderModule} from './loader/loader.module';
+import { TableDemoComponent } from './table-module/table-demo/table-demo.component';
+import {TableModuleModule} from './table-module/table-module.module';
 
 
 const appRoutes: Routes = [
@@ -64,6 +66,7 @@ const appRoutes: Routes = [
     ProgressbarModule,
     LoaderModule,
     MatProgressBarModule,
+    TableModuleModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
