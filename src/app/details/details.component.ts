@@ -4,7 +4,7 @@ import {Agreement} from '../agreement';
 import {Asset} from '../asset';
 import {TableData} from '../tableData';
 import {Metric} from '../metric';
-import any = jasmine.Any;
+// import any = jasmine.Any;
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit {
     this.assetDetail = this.dataService.getAssets();
     this.agreements = this.dataService.getAgreement();
     this.category = this.dataService.getAssetCategory();
-    
+
     console.log(this.assetDetail);
     const mData = [];
     this.assetDetail.map((asset: Asset) => {
@@ -82,7 +82,7 @@ export class DetailsComponent implements OnInit {
   
   public assetColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Status',name: 'status',sort: false,},
+    {title: 'Status',name: 'status',sort: false},
     {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
     {title: 'Action', className: 'text-warning', name: 'action'},
   ];
