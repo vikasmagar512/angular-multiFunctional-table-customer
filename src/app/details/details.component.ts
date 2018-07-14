@@ -4,7 +4,6 @@ import {Agreement} from '../agreement';
 import {Asset} from '../asset';
 import {TableData} from '../tableData';
 import {Metric} from '../metric';
-import any = jasmine.any;
 
 @Component({
   selector: 'app-details',
@@ -69,6 +68,7 @@ export class DetailsComponent implements OnInit {
     filtering: {filterString: ''},
     className: ['table-striped', 'table-bordered']
   };
+  
   public assetColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
     {title: 'Status',name: 'status',sort: false,filtering: {filterString: '', placeholder: 'Filter by position'}},
