@@ -4,7 +4,7 @@ import {Agreement} from '../agreement';
 import {Asset} from '../asset';
 import {TableData} from '../tableData';
 import {Metric} from '../metric';
-
+// import any = jasmine.Any;
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -44,21 +44,32 @@ export class DetailsComponent implements OnInit {
     const mAssetData=[];
     this.assetDetail.map((asset: Asset) => {
       mAssetData.push({
-        // "id":  asset.id,
+        "id":  asset.id,
         // "name":  asset.name,
-        "name":  '<a routerLink="asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
+        "name":  '<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
         "status": '<img src="../../assets/'+ (!asset.status ? '09.png' : (asset.status ===1 ? '10.png' : '12.png')) +'" class="ass-size">',
         "location": asset.location,
-        "action": "zxc",
+        "action": '<div class="a-div bg-aqua mbot-2p">\n' +
+        '                  <span>\n' +
+        '                    <img src="../../assets/wrench.svg" class="a-size wd-10">\n' +
+        '                  </span>\n' +
+        '                <p class="c-white">Do it yourself</p>\n' +
+        '              </div>\n' +
+        '              <div class="a-div bg-lgrey">\n' +
+        '                  <span>\n' +
+        '                    <img src="../../assets/problem.svg" class="a-size wd-14">\n' +
+        '                  </span>\n' +
+        '                <p class="c-white">Report Incident</p>\n' +
+        '              </div>',
       });
     });
     this.assetData = mAssetData;
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by position'}},
+    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
     {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'}},
     {title: 'Available', className: 'text-warning', name: 'available'},
     {title: 'Required', className: 'text-warning', name: 'required'},
   ];
@@ -71,7 +82,7 @@ export class DetailsComponent implements OnInit {
   
   public assetColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Status',name: 'status',sort: false,filtering: {filterString: '', placeholder: 'Filter by position'}},
+    {title: 'Status',name: 'status',sort: false},
     {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
     {title: 'Action', className: 'text-warning', name: 'action'},
   ];
@@ -79,7 +90,7 @@ export class DetailsComponent implements OnInit {
     paging: true,
     sorting: {columns: this.assetColumns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['third-t','s-table','table-striped', 'table-bordered']
   };
 
 }
