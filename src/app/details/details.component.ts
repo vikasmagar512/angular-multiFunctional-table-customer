@@ -4,7 +4,7 @@ import {Agreement} from '../agreement';
 import {Asset} from '../asset';
 import {TableData} from '../tableData';
 import {Metric} from '../metric';
-
+import any = jasmine.Any;
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit {
     this.assetDetail = this.dataService.getAssets();
     this.agreements = this.dataService.getAgreement();
     this.category = this.dataService.getAssetCategory();
-
+    
     console.log(this.assetDetail);
     const mData = [];
     this.assetDetail.map((asset: Asset) => {
@@ -56,9 +56,9 @@ export class DetailsComponent implements OnInit {
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by position'}},
+    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
     {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'}},
     {title: 'Available', className: 'text-warning', name: 'available'},
     {title: 'Required', className: 'text-warning', name: 'required'},
   ];
