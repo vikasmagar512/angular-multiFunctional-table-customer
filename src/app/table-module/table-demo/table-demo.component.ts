@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-table-demo',
   templateUrl: './table-demo.component.html',
-  styleUrls: ['./table-demo.component.css']
+  styleUrls: ['./table-demo.component.css','../../table.css']
 })
 export class TableDemoComponent implements OnInit {
   @Input() columns: any[];
