@@ -7,7 +7,7 @@ export const TableData:Array<any> = [
     'startDate': '2015/08/19',
     'salary': 208.178
   },
- /* {
+ {
     'name': 'Pearl Crosby',
     'position': 'In PC',
     'office': 'Cambodia',
@@ -700,5 +700,5 @@ export const TableData:Array<any> = [
     'ext': '2973',
     'startDate': '2014/12/01',
     'salary': 223.227
-  }*/
+  }
 ];

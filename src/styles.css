@@ -124,6 +124,7 @@ body{
 .bgGrey{background-color: lightgrey}
 .bg-aqua{background-color:#4be6d8}
 .bg-lgrey{background-color:#8b8989;}
+.bg-black{background-color: #000}
 /* !***************width*********************! */
 .wd-10p{width: 10%}
 .wd-28{width: 28px}
@@ -205,6 +206,10 @@ button:hover, button:focus{
   border-top-right-radius: 10px;
   border-style: hidden;
   box-shadow: 0 0 3px 2px #9c9898;
+}
+.s-table th{
+  background-color:#000;
+  color:#fff;
 }
 
 .s-table , .s-table th{

@@ -4,7 +4,7 @@ import {Agreement} from '../agreement';
 import {Asset} from '../asset';
 import {TableData} from '../tableData';
 import {Metric} from '../metric';
-// import any = jasmine.Any;
+import any = jasmine.Any;
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -77,20 +77,35 @@ export class DetailsComponent implements OnInit {
     paging: true,
     sorting: {columns: this.consumptionColumns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['table-bordered']
   };
   
   public assetColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
     {title: 'Status',name: 'status',sort: false},
     {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Action', className: 'text-warning', name: 'action'},
+    {title: 'Action', className:[ 'text-warning'], name: 'action'},
   ];
   public assetConfig:any = {
     paging: true,
     sorting: {columns: this.assetColumns},
     filtering: {filterString: ''},
     className: ['third-t','s-table','table-striped', 'table-bordered']
+  };
+
+  public agreementColumns:Array<any> = [
+    {title: 'Agreement No', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
+    {title: 'Location',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
+    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'category', sort: 'asc'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'}},
+    {title: 'Available', className: 'text-warning', name: 'available'},
+    {title: 'Required', className: 'text-warning', name: 'required'},
+  ];
+  public agreementConfig:any = {
+    paging: true,
+    sorting: {columns: this.agreementColumns},
+    filtering: {filterString: ''},
+    className: ['table-bordered']
   };
 
 }
