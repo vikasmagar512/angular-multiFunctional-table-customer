@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TableData} from '../../tableData';
 import {Router} from '@angular/router';
+import any = jasmine.any;
 
 @Component({
   selector: 'app-table-demo',
@@ -91,8 +92,22 @@ export class TableDemoComponent implements OnInit {
       return 0;
     });
   }
-  debugger
+
+  public globalSearch(globalSearchText){
+    debugger
+    let config = {
+      ...this.config,
+      filtering:{
+        ...this.config['filtering'],
+        "filterString":globalSearchText
+      }
+    }
+    this.onChangeTable(config);
+  }
+  
   public changeFilter(data:any, config:any):any {
+    debugger
+    console.log(this.config)
     let filteredData:Array<any> = data;
     this.columns.forEach((column:any) => {
       if (column.filtering) {

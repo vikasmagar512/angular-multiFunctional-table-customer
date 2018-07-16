@@ -16,7 +16,7 @@
     </div>
     <div class="table-container">
       <div class="table-responsive">
-        <app-table-demo [data]="assetData" [config]="assetConfig" [columns]="assetColumns"></app-table-demo>
+        <app-table-demo  #assetTable [data]="assetData" [config]="assetConfig" [columns]="assetColumns"></app-table-demo>
 
       <!-- <app-reusable-table></app-reusable-table> -->
 
@@ -255,7 +255,7 @@
             <span>
               <img src="">
             </span>
-        <input class="input-lg wd-85" type="text" name="" placeholder="Type here to search by Agreement No./Type / Asset">
+        <input class="input-lg wd-85" #search (keyup)="onSearchKey(search.value)" type="text" name="" placeholder="Type here to search by Agreement No./Type / Asset">
       </div>
     </div>
 
@@ -263,7 +263,7 @@
       <h3 class="ml-21 fb-15">Consumption Status</h3>
       <div class="table-container tb">
         <div class="table-responsive">
-          <app-table-demo [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
+          <app-table-demo #consumptionTable [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
 <!--
           <table class="third-t s-table">
             <thead>

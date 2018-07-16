@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {dataService} from '../dataService.service';
 import {Agreement} from '../agreement';
 import {Asset} from '../asset';
@@ -17,6 +17,18 @@ export class DetailsComponent implements OnInit {
   category: Object;
   consumptionData: Array<any>;
   assetData: Array<any>;
+  searchValue = ""
+
+  @ViewChild('assetTable') assetTableRef;
+  @ViewChild('consumptionTable') consumptionTableRef;
+
+  onSearchKey(value: string) {
+    this.searchValue = value;
+    console.log(`this.searchValue ${this.searchValue}`)
+    this.assetTableRef.globalSearch(this.searchValue)
+    this.consumptionTableRef.globalSearch(this.searchValue)
+  }
+
 
   constructor(private dataService: dataService) {}
 

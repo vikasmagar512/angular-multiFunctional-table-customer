@@ -114,7 +114,6 @@ export class ReusableTableComponent implements OnInit {
       }
     });
     filteredData = tempArray;
-
     return filteredData;
   }
 
