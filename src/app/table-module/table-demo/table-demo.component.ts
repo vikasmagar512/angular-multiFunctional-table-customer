@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TableData} from '../../tableData';
 import {Router} from '@angular/router';
+import any = jasmine.any;
 
 @Component({
   selector: 'app-table-demo',
@@ -91,13 +92,25 @@ export class TableDemoComponent implements OnInit {
       return 0;
     });
   }
-
+  public globalSearch(globalSearchText){
+    debugger
+    let config = {
+      ...this.config,
+      filtering:{
+        ...this.config['filtering'],
+        "filterString":globalSearchText
+      }
+    }
+    this.onChangeTable(config);
+  }
   public changeFilter(data:any, config:any):any {
+    debugger
+    console.log(this.config)
     let filteredData:Array<any> = data;
     this.columns.forEach((column:any) => {
       if (column.filtering) {
         filteredData = filteredData.filter((item:any) => {
-          return item[column.name].match(column.filtering.filterString);
+          return item[column.name].toLowerCase().match(column.filtering.filterString.toLowerCase());
         });
       }
     });
@@ -108,14 +121,14 @@ export class TableDemoComponent implements OnInit {
 
     if (config.filtering.columnName) {
       return filteredData.filter((item:any) =>
-        item[config.filtering.columnName].match(this.config.filtering.filterString));
+        item[config.filtering.columnName].toLowerCase().match(this.config.filtering.filterString.toLowerCase()));
     }
 
     let tempArray:Array<any> = [];
     filteredData.forEach((item:any) => {
       let flag = false;
       this.columns.forEach((column:any) => {
-        if (item[column.name].toString().match(this.config.filtering.filterString)) {
+        if (item[column.name].toString().toLowerCase().match(this.config.filtering.filterString.toLowerCase())) {
           flag = true;
         }
       });
