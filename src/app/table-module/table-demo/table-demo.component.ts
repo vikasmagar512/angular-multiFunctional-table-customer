@@ -164,6 +164,10 @@ export class TableDemoComponent implements OnInit {
     if (data.column == "name") {
       this.router.navigate(['/main/asset/',data.row['id'] ]);
     }
+    if (data.column == "agreement_no") {
+      this.router.navigate(['/main/agreementNo/',data.row['id'] ]);
+    }
+    
     // If Button View
     // if (data.column == "action") {
     //   this.router.navigate(['/view', this.selectedDocument.doknr]);

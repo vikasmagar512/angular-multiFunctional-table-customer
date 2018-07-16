@@ -17,16 +17,19 @@ export class DetailsComponent implements OnInit {
   category: Object;
   consumptionData: Array<any>;
   assetData: Array<any>;
+  agreementData:Array<any>;
   searchValue = ""
 
   @ViewChild('assetTable') assetTableRef;
   @ViewChild('consumptionTable') consumptionTableRef;
+  @ViewChild('agreementTable') agreementTableRef;
 
   onSearchKey(value: string) {
     this.searchValue = value;
     console.log(`this.searchValue ${this.searchValue}`)
     this.assetTableRef.globalSearch(this.searchValue)
     this.consumptionTableRef.globalSearch(this.searchValue)
+    this.agreementTableRef.globalSearch(this.searchValue)
   }
 
 
@@ -42,7 +45,8 @@ export class DetailsComponent implements OnInit {
     this.assetDetail.map((asset: Asset) => {
       asset.metrics.map((metric: Metric) => {
         mData.push({
-          "name": asset.name,
+          "id":  asset.id,
+          "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
           "unit": metric.unit,
           "category": metric.category,
           "location": asset.location,
@@ -76,6 +80,31 @@ export class DetailsComponent implements OnInit {
       });
     });
     this.assetData = mAssetData;
+
+    const mAgreementData=[];
+    this.agreements.map((agreement:Agreement) => {
+      mAgreementData.push({
+        "id":  agreement.id,
+        // "name":  asset.name,
+        "agreement_no":  '<a routerLink="main/agreementNo/'+agreement.id+'" routerLinkActive="active">'+agreement.agreement_no+'</a>',
+        /* "agreement_no":  agreement.agreement_no, */
+        "termination_date": agreement.termination_date,
+        "location": "Bromma",
+        "action": '<div class="a-div bg-aqua mbot-2p">\n' +
+        '                  <span>\n' +
+        '                    <img src="../../assets/upgrade.svg" class="a-size wd-24">\n' +
+        '                  </span>\n' +
+        '                <p class="c-white">Upgrade</p>\n' +
+        '              </div>\n' +
+        '              <div class="a-div bg-lgrey">\n' +
+        '                  <span>\n' +
+        '                    <img src="../../assets/terminated.svg" class="a-size wd-24">\n' +
+        '                  </span>\n' +
+        '                <p class="c-white">Terminated</p>\n' +
+        '              </div>',
+      });
+    });
+    this.agreementData = mAgreementData;
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
@@ -106,18 +135,16 @@ export class DetailsComponent implements OnInit {
   };
 
   public agreementColumns:Array<any> = [
-    {title: 'Agreement No', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Location',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
-    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'category', sort: 'asc'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'}},
-    {title: 'Available', className: 'text-warning', name: 'available'},
-    {title: 'Required', className: 'text-warning', name: 'required'},
+    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by name'}},
+    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
+    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc' filtering: {filterString: '', placeholder: 'Filter by date.'}},
+    {title: 'Action', name: 'action', sort: ''},
   ];
   public agreementConfig:any = {
     paging: true,
     sorting: {columns: this.agreementColumns},
     filtering: {filterString: ''},
-    className: ['table-bordered']
+    className: ['third-t','s-table','table-striped', 'table-bordered']
   };
 
 }
