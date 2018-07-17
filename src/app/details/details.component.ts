@@ -4,7 +4,7 @@ import {Agreement} from '../agreement';
 import {Asset} from '../asset';
 import {TableData} from '../tableData';
 import {Metric} from '../metric';
-import any = jasmine.Any;
+// import any = jasmine.Any;
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',

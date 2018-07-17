@@ -112,7 +112,7 @@
               <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
             </button>
             <div *ngIf="defaultSignInMethod==1">
-              <span class="clr-w mart-10 cursor" data-toggle="modal" data-target="#myModal">Forget Password?
+              <span class="clr-w mart-10 cursor" data-toggle="modal" data-target="#myModal" (click)="openModal(template)">Forget Password?
               </span>
             </div>
           </div>
@@ -122,21 +122,26 @@
     </div>
   </div>
 </div>
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <div class="modal-content" style="background-color: #f6f3f3;">
-      <div class="model-pass">
-        <img src="../../assets/siemens logo.png" class="wd-10p">
-        <h6 class="fw-600">Forgot Password ?</h6>
-        <h6>Please enter Email Address to reset the password</h6>
-        <input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">
-        <input type="button" name="" value="Submit" class="btn-fp">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Forgot Password ?</h4>
+    <button type="button" class="close pull-right"
+            aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-</div>
+  <!--<div class="modal-body">
+    This is a modal.
+  </div>-->
+  <div class="modal-body" style="background-color: #f6f3f3;">
+    <div class="model-pass" >
+      <img src="../../assets/siemens logo.png" class="wd-10p">
+      <h6>Please enter Email Address to reset the password</h6>
+      <input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">
+      <input type="button" name="" value="Submit" class="btn-fp">
+    </div>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
+  </div>-->
+</ng-template>
