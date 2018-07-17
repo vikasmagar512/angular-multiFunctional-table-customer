@@ -5,19 +5,15 @@
       <div class="table-container">
         <div class="table-responsive box-border">
 
-          <!--<app-table-demo></app-table-demo>-->
-<!--
-          <app-table-demo [data]="data" [config]="config" [columns]="columns"></app-table-demo>
--->
           <table class="asset-table">
             <thead>
             <tr>
               <th>Asset Name</th>
-              <td>{{asset.name}}</td>
+              <td>{{assets.name}}</td>
             </tr>
             <tr>
               <th>Location</th>
-              <td>{{asset.location}}</td>
+              <td>{{assets.location}}</td>
             </tr>
             </thead>
           </table>
@@ -26,8 +22,9 @@
       <div class="mt-60">
         <h4 class="fb-15 mar-lb">Service Requests</h4>
         <div class="table-container">
-          <div class="table-responsive box-border">
-            <table class="asset-table">
+          <div class="table-responsive">
+              <app-table-demo  [data]="serviceData" [config]="serviceConfig" [columns]="serviceColumns"></app-table-demo>
+            <!-- <table class="asset-table">
               <thead class="bg-black c-white">
               <tr>
                 <th>Category of services</th>
@@ -51,9 +48,9 @@
               </tr>
 
               </tbody>
-            </table>
+            </table> -->
           </div>
-          <div class="paginate">
+         <!--  <div class="paginate">
             <a href="#">&#10094;&#10094;</a>
             <a href="#" class="mright-18">&#10094;</a>
             <a href="#">1</a>
@@ -64,15 +61,16 @@
             <a href="#">6</a>
             <a href="#" class="mleft-18">&#10095;</a>
             <a href="#">&#10095;&#10095;</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <div class="col-sm-6">
       <h4 class="fb-15 mar-lb">Product Request</h4>
       <div class="table-container">
-        <div class="table-responsive box-border">
-          <table class="asset-table">
+        <div class="table-responsive ">
+            <app-table-demo  [data]="productData" [config]="productConfig" [columns]="productColumns"></app-table-demo>
+          <!-- <table class="asset-table">
             <thead class="bg-black c-white">
             <tr>
               <th>Category of Products</th>
@@ -95,9 +93,9 @@
               </td>
             </tr>
             </tbody>
-          </table>
+          </table> -->
         </div>
-        <div class="paginate">
+        <!-- <div class="paginate">
           <a href="#">&#10094;&#10094;</a>
           <a href="#" class="mright-18">&#10094;</a>
           <a href="#">1</a>
@@ -108,15 +106,15 @@
           <a href="#">6</a>
           <a href="#" class="mleft-18">&#10095;</a>
           <a href="#">&#10095;&#10095;</a>
-        </div>
+        </div> -->
       </div>
       <div class="mt-29">
         <h4 class="fb-15 mar-lb">Consumption Details</h4>
         <div class="table-container">
-          <div class="table-responsive box-border">
-            <!--<app-table-demo [data]="data" [config]="config" [columns]="columns"></app-table-demo>-->
+          <div class="table-responsive">
+              <app-table-demo [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
 
-            <table class="asset-table">
+            <!-- <table class="asset-table">
               <thead class="bg-black c-white">
               <tr>
                 <th>Category</th>
@@ -126,23 +124,23 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let metric of asset.metrics">
-                <td>{{asset.name}}</td>
+              <tr *ngFor="let metric of assets.metrics">
+                <td>{{assets.name}}</td>
                 <td>{{metric.unit}}</td>
                 <td>{{metric.category}}</td>
-                <td>{{asset.location}}</td>
+                <td>{{assets.location}}</td>
               </tr>
-              <!--  <tr>
+                <tr>
                  <td>A4 Paper</td>
                  <td>2000</td>
                  <td>3000</td>
                  <td></td>
 
-               </tr> -->
+               </tr> 
               </tbody>
-            </table>
+            </table> -->
           </div>
-          <div class="paginate">
+          <!-- <div class="paginate">
             <a href="#">&#10094;&#10094;</a>
             <a href="#" class="mright-18">&#10094;</a>
             <a href="#">1</a>
@@ -153,7 +151,7 @@
             <a href="#">6</a>
             <a href="#" class="mleft-18">&#10095;</a>
             <a href="#">&#10095;&#10095;</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

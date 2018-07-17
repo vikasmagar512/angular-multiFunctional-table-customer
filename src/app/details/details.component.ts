@@ -137,7 +137,7 @@ export class DetailsComponent implements OnInit {
   public agreementColumns:Array<any> = [
     {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by name'}},
     {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
-    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc' filtering: {filterString: '', placeholder: 'Filter by date.'}},
+    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'Filter by date.'}},
     {title: 'Action', name: 'action', sort: ''},
   ];
   public agreementConfig:any = {

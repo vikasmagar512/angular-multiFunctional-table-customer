@@ -14,6 +14,7 @@ export class AgreementComponent implements OnInit {
   agreement: Agreement;
   coveredAssets:Array<Asset>
   assetsService:Array<Asset>
+  agreementData:Array<Agreement>;
   id: String;
   constructor(private route: ActivatedRoute, private dataService: dataService) { }
   ngOnInit() {
@@ -24,5 +25,33 @@ export class AgreementComponent implements OnInit {
 
     const coveredAssets =  this.agreement.assets_covered;
     this.coveredAssets = this.assetsService.filter(asset=>(coveredAssets.includes(asset.id)))
+
+    const mData = [];
+      this.coveredAssets.map((asset: Asset) => {
+
+        mData.push({
+          "id":  asset.id,
+          "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
+          "location":asset.category,
+          "quantity": asset.supplier,
+          "serialNo": asset.serialno,
+          "supplier": asset.supplier,
+        });
+      });
+      this.agreementData = mData;
   }
+
+  public agreementColumns:Array<any> = [
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
+    {title: 'Location', className: ['office-header', 'text-success'], name: 'location', sort: 'asc'},
+    {title: 'Quantity', name: 'quantity', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
+    {title: 'Seraial No,', className: 'text-warning', name: 'serialNo'},
+    {title: 'Supplier', name: 'supplier'}
+  ];
+  public agreementConfig:any = {
+    paging: true,
+    sorting: {columns: this.agreementColumns},
+    filtering: {filterString: ''},
+    className: ['table-striped', 'table-bordered']
+  };
 }

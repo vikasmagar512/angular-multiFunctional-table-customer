@@ -94,7 +94,6 @@ export class TableDemoComponent implements OnInit {
   }
 
   public globalSearch(globalSearchText){
-    debugger
     let config = {
       ...this.config,
       filtering:{
@@ -106,7 +105,6 @@ export class TableDemoComponent implements OnInit {
   }
   
   public changeFilter(data:any, config:any):any {
-    debugger
     console.log(this.config)
     let filteredData:Array<any> = data;
     this.columns.forEach((column:any) => {
