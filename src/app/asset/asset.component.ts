@@ -18,19 +18,19 @@ export class AssetComponent implements OnInit {
   productData: Array<any>;
   serviceData:Array<any>;
   consumptionData: Array<any>;
-  constructor(private route: ActivatedRoute, private dataService: dataService) { }
-
-
+  constructor(private route: ActivatedRoute, private dataService: dataService) {
+    this.productData=[]
+    this.consumptionData = []
+    this.serviceData = []
+  }
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets()
     this.id = this.route.snapshot.paramMap.get('id');
 
     this.assets = this.assetDetail.find((agr) => agr.id == this.id)
 
-    const mData = [];
-      this.assets.metrics.map((metric: Metric) => {
-
-        mData.push({
+    this.productData = this.assets.metrics.reduce((acc,metric: Metric) => {
+      return acc.concat({
           /*"id":  asset.id,
            "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>', */
           "product_category":metric.category,
@@ -41,13 +41,10 @@ export class AssetComponent implements OnInit {
                       '<img src="../../assets/pdf.svg">'+
                       '</span>'
         });
-      });
-      this.productData = mData;
+      },[]);
 
-      const mserviceData = [];
-      this.assets.metrics.map((metric: Metric) => {
-
-        mserviceData.push({
+    this.serviceData = this.assets.metrics.reduce((acc,metric: Metric) => {
+        return acc.concat({
           /*"id":  asset.id,
            "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>', */
           "service_category":metric.category,
@@ -58,21 +55,16 @@ export class AssetComponent implements OnInit {
                       '<img src="../../assets/pdf.svg">'+
                       '</span>'
         });
-      });
-      this.serviceData = mserviceData;
+      },[]);
 
-      const mconsumptionData = [];
-      this.assets.metrics.map((metric: Metric) => {
-
-        mconsumptionData.push({
+    this.consumptionData = this.assets.metrics.reduce((acc,metric: Metric) => {
+        return acc.concat({
           "category":this.assets.category,
           "presentConsum": metric.unit,
           "forecastedConsum":metric.category,
           "recommend": this.assets.location,
         });
-      });
-      this.consumptionData = mconsumptionData;
-
+      },[]);
   }
   public productColumns:Array<any> = [
     {title: 'Category of Products', name: 'product_category', filtering: {filterString: '', placeholder: 'Filter by name'}},
