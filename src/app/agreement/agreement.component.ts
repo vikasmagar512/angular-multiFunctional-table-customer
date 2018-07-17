@@ -15,9 +15,12 @@ export class AgreementComponent implements OnInit {
   coveredAssets:Array<Asset>
   assetsService:Array<Asset>
   agreementData:Array<Agreement>;
+  overDueData:Array<any>;
+  paymentsObjectArray:Array<Agreement>;
   id: String;
   constructor(private route: ActivatedRoute, private dataService: dataService) {
     this.agreementData = []
+    this.overDueData = []
   }
   ngOnInit() {
     this.agreements = this.dataService.getAgreement()
@@ -38,6 +41,19 @@ export class AgreementComponent implements OnInit {
           "supplier": asset.supplier,
         });
       },[]);
+
+      this.paymentsObjectArray =  this.agreements;
+      this.overDueData  = this.agreements.reduce((acc,agree: Agreement) => {
+        return acc.concat({
+          "dueDate":agree.dueDate,
+          "amount":agree.amount,
+          "status":agree.status,      
+          "invoice": '<span>'+
+                        '<img src="../../assets/pdf.svg">'+
+                        '</span>',
+          "invoiceAddress":agree.invoiceAddress
+        });
+    },[]);
   }
 
   public agreementColumns:Array<any> = [
@@ -51,6 +67,21 @@ export class AgreementComponent implements OnInit {
     paging: true,
     sorting: {columns: this.agreementColumns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['third-t','s-table','table-striped', 'table-bordered']
+  };
+
+
+  public overDueColumns:Array<any> = [
+    {title: 'Due Date', name: 'dueDate'},
+    {title: 'Open Amount', className: ['office-header', 'text-success'], name: 'amount', sort: 'asc'},
+    {title: 'Status paid/Unpaid', name: 'status', sort: ''},
+    {title: 'Invoice', className: 'text-warning', name: 'invoice'},
+    {title: 'Invoice Address', name: 'invoiceAddress'}
+  ];
+  public overDueConfig:any = {
+    paging: true,
+    sorting: {columns: this.overDueColumns},
+    filtering: {filterString: ''},
+    className: ['third-t','s-table','table-striped', 'table-bordered']
   };
 }

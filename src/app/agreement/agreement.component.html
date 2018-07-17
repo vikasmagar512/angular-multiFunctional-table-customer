@@ -113,6 +113,43 @@
             </tbody>
           </table> -->
         </div>
+        <div class="popup" id="popup">
+            <div class="content">
+              <div>
+                <h4 class="fb-15 mar-lb">Total Overdue</h4>
+                <div>
+                  <div class="table-responsive">
+                      <app-table-demo  [data]="overDueData" [config]="overDueConfig" [columns]="overDueColumns"></app-table-demo>
+                   <!-- <table class="asset-table">
+                      <thead class="">
+                        <tr>
+                          <th>Due Date</th>
+                          <th>Open Amount</th>
+                          <th>Status Paid/Unpaid</th>
+                          <th>Invoice</th>
+                          <th colspan="2">Invoice Address</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>15 May 2020</td>
+                          <td><span class="fw-600">Kr</span>200</td>
+                          <td>Paid</td>
+                          <td>
+                            <span class="cursor">
+                              <img src="Assets/pdf.svg">
+                            </span>
+                          </td>
+                          <td>Bromma</td>
+                          <td>4455</td>
+                        </tr>
+                      </tbody>
+                    </table> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
       <div class="payment-d">
         <img src="../../assets/wallet.svg">

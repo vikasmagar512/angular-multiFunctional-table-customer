@@ -10,4 +10,8 @@ export interface Agreement {
 	"Remaining_term": string;
 	"term": string;
 	"assets_covered": Array<string>;
+	"dueDate":string;
+    "amount":string;
+	"status":string,      
+	"invoiceAddress":string;
 }

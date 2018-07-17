@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Asset } from './asset';
-import { Metric} from "./metric";
+import { Metric } from "./metric";
 import { Agreement } from './agreement';
 
 @Injectable({
@@ -9,21 +9,21 @@ import { Agreement } from './agreement';
 export class dataService {
 
   constructor() { }
-  assetCategory={
-    "Coffee_Machine":"Coffee Machine",
-    "Printer":"Printer",
-    "Vaccum":"Vaccum"
+  assetCategory = {
+    "Coffee_Machine": "Coffee Machine",
+    "Printer": "Printer",
+    "Vaccum": "Vaccum"
   }
-  Assets: Array<Asset>=[
+  Assets: Array<Asset> = [
     {
       "id": "01",
       "category": "Coffee_Machine",
       "name": "Coffee Machine",
-      "status":0,
+      "status": 0,
       "location": "Bromma",
       "serialno": "CM12190",
-      "supplier":"Siemens LLP",
-      "img":"../../../assets/machine.svg",
+      "supplier": "Siemens LLP",
+      "img": "../../../assets/machine.svg",
       "metrics": [
         {
           "category": "Coffee Powder",
@@ -47,11 +47,11 @@ export class dataService {
       "id": "02",
       "category": "Printer",
       "name": "Canon SW2014",
-      "status":1,
+      "status": 1,
       "location": "Bromma",
       "serialno": "SR12190",
-      "supplier":"ATOS LLP",
-      "img":"../../../assets/printer.svg",
+      "supplier": "ATOS LLP",
+      "img": "../../../assets/printer.svg",
       "metrics": [
         {
           "category": "Cartridge",
@@ -67,11 +67,11 @@ export class dataService {
       "id": "03",
       "category": "Vaccum",
       "name": "Vaccum",
-      "status":2,
+      "status": 2,
       "location": "Bromma",
       "serialno": "VC12190",
-      "supplier":"ATOS LLP",
-      "img":"../../../assets/broom.svg",
+      "supplier": "ATOS LLP",
+      "img": "../../../assets/broom.svg",
       "metrics": [
         {
           "category": "Motor",
@@ -87,7 +87,7 @@ export class dataService {
 
   Agreement: Array<Agreement> = [
     {
-      "id":"AGR01",
+      "id": "AGR01",
       "agreement_no": "AGR984567854",
       "type": "Annual",
       "contact": "James Bond",
@@ -97,10 +97,14 @@ export class dataService {
       "payment_freq": "Monthly",
       "Remaining_term": "18 months",
       "term": "80 months",
+      "dueDate": '15 May 2020',
+      "amount": 'Kr 200',
+      "status": 'Paid',
+      "invoiceAddress": 'Bromma',
       "assets_covered": ["01", "02"]
     },
-   {
-      "id":"AGR02",
+    {
+      "id": "AGR02",
       "agreement_no": "AGR984567888",
       "type": "Month",
       "contact": "Tom Lee",
@@ -110,14 +114,18 @@ export class dataService {
       "payment_freq": "Weekly",
       "Remaining_term": "17 months",
       "term": "70 months",
+      "dueDate": '15 May 2020',
+      "amount": 'Kr 200',
+      "status": 'Paid',
+      "invoiceAddress": 'Bromma',
       "assets_covered": ["03"]
     }
   ];
 
-  getAgreement():Agreement[]{
+  getAgreement(): Agreement[] {
     return this.Agreement;
   }
-  getAssets():Asset[] {
+  getAssets(): Asset[] {
     return this.Assets;
   }
   getAssetCategory() {
