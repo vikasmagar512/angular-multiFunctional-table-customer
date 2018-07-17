@@ -103,7 +103,7 @@ export class TableDemoComponent implements OnInit {
     }
     this.onChangeTable(config);
   }
-  
+
   public changeFilter(data:any, config:any):any {
     console.log(this.config)
     let filteredData:Array<any> = data;
@@ -165,7 +165,7 @@ export class TableDemoComponent implements OnInit {
     if (data.column == "agreement_no") {
       this.router.navigate(['/main/agreementNo/',data.row['id'] ]);
     }
-    
+
     // If Button View
     // if (data.column == "action") {
     //   this.router.navigate(['/view', this.selectedDocument.doknr]);
