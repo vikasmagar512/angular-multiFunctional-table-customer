@@ -16,7 +16,9 @@ export class AgreementComponent implements OnInit {
   assetsService:Array<Asset>
   agreementData:Array<Agreement>;
   id: String;
-  constructor(private route: ActivatedRoute, private dataService: dataService) { }
+  constructor(private route: ActivatedRoute, private dataService: dataService) {
+    this.agreementData = []
+  }
   ngOnInit() {
     this.agreements = this.dataService.getAgreement()
     this.assetsService = this.dataService.getAssets()
@@ -26,10 +28,8 @@ export class AgreementComponent implements OnInit {
     const coveredAssets =  this.agreement.assets_covered;
     this.coveredAssets = this.assetsService.filter(asset=>(coveredAssets.includes(asset.id)))
 
-    const mData = [];
-      this.coveredAssets.map((asset: Asset) => {
-
-        mData.push({
+    this.agreementData  = this.coveredAssets.reduce((acc,asset: Asset) => {
+        return acc.concat({
           "id":  asset.id,
           "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
           "location":asset.category,
@@ -37,8 +37,7 @@ export class AgreementComponent implements OnInit {
           "serialNo": asset.serialno,
           "supplier": asset.supplier,
         });
-      });
-      this.agreementData = mData;
+      },[]);
   }
 
   public agreementColumns:Array<any> = [
