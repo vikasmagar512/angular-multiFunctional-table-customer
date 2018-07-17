@@ -85,7 +85,7 @@ export class AssetComponent implements OnInit {
     paging: true,
     sorting: {columns: this.productColumns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['third-t','s-table','table-bordered']
   };
 
   public serviceColumns:Array<any> = [
@@ -99,7 +99,7 @@ export class AssetComponent implements OnInit {
     paging: true,
     sorting: {columns: this.serviceColumns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['third-t','s-table','table-bordered']
   };
 
   public consumptionColumns:Array<any> = [
@@ -112,7 +112,7 @@ export class AssetComponent implements OnInit {
     paging: true,
     sorting: {columns: this.consumptionColumns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['third-t','s-table','table-bordered']
   };
 
 

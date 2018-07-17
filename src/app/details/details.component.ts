@@ -134,6 +134,6 @@ export class DetailsComponent implements OnInit {
     paging: true,
     sorting: {columns: this.agreementColumns},
     filtering: {filterString: ''},
-    className: ['third-t','s-table','table-striped', 'table-bordered']
+    className: ['third-t','s-table','table-bordered']
   };
 }
