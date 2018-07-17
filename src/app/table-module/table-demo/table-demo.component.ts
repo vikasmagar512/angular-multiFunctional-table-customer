@@ -94,7 +94,6 @@ export class TableDemoComponent implements OnInit {
   }
 
   public globalSearch(globalSearchText){
-    debugger
     let config = {
       ...this.config,
       filtering:{
@@ -104,9 +103,8 @@ export class TableDemoComponent implements OnInit {
     }
     this.onChangeTable(config);
   }
-  
+
   public changeFilter(data:any, config:any):any {
-    debugger
     console.log(this.config)
     let filteredData:Array<any> = data;
     this.columns.forEach((column:any) => {
@@ -167,7 +165,7 @@ export class TableDemoComponent implements OnInit {
     if (data.column == "agreement_no") {
       this.router.navigate(['/main/agreementNo/',data.row['id'] ]);
     }
-    
+
     // If Button View
     // if (data.column == "action") {
     //   this.router.navigate(['/view', this.selectedDocument.doknr]);

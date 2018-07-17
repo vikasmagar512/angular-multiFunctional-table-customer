@@ -31,9 +31,9 @@ export class DetailsComponent implements OnInit {
     this.consumptionTableRef.globalSearch(this.searchValue)
     this.agreementTableRef.globalSearch(this.searchValue)
   }
-
-
-  constructor(private dataService: dataService) {}
+  constructor(private dataService: dataService) {
+    this.consumptionData=[]
+  }
 
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets();
@@ -41,10 +41,9 @@ export class DetailsComponent implements OnInit {
     this.category = this.dataService.getAssetCategory();
 
     console.log(this.assetDetail);
-    const mData = [];
-    this.assetDetail.map((asset: Asset) => {
-      asset.metrics.map((metric: Metric) => {
-        mData.push({
+    this.consumptionData = this.assetDetail.reduce((accumulator,asset: Asset) =>{
+      return asset.metrics.reduce((acc,metric:Metric) =>{
+        return acc.concat({
           "id":  asset.id,
           "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
           "unit": metric.unit,
@@ -52,14 +51,12 @@ export class DetailsComponent implements OnInit {
           "location": asset.location,
           "available": metric.available,
           "required": metric.required
-        });
-      });
-    })
-    this.consumptionData = mData;
+        })}
+        ,accumulator)
+    },[])
 
-    const mAssetData=[];
-    this.assetDetail.map((asset: Asset) => {
-      mAssetData.push({
+    console.log('this.consumptionData ',this.consumptionData)
+    this.assetData = this.assetDetail.map((asset: Asset) => ({
         "id":  asset.id,
         // "name":  asset.name,
         "name":  '<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
@@ -77,13 +74,8 @@ export class DetailsComponent implements OnInit {
         '                  </span>\n' +
         '                <p class="c-white">Report Incident</p>\n' +
         '              </div>',
-      });
-    });
-    this.assetData = mAssetData;
-
-    const mAgreementData=[];
-    this.agreements.map((agreement:Agreement) => {
-      mAgreementData.push({
+      }));
+    this.agreementData = this.agreements.map((agreement:Agreement) =>({
         "id":  agreement.id,
         // "name":  asset.name,
         "agreement_no":  '<a routerLink="main/agreementNo/'+agreement.id+'" routerLinkActive="active">'+agreement.agreement_no+'</a>',
@@ -102,9 +94,7 @@ export class DetailsComponent implements OnInit {
         '                  </span>\n' +
         '                <p class="c-white">Terminated</p>\n' +
         '              </div>',
-      });
-    });
-    this.agreementData = mAgreementData;
+      }));
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
@@ -120,7 +110,7 @@ export class DetailsComponent implements OnInit {
     filtering: {filterString: ''},
     className: ['table-bordered']
   };
-  
+
   public assetColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
     {title: 'Status',name: 'status',sort: false},
@@ -137,7 +127,7 @@ export class DetailsComponent implements OnInit {
   public agreementColumns:Array<any> = [
     {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by name'}},
     {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
-    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc' filtering: {filterString: '', placeholder: 'Filter by date.'}},
+    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'Filter by date.'}},
     {title: 'Action', name: 'action', sort: ''},
   ];
   public agreementConfig:any = {
@@ -146,5 +136,4 @@ export class DetailsComponent implements OnInit {
     filtering: {filterString: ''},
     className: ['third-t','s-table','table-striped', 'table-bordered']
   };
-
 }
