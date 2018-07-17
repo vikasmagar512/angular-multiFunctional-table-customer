@@ -52,8 +52,9 @@
     <div class="col-md-7">
       <h4 class="fb-15 mar-lb">List of Assets</h4>
       <div>
-        <div class="table-responsive box-border">
-          <table  class="asset-table">
+        <div class="table-responsive">
+            <app-table-demo  [data]="agreementData" [config]="agreementConfig" [columns]="agreementColumns"></app-table-demo>
+          <!-- <table  class="asset-table">
             <thead class="bg-black c-white">
             <tr>
               <th>Asset Name</th>
@@ -108,9 +109,9 @@
               <td>6</td>
               <td>SR92912</td>
               <td>ATOS LLP</td>
-            </tr> -->
+            </tr
             </tbody>
-          </table>
+          </table> -->
         </div>
       </div>
       <div class="payment-d">
