@@ -23,7 +23,7 @@ import {SessionService} from './session.service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CanActivateRoutesGuard} from './can-activate-routes.guard';
 import { MainComponent } from './main/main.component';
-import {ModalModule, ProgressbarModule, TooltipModule} from 'ngx-bootstrap';
+import {BsDropdownModule, ModalModule, PopoverModule, ProgressbarModule, TooltipModule} from 'ngx-bootstrap';
 import {LoaderServiceService} from './loader-service.service';
 // import { MaterialModule } from '@angular/material';
 import {CustomHttpService} from './custom-http-service.service';
@@ -62,8 +62,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     ModalModule.forRoot(),
     TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
     MatProgressBarModule,
     ProgressbarModule,
+    PopoverModule.forRoot(),
     LoaderModule,
     MatProgressBarModule,
     TableModuleModule,

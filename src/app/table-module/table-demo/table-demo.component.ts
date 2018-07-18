@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TableData} from '../../tableData';
 import {Router} from '@angular/router';
-import any = jasmine.any;
+// import any = jasmine.any;
 
 @Component({
   selector: 'app-table-demo',
@@ -34,14 +34,14 @@ export class TableDemoComponent implements OnInit {
   public numPages:number = 1;
   public length:number = 0;
 
-/*
-  public config:any = {
-    paging: true,
-    sorting: {columns: this.columns},
-    filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
-  };
-*/
+  /*
+    public config:any = {
+      paging: true,
+      sorting: {columns: this.columns},
+      filtering: {filterString: ''},
+      className: ['table-striped', 'table-bordered']
+    };
+  */
 
   // private data:Array<any> = TableData;
 
@@ -63,11 +63,11 @@ export class TableDemoComponent implements OnInit {
   }
 
   public changeSort(data:any, config:any):any {
-    if (!config.sorting) {
+    if (!config['sorting']) {
       return data;
     }
 
-    let columns = this.config.sorting.columns || [];
+    let columns = this.config['sorting'].columns || [];
     let columnName:string = void 0;
     let sort:string = void 0;
 
@@ -121,14 +121,14 @@ export class TableDemoComponent implements OnInit {
 
     if (config.filtering.columnName) {
       return filteredData.filter((item:any) =>
-        item[config.filtering.columnName].toLowerCase().match(this.config.filtering.filterString.toLowerCase()));
+        item[config['filtering'].columnName].toLowerCase().match(this.config['filtering'].filterString.toLowerCase()));
     }
 
     let tempArray:Array<any> = [];
     filteredData.forEach((item:any) => {
       let flag = false;
       this.columns.forEach((column:any) => {
-        if (item[column.name].toString().toLowerCase().match(this.config.filtering.filterString.toLowerCase())) {
+        if (item[column.name].toString().toLowerCase().match(this.config['filtering'].filterString.toLowerCase())) {
           flag = true;
         }
       });
@@ -143,11 +143,11 @@ export class TableDemoComponent implements OnInit {
 
   public onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
     if (config.filtering) {
-      Object.assign(this.config.filtering, config.filtering);
+      Object.assign(this.config['filtering'], config.filtering);
     }
 
-    if (config.sorting) {
-      Object.assign(this.config.sorting, config.sorting);
+    if (config['sorting']) {
+      Object.assign(this.config['sorting'], config['sorting']);
     }
 
     let filteredData = this.changeFilter(this.data, this.config);

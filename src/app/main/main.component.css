@@ -48,6 +48,14 @@
   padding:10px;
 }
 
+/* CSS used here will be applied after bootstrap.css */
+
+.dropdown {
+  display:inline-block;
+  margin-left:20px;
+  padding:10px;
+}
+
 
 .glyphicon-bell {
 
@@ -102,6 +110,8 @@
   background:#ccc;
   border-radius:4px;
 }
+
+
 
 
 

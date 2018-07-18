@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Asset } from './asset';
 import { Metric} from "./metric";
 import { Agreement } from './agreement';
+import {Customer} from './customer';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,14 @@ export class dataService {
     "Coffee_Machine":"Coffee Machine",
     "Printer":"Printer",
     "Vaccum":"Vaccum"
+  }
+  customer:Customer={
+    "id":"123",
+    "name":"vikas",
+    "email":"vikasmagar512@gmail.com",
+    "address":"vikasmagar512@gmail.com address address address address address ",
+    "contact":"12312312313",
+    "img":"../../../assets/machine.svg",
   }
   Assets: Array<Asset>=[
     {
@@ -119,6 +128,9 @@ export class dataService {
   }
   getAssets():Asset[] {
     return this.Assets;
+  }
+  getCustomer():Customer {
+    return this.customer;
   }
   getAssetCategory() {
     return this.assetCategory;

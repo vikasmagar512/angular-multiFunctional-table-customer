@@ -7,130 +7,134 @@
           <img src="../assets/Sieconnect.png" class="log">
         </a>
       </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="cust">
-          <span class="clr-w">Vendor A</span>
-        </li>
-        <li>
-          <a href="#">
-            <img src="../assets/01.png" class="img-responsive rlogo">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="../assets/02.png" class="img-responsive rlogo">
-          </a>
-<!--
-          <div class="dropdowns-wrapper">
-            <div class="dropdown-container">
-              <div class="notifications dropdown dd-trigger" ng-click="showNotifications($event)">
-                <span class="count animated" id="notifications-count">{{awaitingNotifications}}</span>
-                <span class="fa fa-bell-o"></span>
-              </div>
-              <div class="dropdown-menu animated" id="notification-dropdown">
-                <div class="dropdown-header">
-                  <span class="triangle"></span>
-                  <span class="heading">Notifications</span>
-                  <span class="count" id="dd-notifications-count">{{newNotifications.length}}</span>
-                </div>
-                <div class="dropdown-body">
-                  <div class="notification new" ng-repeat="notification in newNotifications.slice().reverse() track by notification.timestamp">
-                    <div class="notification-image-wrapper">
-                      <div class="notification-image">
-                        <img src="{{notification.user.imageUrl}}" alt="" width="32">
-                      </div>
-                    </div>
-                    <div class="notification-text">
-                      <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
-                    </div>
-                  </div>
-                  <div class="notification" ng-repeat="notification in readNotifications.slice().reverse() track by $index">
-                    <div class="notification-image-wrapper">
-                      <div class="notification-image">
-                        <img src="{{notification.user.imageUrl}}" alt="" width="32">
-                      </div>
-                    </div>
-                    <div class="notification-text">
-                      <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="dropdown-container">
-              <div class="messages dropdown">
-                <span class="fa fa-envelope-o"></span>
-              </div>
-            </div>
-          </div>-->
-          <!--<a href="#">-->
-            <!--<img src="../assets/02.png" class="img-responsive rlogo">-->
-          <!--</a>-->
-          <!--<button class="btn btn-outline-primary" ngbDropdownToggle>Drop me</button>
-          <div class="dropdown-menu" ngbDropdownMenu>
-            <button class="dropdown-item">One</button>
-            <button class="dropdown-item">Two</button>
-            <button class="dropdown-item">Four!</button>
-          </div>-->
-          <!--<div class="dropdown">
-            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-              <i class="glyphicon glyphicon-bell"></i>
+
+      <ul class="nav navbar-nav navbar-right mar-r">
+        <li class="nav-item dropdown">
+          <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
+            <a class="nav-link dropdown-toggle mr-lg-2" id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
+              <i class="fa fa-fw fa-envelope"></i>
+              <span class="d-lg-none">Messages
+                <span class="badge badge-pill badge-primary">12 New</span>
+              </span>
+              <span class="indicator text-primary d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+              </span>
             </a>
+
             <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
-              <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
-              </div>
-              <li class="divider"></li>
-              <div class="notifications-wrapper">
-                <a class="content" href="#">
 
-                  <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                  </div>
+          <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
+          </div>
+          <li class="divider"></li>
+         <div class="notifications-wrapper">
+           <a class="content" href="#">
 
-                </a>
-                <a class="content" href="#">
-                  <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                  </div>
-                </a>
-                <a class="content" href="#">
-                  <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                  </div>
-                </a>
-                <a class="content" href="#">
-                  <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                  </div>
+             <div class="notification-item">
+              <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+              <p class="item-info">Marketing 101, Video Assignment</p>
+            </div>
 
-                </a>
-                <a class="content" href="#">
-                  <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                  </div>
-                </a>
-                <a class="content" href="#">
-                  <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                  </div>
-                </a>
+          </a>
+           <a class="content" href="#">
+            <div class="notification-item">
+              <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+              <p class="item-info">Marketing 101, Video Assignment</p>
+            </div>
+          </a>
+           <a class="content" href="#">
+            <div class="notification-item">
+              <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+              <p class="item-info">Marketing 101, Video Assignment</p>
+            </div>
+          </a>
+           <a class="content" href="#">
+            <div class="notification-item">
+              <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+              <p class="item-info">Marketing 101, Video Assignment</p>
+            </div>
 
-              </div>
-              <li class="divider"></li>
-              <div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
-            </ul>
+          </a>
+           <a class="content" href="#">
+            <div class="notification-item">
+              <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+              <p class="item-info">Marketing 101, Video Assignment</p>
+            </div>
+          </a>
+           <a class="content" href="#">
+            <div class="notification-item">
+              <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+              <p class="item-info">Marketing 101, Video Assignment</p>
+            </div>
+          </a>
 
-          </div>-->
+         </div>
+          <li class="divider"></li>
+          <div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+        </ul>
+
+          </span>
+        </li>
+        <li class="cust">
+          <a href="javascript:void(0)" [popover]="popoverCustomer" placement="bottom" outsideClick="false">
+            <span class="clr-w">{{customer.name}}</span>
+          </a>
+        </li>
+        <ng-template #popoverCustomer>
+          <div>
+            <img src="assets/pencil.svg" class="pull-right pop-img">
+            <div class=popup-p>
+              <p>Name-{{customer.name}}</p>
+              <p>Address-{{customer.address}}</p>
+              <p>Email-{{customer.email}}</p>
+              <p>contact-{{customer.contact}}</p>
+            </div>
+          </div>
+        </ng-template>
+        <li>
+          <a href="#">
+            <img src="../assets/setting.svg" class="img-responsive rlogo">
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="javascript:void(0)" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="../assets/message.svg" class="img-responsive rlogo">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
+          </div>
         </li>
         <li (click)="doSignOut()">
-          <a href="#" >
-          <img src="../assets/03.png" class="img-responsive rlogo">
+          <a href="#">
+            <img src="../assets/logout.svg" class="img-responsive rlogo">
           </a>
         </li>
       </ul>
