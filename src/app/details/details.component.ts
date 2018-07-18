@@ -97,12 +97,12 @@ export class DetailsComponent implements OnInit {
       }));
   }
   public consumptionColumns:Array<any> = [
-    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
-    {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'}},
-    {title: 'Available', className: 'text-warning', name: 'available'},
-    {title: 'Required', className: 'text-warning', name: 'required'},
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'},filter:'text'},
+    {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filter:'text'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'},filter:'text'},
+    {title: 'Available', className: 'text-warning', name: 'available',filter:'text'},
+    {title: 'Required', className: 'text-warning', name: 'required',filter:'text'},
   ];
   public consumptionConfig:any = {
     paging: true,
@@ -112,10 +112,10 @@ export class DetailsComponent implements OnInit {
   };
 
   public assetColumns:Array<any> = [
-    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Status',name: 'status',sort: false},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Action', className:[ 'text-warning'], name: 'action'},
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Status',name: 'status',sort: false,filter:'text'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Action', className:[ 'text-warning'], name: 'action',filter:'text'},
   ];
   public assetConfig:any = {
     paging: true,
@@ -125,10 +125,10 @@ export class DetailsComponent implements OnInit {
   };
 
   public agreementColumns:Array<any> = [
-    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'}},
-    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'Filter by date.'}},
-    {title: 'Action', name: 'action', sort: ''},
+    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'},filter:'text'},
+    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'Filter by date.'},filter:'text'},
+    {title: 'Action', name: 'action', sort: '',filter:'text'},
   ];
   public agreementConfig:any = {
     paging: true,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TableData} from '../../tableData';
+import {Format} from '../Format';
 
 @Component({
   selector: 'app-reusable-table',
@@ -7,23 +8,41 @@ import {TableData} from '../../tableData';
   styleUrls: ['./reusable-table.component.css']
 })
 export class ReusableTableComponent implements OnInit {
+  exportFileName:string = "csv";
 
   public rows:Array<any> = [];
+  /*this.columns= [
+    {
+      display: 'Id',
+      variable: 'id',filter: 'text'
+    },
+    {
+      display: 'First Name',
+      variable: 'firstName',
+      filter: 'text'
+    },
+    {
+      display: 'Last Name',
+      variable: 'lastName',
+      filter: 'text'
+    },
+  ];*/
   public columns:Array<any> = [
-    {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
+    {title: 'Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter: 'text'},
     {
       title: 'Position',
       name: 'position',
       sort: false,
-      filtering: {filterString: '', placeholder: 'Filter by position'}
+      filtering: {filterString: '', placeholder: 'Filter by position'},
+      filter: 'text'
     },
-    {title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc'},
-    {title: 'Extn.', name: 'ext', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Start date', className: 'text-warning', name: 'startDate'},
-    {title: 'Salary ($)', name: 'salary'}
+    {title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc',filter: 'text'},
+    {title: 'Extn.', name: 'ext', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter: 'text'},
+    {title: 'Start date', className: 'text-warning', name: 'startDate',filter: 'text'},
+    {title: 'Salary ($)', name: 'salary',filter: 'text'}
   ];
   public page:number = 1;
-  public itemsPerPage:number = 10;
+  public itemsPerPage:number = 5;
   public maxSize:number = 5;
   public numPages:number = 1;
   public length:number = 0;
@@ -32,7 +51,7 @@ export class ReusableTableComponent implements OnInit {
     paging: true,
     sorting: {columns: this.columns},
     filtering: {filterString: ''},
-    className: ['table-striped', 'table-bordered']
+    className: ['het','table-striped', 'table-bordered']
   };
 
   private data:Array<any> = TableData;
@@ -134,6 +153,76 @@ export class ReusableTableComponent implements OnInit {
 
   public onCellClick(data: any): any {
     console.log(data);
+  }
+
+  public static downloadcsv(data: any, exportFileName: string) {
+    var csvData = this.convertToCSV(data);
+
+    var blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
+
+    if (navigator.msSaveBlob) { // IE 10+
+      navigator.msSaveBlob(blob, this.createFileName(exportFileName))
+    } else {
+      var link = document.createElement("a");
+      if (link.download !== undefined) { // feature detection
+        // Browsers that support HTML5 download attribute
+        var url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", this.createFileName(exportFileName));
+        //link.style = "visibility:hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  }
+  exporttoCSV() {
+    let exprtcsv: any[] = [];
+    // let columns = this.config.columns;
+    (<any[]>JSON.parse(JSON.stringify(this.data))).forEach(x => {
+        var obj = new Object();
+        var frmt = new Format();
+        for (var i = 0; i < this.columns.length; i++) {
+          let transfrmVal = frmt.transform(x[this.columns[i].name],
+            this.columns[i].filter);
+          obj[this.columns[i].title] = transfrmVal;
+        }
+        exprtcsv.push(obj);
+      }
+    );
+    ReusableTableComponent.downloadcsv(exprtcsv, this.exportFileName);
+  }
+  private static convertToCSV(objarray: any) {
+    var array = typeof objarray != 'object' ? JSON.parse(objarray) : objarray;
+
+    var str = '';
+    var row = "";
+
+    for (var index in objarray[0]) {
+      //Now convert each value to string and comma-separated
+      row += index + ',';
+    }
+    row = row.slice(0, -1);
+    //append Label row with line break
+    str += row + '\r\n';
+
+    for (var i = 0; i < array.length; i++) {
+      var line = '';
+      for (var index in array[i]) {
+        if (line != '') line += ','
+        line += JSON.stringify(array[i][index]);
+      }
+      str += line + '\r\n';
+    }
+    return str;
+  }
+
+  private static createFileName(exportFileName: string): string {
+    var date = new Date();
+    return (exportFileName +
+      date.toLocaleDateString() + "_" +
+      date.toLocaleTimeString()
+      + '.csv')
   }
 
 }

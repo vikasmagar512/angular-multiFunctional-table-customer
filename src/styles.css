@@ -257,6 +257,24 @@ button:hover, button:focus{
   border-top: 1px solid #fff;
 }
 
+.s-table thead,.s-table tbody{
+  display: block;
+}
+
+.s-table tbody {
+  height: 100px;
+  overflow-y: auto;
+  /*overflow-x: hidden;*/
+}
+
+
+.s-table thead {
+  display: inline-block;
+  width: 100%;
+  /*height: 20px;*/
+}
+
+
 .s-table th{
   /*padding: 10px;*/
   padding:9px 0px 9px 8px

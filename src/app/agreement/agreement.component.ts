@@ -47,7 +47,7 @@ export class AgreementComponent implements OnInit {
         return acc.concat({
           "dueDate":agree.dueDate,
           "amount":agree.amount,
-          "status":agree.status,      
+          "status":agree.status,
           "invoice": '<span>'+
                         '<img src="../../assets/pdf.svg">'+
                         '</span>',
@@ -57,11 +57,11 @@ export class AgreementComponent implements OnInit {
   }
 
   public agreementColumns:Array<any> = [
-    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Location', className: ['office-header', 'text-success'], name: 'location', sort: 'asc'},
-    {title: 'Quantity', name: 'quantity', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Seraial No,', className: 'text-warning', name: 'serialNo'},
-    {title: 'Supplier', name: 'supplier'}
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Location', className: ['office-header', 'text-success'], name: 'location', sort: 'asc',filter:'text'},
+    {title: 'Quantity', name: 'quantity', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Seraial No,', className: 'text-warning', name: 'serialNo',filter:'text'},
+    {title: 'Supplier', name: 'supplier',filter:'text'}
   ];
   public agreementConfig:any = {
     paging: true,
@@ -72,11 +72,11 @@ export class AgreementComponent implements OnInit {
 
 
   public overDueColumns:Array<any> = [
-    {title: 'Due Date', name: 'dueDate'},
-    {title: 'Open Amount', className: ['office-header', 'text-success'], name: 'amount', sort: 'asc'},
-    {title: 'Status paid/Unpaid', name: 'status', sort: ''},
-    {title: 'Invoice', className: 'text-warning', name: 'invoice'},
-    {title: 'Invoice Address', name: 'invoiceAddress'}
+    {title: 'Due Date', name: 'dueDate',filter:'text'},
+    {title: 'Open Amount', className: ['office-header', 'text-success'], name: 'amount', sort: 'asc',filter:'text'},
+    {title: 'Status paid/Unpaid', name: 'status', sort: '',filter:'text'},
+    {title: 'Invoice', className: 'text-warning', name: 'invoice',filter:'text'},
+    {title: 'Invoice Address', name: 'invoiceAddress',filter:'text'}
   ];
   public overDueConfig:any = {
     paging: true,
