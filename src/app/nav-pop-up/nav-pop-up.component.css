@@ -1,0 +1,9 @@
+
+.notifications {
+    min-width:420px;
+  }
+  
+  .notifications-wrapper {
+    overflow:auto;
+    max-height:250px;
+  }

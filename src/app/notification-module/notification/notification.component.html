@@ -1,0 +1,60 @@
+<div class="notification-heading">
+    <h4 class="menu-title">Notifications</h4>
+    <!-- <h4 class="menu-title pull-right">View all
+      <i class="glyphicon glyphicon-circle-arrow-right"></i>
+    </h4> -->
+  </div>
+  <li class="divider"></li>
+  <div class="notifications-wrapper" *ngFor="let notify of data; let i=index">
+    <!-- <div *ngIf="i<4"> -->
+        <div class="notification-item" (click)="navigateTo(notify)">
+          <img src="{{notify.image}}" style="width:50px;border-radius:50%;float:left">
+          <h4 class="item-title">{{notify.headText}}
+            <span>{{notify.timeStamp}}</span>
+          </h4>
+          <a >{{notify.shortText}}</a>
+        </div>
+
+      <!--  <a class="content" href="#">
+      <div class="notification-item">
+          <img src="../assets/FemaleAvatar.png" style="width:50px;border-radius:50%;">
+        <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+    <a class="content" href="#">
+      <div class="notification-item">
+          <img src="../assets/FemaleAvatar.png" style="width:50px;border-radius:50%;">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+    <a class="content" href="#">
+      <div class="notification-item">
+          <img src="../assets/FemaleAvatar.png" style="width:50px;border-radius:50%;">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+
+    </a>
+    <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+    <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a> -->
+
+    <!-- </div> -->
+  </div>
+  <li class="divider"></li>
+  <div class="notification-footer">
+    <h4 class="menu-title">View all
+      <i class="glyphicon glyphicon-circle-arrow-right"></i>
+    </h4>
+  </div>

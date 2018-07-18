@@ -30,9 +30,11 @@ import {CustomHttpService} from './custom-http-service.service';
 import {MatProgressBar} from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {LoaderModule} from './loader/loader.module';
-import { TableDemoComponent } from './table-module/table-demo/table-demo.component';
+/* import { TableDemoComponent } from './table-module/table-demo/table-demo.component'; */
 import {TableModuleModule} from './table-module/table-module.module';
-
+import {NotificationModuleModule} from './notification-module/notification-module.module'
+import { DedicatedNotificationComponent } from './notification-module/dedicated-notification/dedicated-notification.component';
+import { NavPopUpComponent } from './nav-pop-up/nav-pop-up.component';
 
 const appRoutes: Routes = [
   {
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     children:[
       { path: '',  component:HomeComponent},
       { path: 'asset/:id',  component:AssetComponent},
-      { path: 'agreementNo/:id',  component:AgreementComponent}
+      { path: 'agreementNo/:id',  component:AgreementComponent},
+      { path: 'notifications/all',  component:DedicatedNotificationComponent}
     ]
   },
   { path: '**', component: PageNotFoundComponent }
@@ -69,6 +72,7 @@ const appRoutes: Routes = [
     LoaderModule,
     MatProgressBarModule,
     TableModuleModule,
+    NotificationModuleModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
@@ -99,6 +103,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     SignInComponent,
     MainComponent,
+    NavPopUpComponent,
   ],
   exports:[],
   entryComponents: [ DetailsComponent,DashboardComponent],
