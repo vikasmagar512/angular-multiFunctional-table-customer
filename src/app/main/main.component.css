@@ -64,6 +64,7 @@
 
 .notifications {
   min-width:420px;
+  width: 350px;
 }
 
 .notifications-wrapper {
@@ -85,7 +86,11 @@
 .notification-heading, .notification-footer  {
   padding:2px 10px;
 }
-
+.dropdown-menu{
+  min-width: 379px;
+  height: 390px;
+    overflow-y: scroll;
+}
 
 .dropdown-menu.divider {
   margin:5px 0;

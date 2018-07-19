@@ -59,7 +59,7 @@ export class NotificationService {
       "image":"../assets/FemaleAvatar.png",
       "headText":"Coffee Machine",
       "type":"asset",
-      "contentId":"AGR02",
+      "contentId":"02",
       "shortText":"Needs servicing for coffee machine",
       //"link":'<a routerLink="main/asset/02" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
