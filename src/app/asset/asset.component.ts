@@ -67,11 +67,11 @@ export class AssetComponent implements OnInit {
       },[]);
   }
   public productColumns:Array<any> = [
-    {title: 'Category of Products', name: 'product_category', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Supplier Name', className: ['office-header', 'text-success'], name: 'supplierName', sort: 'asc'},
-    {title: 'Request Date', name: 'requestDate', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Amount', className: 'text-warning', name: 'amount'},
-    {title: 'Invoice', name: 'invoice'}
+    {title: 'Category of Products', name: 'product_category', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Supplier Name', className: ['office-header', 'text-success'], name: 'supplierName', sort: 'asc',filter:'text'},
+    {title: 'Request Date', name: 'requestDate', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Amount', className: 'text-warning', name: 'amount',filter:'text'},
+    {title: 'Invoice', name: 'invoice',filter:'text'}
   ];
   public productConfig:any = {
     paging: true,
@@ -81,11 +81,11 @@ export class AssetComponent implements OnInit {
   };
 
   public serviceColumns:Array<any> = [
-    {title: 'Category of service', name: 'service_category', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Supplier Name', className: ['office-header', 'text-success'], name: 'supplierName', sort: 'asc'},
-    {title: 'Date of service', name: 'serviceDate', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Amount', className: 'text-warning', name: 'amount'},
-    {title: 'Invoice', name: 'invoice'}
+    {title: 'Category of service', name: 'service_category', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Supplier Name', className: ['office-header', 'text-success'], name: 'supplierName', sort: 'asc',filter:'text'},
+    {title: 'Date of service', name: 'serviceDate', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Amount', className: 'text-warning', name: 'amount',filter:'text'},
+    {title: 'Invoice', name: 'invoice',filter:'text'}
   ];
   public serviceConfig:any = {
     paging: true,
@@ -95,10 +95,10 @@ export class AssetComponent implements OnInit {
   };
 
   public consumptionColumns:Array<any> = [
-    {title: 'Category', name: 'category', filtering: {filterString: '', placeholder: 'Filter by name'}},
-    {title: 'Present Consumption', className: ['office-header', 'text-success'], name: 'presentConsum', sort: 'asc'},
-    {title: 'Forecasted Consumption', name: 'forecastedConsum', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'}},
-    {title: 'Recomendation', className: 'text-warning', name: 'recommend'},
+    {title: 'Category', name: 'category', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Present Consumption', className: ['office-header', 'text-success'], name: 'presentConsum', sort: 'asc',filter:'text'},
+    {title: 'Forecasted Consumption', name: 'forecastedConsum', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Recomendation', className: 'text-warning', name: 'recommend',filter:'text'},
   ];
   public consumptionConfig:any = {
     paging: true,
