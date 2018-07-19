@@ -18,7 +18,7 @@ export class NotificationService {
       "contentId":"02",
       // "link":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
       /* "link":'<a routerLink="main/asset/01" routerLinkActive="active">'+'link'+'</a>', */
-      "readFlag":false,
+      "readFlag":true,
       "timeStamp":"23 hours"
     },
     {

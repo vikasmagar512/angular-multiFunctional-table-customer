@@ -39,11 +39,14 @@
   .notification-item {
     padding:10px;
     margin:5px;
-    background:#ccc;
+    background:#ccc;  
     border-radius:4px;
     cursor:pointer;
   }
   
+  .notification-item.blur{
+    background: red;
+  }
   
   
   

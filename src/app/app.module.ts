@@ -35,6 +35,8 @@ import {TableModuleModule} from './table-module/table-module.module';
 import {NotificationModuleModule} from './notification-module/notification-module.module'
 import { DedicatedNotificationComponent } from './notification-module/dedicated-notification/dedicated-notification.component';
 import { NavPopUpComponent } from './nav-pop-up/nav-pop-up.component';
+import { SettingComponent } from './setting/setting.component';
+import { NotificationSettingComponent } from './src/app/notification-module/notification-setting/notification-setting.component';
 
 const appRoutes: Routes = [
   {
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
       { path: '',  component:HomeComponent},
       { path: 'asset/:id',  component:AssetComponent},
       { path: 'agreementNo/:id',  component:AgreementComponent},
-      { path: 'notifications/all',  component:DedicatedNotificationComponent}
+      { path: 'notifications/all',  component:DedicatedNotificationComponent},
+      { path: 'setting',  component:SettingComponent}
     ]
   },
   { path: '**', component: PageNotFoundComponent }
@@ -104,6 +107,8 @@ const appRoutes: Routes = [
     SignInComponent,
     MainComponent,
     NavPopUpComponent,
+    SettingComponent,
+    NotificationSettingComponent,
   ],
   exports:[],
   entryComponents: [ DetailsComponent,DashboardComponent],

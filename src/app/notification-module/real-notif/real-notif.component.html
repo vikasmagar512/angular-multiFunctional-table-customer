@@ -1,14 +1,14 @@
-<div class="notifications-wrapper" *ngFor="let notify of notification; let i=index">
-    <!-- <div *ngIf="i<4"> -->
-        <div class="notification-item" (click)="navigateTo(notify)">
-          <img src="{{notify.image}}" style="width:50px;border-radius:50%;float:left">
-          <h4 class="item-title">{{notify.headText}}
-            <span>{{notify.timeStamp}}</span>
-          </h4>
-          <a >{{notify.shortText}}</a>
-        </div>
+<div class="notifications-wrapper" *ngFor="let notify of notifications; let i=index">
+  <!-- <div *ngIf="i<4"> -->
+  <div class="notification-item" [ngClass]="{'blur' : notify.readFlag}" (click)="navigateTo(notify)">
+    <img src="{{notify.image}}" style="width:50px;border-radius:50%;float:left">
+    <h4 class="item-title">{{notify.headText}}
+      <span>{{notify.timeStamp}}</span>
+    </h4>
+    <a>{{notify.shortText}}</a>
+  </div>
 
-      <!--  <a class="content" href="#">
+  <!--  <a class="content" href="#">
       <div class="notification-item">
           <img src="../assets/FemaleAvatar.png" style="width:50px;border-radius:50%;">
         <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
@@ -43,5 +43,5 @@
       </div>
     </a> -->
 
-    <!-- </div> -->
-  </div>
+  <!-- </div> -->
+</div>
