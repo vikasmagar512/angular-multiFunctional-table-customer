@@ -3,18 +3,24 @@ import { Asset } from './asset';
 import { Metric } from "./metric";
 import { Agreement } from './agreement';
 import {Customer} from './customer';
+import { SettingOptions } from './SettingOptions';
+import { BehaviorSubject } from 'rxjs';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class dataService {
 
+  /* private messageSource = new BehaviorSubject('default message');
+  currentMessage = this.messageSource.asObservable(); */
+
   constructor() { }
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
     "Vaccum": "Vaccum"
-  }
+  } 
   customer:Customer={
     "id":"123",
     "name":"vikas",
@@ -23,6 +29,52 @@ export class dataService {
     "contact":"12312312313",
     "img":"../../../assets/machine.svg",
   }
+  notificationOptions:Array<SettingOptions>=[
+    {
+      name:"Service Request",
+      id:"1",
+      selected:true
+    },
+    {
+      name:"Change in Asset status",
+      id:"2",
+      selected:false
+    },
+    {
+      name:"Product Request",
+      id:"3",
+      selected:false
+    },
+    {
+      name:"Change in Contract status",
+      id:"4",
+      selected:false
+    }
+  ];
+
+  dashboardOptions:Array<SettingOptions>=[
+    {
+      name:"Overall Cost",
+      id:"1",
+      selected:true
+    },
+    {
+      name:"Downtime",
+      id:"2",
+      selected:false
+    },
+    {
+      name:"Usage",
+      id:"3",
+      selected:false
+    },
+    {
+      name:"Utilization",
+      id:"4",
+      selected:false
+    }
+  ];
+  /* selectedOptions:Array<SettingOptions>=[]; */
   Assets: Array<Asset>=[
     {
       "id": "01",
@@ -130,7 +182,40 @@ export class dataService {
       "assets_covered": ["03"]
     }
   ];
+  dashSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.dashboardOptions);
+  currentDashSetting=this.dashSetting.asObservable();
 
+  
+  notifSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.notificationOptions);
+  currentNotifSetting=this.dashSetting.asObservable();
+  changeSettings(options,typeOfSetting,isSuccess){
+    let k = [...options]    
+    if(isSuccess){
+      if(typeOfSetting===1){
+        //dashboard
+        this.dashSetting.next(k);
+      }else{
+        //notifi
+        this.notifSetting.next(k);
+      }
+    }else{
+      if(typeOfSetting===1){
+        //dashboard
+        this.dashSetting.next(this.dashboardOptions);
+      }else{
+        //notifi
+        this.notifSetting.next(this.notificationOptions);
+      }
+    }
+  }
+  sendSettings(options:Array<SettingOptions>,typeOfSetting){
+    //api request
+    // if(response.status==200){
+      this.changeSettings(options,typeOfSetting,1)
+    // }ese{
+    //   this.changeSettings(options,typeOfSetting,0)  
+    // }
+  }
   getAgreement(): Agreement[] {
     return this.Agreement;
   }
@@ -143,4 +228,20 @@ export class dataService {
   getAssetCategory() {
     return this.assetCategory;
   }
+
+  getNotificationOptions() {
+    return this.notificationOptions;
+  }
+
+  getDashboardOptions() {
+    return this.dashboardOptions;
+  }
+
+
+
+  /* changeMessage(message: string) {
+    this.messageSource.next(message)
+  } */
+
+
 }

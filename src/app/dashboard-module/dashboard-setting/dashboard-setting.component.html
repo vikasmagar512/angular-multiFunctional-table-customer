@@ -1,0 +1,38 @@
+
+    <div class="row mar-t">
+    <div class="col-xs-5">
+    <!-- <div class="mar">Available KPI</div> -->
+    <!-- {{message}}
+    <button (click)="newMessage()">New Message</button> -->
+    <select [ngModel]="selectedCountry" name="from" id="multiselect1" class="form-control" size="8" multiple="multiple" title="asdf">
+      <ng-container *ngFor="let options of optionsSettings">
+        <option *ngIf="!options.selected" value={{options.id}}>{{options.name}}</option>
+      </ng-container>
+    </select>
+    </div>
+    <div class="col-xs-2">
+    <button type="button" id="multiselect1_rightAll" class="btn btn-block">
+      <i class="glyphicon glyphicon-forward"></i>
+    </button>
+    <button type="button" id="multiselect1_rightSelected" class="btn btn-block">
+      <i class="glyphicon glyphicon-chevron-right"></i>
+    </button>
+    <button type="button" id="multiselect1_leftSelected" class="btn btn-block">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+    </button>
+    <button type="button" id="multiselect1_leftAll" class="btn btn-block">
+      <i class="glyphicon glyphicon-backward"></i>
+    </button>
+    </div>
+    <div class="col-xs-5">
+       <!--  <div class="mar">Selected KPI</div> -->
+        <select [ngModel]="selectedCountry" name="to" id="multiselect1_to" class="form-control" size="8" multiple="multiple">
+          <ng-container *ngFor="let options of optionsSettings">
+            <option *ngIf="options.selected" value={{options.id}}>{{options.name}}</option>
+          </ng-container> 
+        </select>
+    </div>
+    </div>
+
+    <!--<select name="to" id="multiselect_to" class="form-control" size="8" multiple="multiple">
+      </select>-->

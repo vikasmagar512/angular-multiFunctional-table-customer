@@ -1,3 +1,24 @@
-<p>
-  notification-setting works!
-</p>
+<div class="row">
+  <div class="col-xs-5">
+    <select [ngModel]="selectedCountry" name="from" id="multiselect2" class="form-control" size="8" multiple="multiple" title="asdf">
+      <ng-container *ngFor="let options of optionsSettings">
+        <option *ngIf="!options.selected" value={{options.id}} selected={{options.selected}}>{{options.name}}</option>
+      </ng-container>
+    </select>
+  </div>
+  <div class="col-xs-2">
+    <button type="button" id="multiselect2_rightAll" class="btn btn-block"><i class="glyphicon glyphicon-forward"></i></button>
+    <button type="button" id="multiselect2_rightSelected" class="btn btn-block"><i class="glyphicon glyphicon-chevron-right"></i></button>
+    <button type="button" id="multiselect2_leftSelected" class="btn btn-block"><i class="glyphicon glyphicon-chevron-left"></i></button>
+    <button type="button" id="multiselect2_leftAll" class="btn btn-block"><i class="glyphicon glyphicon-backward"></i></button>
+  </div>
+  <div class="col-xs-5">
+    <!--<select name="to" id="multiselect_to" class="form-control" size="8" multiple="multiple">
+    </select>-->
+    <select [ngModel]="selectedCountry"  name="to" id="multiselect2_to" class="form-control" size="8" multiple="multiple">
+      <ng-container *ngFor="let options of optionsSettings">
+        <option *ngIf="options.selected" value={{options.id}}>{{options.name}}</option>
+      </ng-container>
+    </select>
+  </div>
+</div>

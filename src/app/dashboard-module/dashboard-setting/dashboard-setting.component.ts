@@ -5,49 +5,24 @@ declare var multiselect:any;
 declare var $ :any;
 
 @Component({
-  selector: 'app-notification-setting',
-  templateUrl: './notification-setting.component.html',
-  styleUrls: ['./notification-setting.component.css']
+  selector: 'app-dashboard-setting',
+  templateUrl: './dashboard-setting.component.html',
+  styleUrls: ['./dashboard-setting.component.css']
 })
-export class NotificationSettingComponent implements OnInit {
-
+export class DashboardSettingComponent implements OnInit {
   optionsSettings:Array<SettingOptions>;
   constructor(private _options:dataService) { }
   selectedCountry:any;
-
-  /* ngOnInit() {
-    this.optionsSettings=this._options.getNotificationOptions();
-    $('#multiselect2').multiselect({
-      afterMoveToRight:function ($left, $right,options) {
-        //alert('notif')
-        console.log('afterMoveToLeft values length',options.length)
-        console.log('afterMoveToLeft values length',options)
-        for (let i = 0; i < options.length; i++) {
-             console.log('options[i] ',options[i].value)
-             console.log('data',options[i].selected)
-        }
-      },
-      afterMoveToLeft:function ($left, $right,options) {
-        //alert('notif')        
-        console.log('afterMoveToLeft values length',options.length)
-        console.log('afterMoveToLeft values length',options)
-        for (let i = 0; i < options.length; i++) {
-          console.log('options[i] ',options[i].value)
-          console.log('data',options[i])
-        }
-      },
-    });
-  } */
-
+  //message:string;
   ngOnInit() {
-    this._options.currentNotifSetting.subscribe(message => {
+    this._options.currentDashSetting.subscribe(message => {
       console.log('message ',message)
       this.optionsSettings = message
     })
     // this.optionsSettings=this._options.getDashboardOptions();
     const optionsSettingsTemp =  this.optionsSettings
     let that = this
-    $('#multiselect2').multiselect({
+    $('#multiselect1').multiselect({
       afterMoveToRight:function ($left, $right,options) {
         console.log('afterMoveToLeft values length',options.length)
         console.log('afterMoveToLeft values length',options)
@@ -73,7 +48,7 @@ export class NotificationSettingComponent implements OnInit {
         }); 
           console.log('k',k)    
           debugger    
-          that._options.sendSettings(k,2)
+          that._options.sendSettings(k,1)
       },
       afterMoveToLeft:function ($left, $right,options) {
         console.log('afterMoveToLeft values length',options.length)
@@ -100,10 +75,15 @@ export class NotificationSettingComponent implements OnInit {
         }); 
         console.log('k',k)    
         debugger    
-        that._options.sendSettings(k,2)
+        that._options.sendSettings(k,1)
       },
     });
   }
+  
+  /* setDashboardOptions(){
+    return this.optionsSettings;
+  }
+   */
 
 }
   

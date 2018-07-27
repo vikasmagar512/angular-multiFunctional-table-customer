@@ -5,12 +5,18 @@ import { DedicatedNotificationComponent } from './dedicated-notification/dedicat
 import { NotifPopUPWrapperComponent } from './notif-pop-upwrapper/notif-pop-upwrapper.component';
 import { RealNotifComponent } from './real-notif/real-notif.component';
 import { NotificationSettingComponent } from './notification-setting/notification-setting.component';
+import { AngularDualListBoxModule } from 'angular-dual-listbox';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AngularDualListBoxModule,
+    FormsModule
   ],
-  exports: [NotificationComponent, DedicatedNotificationComponent, NotifPopUPWrapperComponent, RealNotifComponent],
-  declarations: [NotificationComponent, DedicatedNotificationComponent, NotifPopUPWrapperComponent, RealNotifComponent, NotificationSettingComponent]
+  exports: [NotificationComponent, DedicatedNotificationComponent, NotifPopUPWrapperComponent,
+     RealNotifComponent,NotificationSettingComponent],
+  declarations: [NotificationComponent, DedicatedNotificationComponent, 
+    NotifPopUPWrapperComponent, RealNotifComponent, NotificationSettingComponent]
 })
 export class NotificationModuleModule { }

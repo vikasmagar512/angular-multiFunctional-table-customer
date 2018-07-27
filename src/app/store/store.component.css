@@ -1,0 +1,40 @@
+.img-size{
+    width: 200px;
+    height: 200px;
+}
+
+.flex-D{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+.flex-C{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+   /*  margin-bottom: 30px; */
+    background-color:#fff;
+    height: 250px;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    /* border: 1px solid black; */
+}
+
+.f-store{
+    display: flex;
+    justify-content: space-around;
+}
+.i-size{
+    font-size: 25px;
+    color: black;
+}
+.if-size{
+    font-size: 21px;
+    color: black;
+}

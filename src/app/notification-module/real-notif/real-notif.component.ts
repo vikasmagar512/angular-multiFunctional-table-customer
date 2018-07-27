@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationService } from '../../notification.service';
 import { NotificationMne } from '../../notification';
 import { Router } from '@angular/router';
-import { MIN_LENGTH_VALIDATOR } from '@angular/forms';
+//import { MIN_LENGTH_VALIDATOR } from '@angular/forms';
 
 @Component({
   selector: 'app-real-notif',
@@ -16,16 +16,11 @@ export class RealNotifComponent implements OnInit {
   notifications:Array<NotificationMne>;
   ngOnInit() {
     let that = this;
-    // (function startGettingNotifications(){
-      setInterval(function(){
-        that.notifications = that.notifyService.getNotification(); 
-        // alert("data updated")
-        this.notifications = this.notifyService.getNotification(); 
-        
-        console.log('vikas')
-      }, 5000);
-    // })()
-    // this.notifications = this.notifyService.getNotification(); 
+    this.notifications = this.notifyService.getNotification(); 
+    setInterval(function(){
+      that.notifications = that.notifyService.getNotification(); 
+      //console.log('getNotification')
+    }, 5000);
   }
 
   navigateTo(notif:NotificationMne){

@@ -476,3 +476,17 @@ button:hover, button:focus{
   margin-top: 0px;
   margin-bottom: 3px;
 }
+
+
+
+
+
+
+
+
+
+
+/************************ GENERIC STYLES *******************************/
+.cursorPointer{
+  cursor: pointer;
+}
