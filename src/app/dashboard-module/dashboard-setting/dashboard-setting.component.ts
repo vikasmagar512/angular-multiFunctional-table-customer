@@ -35,10 +35,8 @@ export class DashboardSettingComponent implements OnInit {
         }
         console.log('arr',arr)
         let k = [...optionsSettingsTemp]
-        debugger
 
         arr.map(ar=>{
-          debugger
           let foundIndex = optionsSettingsTemp.findIndex(opt=>opt.id===ar)
           console.log(foundIndex)
           
@@ -47,7 +45,6 @@ export class DashboardSettingComponent implements OnInit {
             ...k.slice(foundIndex + 1)] 
         }); 
           console.log('k',k)    
-          debugger    
           that._options.sendSettings(k,1)
       },
       afterMoveToLeft:function ($left, $right,options) {
@@ -62,10 +59,8 @@ export class DashboardSettingComponent implements OnInit {
         }
         console.log('arr',arr)
         let k = [...optionsSettingsTemp]
-        debugger
 
         arr.map(ar=>{
-          debugger
           let foundIndex = optionsSettingsTemp.findIndex(opt=>opt.id===ar)
           console.log(foundIndex)
           
@@ -74,7 +69,6 @@ export class DashboardSettingComponent implements OnInit {
             ...k.slice(foundIndex + 1)] 
         }); 
         console.log('k',k)    
-        debugger    
         that._options.sendSettings(k,1)
       },
     });

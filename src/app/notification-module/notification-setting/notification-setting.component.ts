@@ -60,10 +60,8 @@ export class NotificationSettingComponent implements OnInit {
         }
         console.log('arr',arr)
         let k = [...optionsSettingsTemp]
-        debugger
 
         arr.map(ar=>{
-          debugger
           let foundIndex = optionsSettingsTemp.findIndex(opt=>opt.id===ar)
           console.log(foundIndex)
           
@@ -72,7 +70,6 @@ export class NotificationSettingComponent implements OnInit {
             ...k.slice(foundIndex + 1)] 
         }); 
           console.log('k',k)    
-          debugger    
           that._options.sendSettings(k,2)
       },
       afterMoveToLeft:function ($left, $right,options) {
@@ -87,10 +84,8 @@ export class NotificationSettingComponent implements OnInit {
         }
         console.log('arr',arr)
         let k = [...optionsSettingsTemp]
-        debugger
 
         arr.map(ar=>{
-          debugger
           let foundIndex = optionsSettingsTemp.findIndex(opt=>opt.id===ar)
           console.log(foundIndex)
           
@@ -99,7 +94,6 @@ export class NotificationSettingComponent implements OnInit {
             ...k.slice(foundIndex + 1)] 
         }); 
         console.log('k',k)    
-        debugger    
         that._options.sendSettings(k,2)
       },
     });
