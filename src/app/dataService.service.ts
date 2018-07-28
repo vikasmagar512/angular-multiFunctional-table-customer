@@ -6,7 +6,12 @@ import {Customer} from './customer';
 import { SettingOptions } from './SettingOptions';
 import { BehaviorSubject } from 'rxjs';
 import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/index';
+import 'rxjs-compat/add/operator/catch';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import 'rxjs-compat/add/operator/map';
 
+const API_URL ="http://192.168.10.33:8080";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +20,7 @@ export class dataService {
   /* private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable(); */
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
@@ -33,17 +38,17 @@ export class dataService {
     {
       name:"Service Request",
       id:"1",
-      selected:true
+      selected:false
     },
     {
       name:"Change in Asset status",
       id:"2",
-      selected:false
+      selected:true
     },
     {
       name:"Product Request",
       id:"3",
-      selected:false
+      selected:true
     },
     {
       name:"Change in Contract status",
@@ -75,7 +80,7 @@ export class dataService {
     }
   ];
   /* selectedOptions:Array<SettingOptions>=[]; */
-  Assets: Array<Asset>=[
+  assets: Array<Asset>=[
     {
       "id": "01",
       "category": "Coffee_Machine",
@@ -146,7 +151,7 @@ export class dataService {
     }
   ];
 
-  Agreement: Array<Agreement> = [
+  agreements: Array<Agreement> = [
     {
       "id": "AGR01",
       "agreement_no": "AGR984567854",
@@ -187,8 +192,9 @@ export class dataService {
 
   
   notifSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.notificationOptions);
-  currentNotifSetting=this.dashSetting.asObservable();
+  currentNotifSetting=this.notifSetting.asObservable();
   changeSettings(options,typeOfSetting,isSuccess){
+    /* debugger */
     let k = [...options]    
     if(isSuccess){
       if(typeOfSetting===1){
@@ -216,11 +222,20 @@ export class dataService {
     //   this.changeSettings(options,typeOfSetting,0)  
     // }
   }
-  getAgreement(): Agreement[] {
-    return this.Agreement;
+  getAgreement(){
+    // getAgreement(): Observable<Agreement[]> {
+    return this.agreements;
+    // return this.http.get<Agreement[]>(API_URL + '/getAgreementDetails');
   }
-  getAssets(): Asset[] {
-    return this.Assets;
+  getAssets() {
+    return this.assets;
+    // getAssets():Observable<Asset[]> {
+    // return this.http.get<Asset[]>(API_URL + '/getAssetDetails')
+    // .subscribe(
+    //  res =>
+    //  {
+    //   console.log("Asset Array",res);
+    //  });
   }
   getCustomer():Customer {
     return this.customer;
