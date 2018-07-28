@@ -97,9 +97,10 @@
   align-items: center;
  /*  margin: 0; */
   /* padding: 0; */
-
   padding-bottom: 20px;
-   
+}
+.customClass{
+  background-color: red;
 }
 .borderLeft{
   border-left: 1px solid black;
@@ -115,7 +116,7 @@
 
 tabset.nav-tabs>ul {
   margin-bottom: 10px;
-} 
+}
 
 .bclr-white{
   background-color: #fff;

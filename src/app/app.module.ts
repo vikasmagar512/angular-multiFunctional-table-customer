@@ -5,7 +5,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
-import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { ChartsModule } from 'ng2-charts';
 import { BsDropdownModule, ModalModule, PopoverModule, ProgressbarModule, TabsModule, TooltipModule } from 'ngx-bootstrap';
 import { AdBannerComponent } from './ad-banner.component';
@@ -38,7 +37,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { TableModuleModule } from './table-module/table-module.module';
 import { StoreComponent } from './store/store.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
- 
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -80,7 +79,6 @@ const appRoutes: Routes = [
     NotificationModuleModule,
     TabsModule.forRoot(),
     DashboardModuleModule,
-    AngularDualListBoxModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot(
       appRoutes,
