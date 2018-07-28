@@ -34,10 +34,9 @@ export class DetailsComponent implements OnInit {
   constructor(private dataService: dataService) {
     this.consumptionData=[]
   }
-
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets();
-    this.agreements = this.dataService.getAgreement();
+    // this.agreements = this.dataService.getAgreement();
     this.category = this.dataService.getAssetCategory();
 
     console.log(this.assetDetail);

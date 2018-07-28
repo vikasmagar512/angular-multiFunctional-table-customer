@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Asset } from './asset';
 import { Metric } from "./metric";
 import { Agreement } from './agreement';
@@ -15,12 +15,20 @@ const API_URL ="http://192.168.10.33:8080";
 @Injectable({
   providedIn: 'root'
 })
-export class dataService {
+export class dataService implements OnInit {
 
   /* private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable(); */
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    this.http.get<Asset[]>(API_URL + '/getAssetDetails')
+  // this.http.get(API_URL + '/getAssetDetails')
+   .subscribe(
+    res =>{
+      console.log('res is ',res)
+      this.assets=res['response'];
+    });
+   }
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
@@ -81,7 +89,7 @@ export class dataService {
   ];
   /* selectedOptions:Array<SettingOptions>=[]; */
   assets: Array<Asset>=[
-    {
+    /* {
       "id": "01",
       "category": "Coffee_Machine",
       "name": "Coffee Machine",
@@ -148,11 +156,11 @@ export class dataService {
           "usage": "20 Hrs 80m"
         }
       ]
-    }
+    } */
   ];
 
   agreements: Array<Agreement> = [
-    {
+   /*  {
       "id": "AGR01",
       "agreement_no": "AGR984567854",
       "type": "Annual",
@@ -186,13 +194,16 @@ export class dataService {
       "invoiceAddress": 'Bromma',
       "assets_covered": ["03"]
     }
-  ];
+ */  ];
+
+ ngOnInit(){
+  alert('getAssets')   
+ }
   dashSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.dashboardOptions);
   currentDashSetting=this.dashSetting.asObservable();
-
-  
   notifSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.notificationOptions);
   currentNotifSetting=this.notifSetting.asObservable();
+
   changeSettings(options,typeOfSetting,isSuccess){
     /* debugger */
     let k = [...options]    
@@ -222,11 +233,11 @@ export class dataService {
     //   this.changeSettings(options,typeOfSetting,0)  
     // }
   }
-  getAgreement(){
+  /* getAgreement(){
     // getAgreement(): Observable<Agreement[]> {
     return this.agreements;
     // return this.http.get<Agreement[]>(API_URL + '/getAgreementDetails');
-  }
+  } */
   getAssets() {
     return this.assets;
     // getAssets():Observable<Asset[]> {
@@ -251,12 +262,5 @@ export class dataService {
   getDashboardOptions() {
     return this.dashboardOptions;
   }
-
-
-
-  /* changeMessage(message: string) {
-    this.messageSource.next(message)
-  } */
-
 
 }

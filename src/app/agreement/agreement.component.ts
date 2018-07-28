@@ -23,7 +23,7 @@ export class AgreementComponent implements OnInit {
     this.overDueData = []
   }
   ngOnInit() {
-    this.agreements = this.dataService.getAgreement()
+    // this.agreements = this.dataService.getAgreement()
     this.assetsService = this.dataService.getAssets()
     this.id = this.route.snapshot.paramMap.get('id');
     this.agreement = this.agreements.find((agr) => agr.id == this.id)
