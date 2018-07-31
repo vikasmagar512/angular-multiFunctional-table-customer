@@ -43,12 +43,7 @@
             </div>
           </div>
         </ng-template>
-        <li class="marR-14">
-          <a (click)="openModal(template)">
-            <img src="../assets/setting.svg" class="img-responsive rlogo">
-          </a>
-          <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
-        </li>
+        
         <li>
             <a (click)="openModal(storeTemplate)">
               <img src="../assets/store.png" class="img-responsive rlogo">
@@ -56,6 +51,14 @@
             </a>
             <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
           </li>
+
+          <li class="marR-14">
+            <a (click)="openModal(template)">
+              <img src="../assets/setting.svg" class="img-responsive rlogo">
+            </a>
+            <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+          </li>
+
           <li class="nav-item dropdown">
               <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
                 <a class="nav-link dropdown-toggle mr-lg-2 " id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
