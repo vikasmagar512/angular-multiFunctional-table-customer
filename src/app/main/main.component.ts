@@ -8,11 +8,13 @@ import { NotificationMne } from '../notification';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import { DashboardSettingComponent } from '../dashboard-module/dashboard-setting/dashboard-setting.component';
 import { NotificationSettingComponent } from '../notification-module/notification-setting/notification-setting.component';
+import {ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MainComponent implements OnInit {
 

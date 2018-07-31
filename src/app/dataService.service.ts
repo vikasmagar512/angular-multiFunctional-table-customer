@@ -21,13 +21,12 @@ export class dataService implements OnInit {
   currentMessage = this.messageSource.asObservable(); */
 
   constructor(private http:HttpClient) {
-    this.http.get<Asset[]>(API_URL + '/getAssetDetails')
-  // this.http.get(API_URL + '/getAssetDetails')
+   /*  this.http.get<Asset[]>(API_URL + '/getAssetDetails')
    .subscribe(
     res =>{
       console.log('res is ',res)
       this.assets=res['response'];
-    });
+    }); */
    }
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
@@ -89,7 +88,7 @@ export class dataService implements OnInit {
   ];
   /* selectedOptions:Array<SettingOptions>=[]; */
   assets: Array<Asset>=[
-    /* {
+    {
       "id": "01",
       "category": "Coffee_Machine",
       "name": "Coffee Machine",
@@ -156,11 +155,11 @@ export class dataService implements OnInit {
           "usage": "20 Hrs 80m"
         }
       ]
-    } */
+    }
   ];
 
   agreements: Array<Agreement> = [
-   /*  {
+    {
       "id": "AGR01",
       "agreement_no": "AGR984567854",
       "type": "Annual",
@@ -194,7 +193,7 @@ export class dataService implements OnInit {
       "invoiceAddress": 'Bromma',
       "assets_covered": ["03"]
     }
- */  ];
+  ];
 
  ngOnInit(){
   alert('getAssets')   
@@ -233,11 +232,11 @@ export class dataService implements OnInit {
     //   this.changeSettings(options,typeOfSetting,0)  
     // }
   }
-  /* getAgreement(){
+  getAgreement(){
     // getAgreement(): Observable<Agreement[]> {
     return this.agreements;
     // return this.http.get<Agreement[]>(API_URL + '/getAgreementDetails');
-  } */
+  }
   getAssets() {
     return this.assets;
     // getAssets():Observable<Asset[]> {

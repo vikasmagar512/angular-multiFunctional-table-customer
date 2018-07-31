@@ -1,11 +1,14 @@
 <div class="notifications-wrapper" *ngFor="let notify of notifications; let i=index">
   <!-- <div *ngIf="i<4"> -->
-  <div class="notification-item" [ngClass]="{'blur' : notify.readFlag}" (click)="navigateTo(notify)">
+  <!-- <div class="notification-item" [ngClass]="{'blur' : notify.readFlag}" (click)="navigateTo(notify)">
     <img src="{{notify.image}}" style="width:50px;border-radius:50%;float:left">
     <h4 class="item-title">{{notify.headText}}
       <span>{{notify.timeStamp}}</span>
     </h4>
     <a>{{notify.shortText}}</a>
+  </div> -->
+  <div class="notification-item" (click)="navigateTo(notify)">
+    <a class="clr-b"><span class="fb">{{notify.headText}}</span> - {{notify.shortText}}</a>
   </div>
 
   <!--  <a class="content" href="#">

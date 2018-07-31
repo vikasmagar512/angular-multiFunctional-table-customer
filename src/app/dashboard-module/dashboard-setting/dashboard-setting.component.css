@@ -32,15 +32,38 @@
 li {
     list-style-type: disc;
 }
-/* .mar{
-    margin: 20px 10px;
-} */
+.mar{
+    margin-bottom: 10px;
+}
 .mar-t{
     margin-top: 20px;
 }
-
+.glyphicon{
+    font-size: 18px;
+}
 .form-control{
-    background-color: #bdbdbd;
-overflow: hidden;
+    background-color: #efefef;
+    overflow: hidden;
+    border: none;
+    padding: 20px 30px;
+    border-radius: none;
+     box-shadow: none;
 }
 .btn{background-color: #fff;}
+
+.flex-r{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.mart-6p{
+    margin-top: 6%;
+}
+.mart-30{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.f-sw{
+    font-size: 15px;
+    font-weight: bold;
+}

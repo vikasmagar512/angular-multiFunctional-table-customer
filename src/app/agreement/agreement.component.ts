@@ -58,10 +58,10 @@ export class AgreementComponent implements OnInit {
 
   public agreementColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
-    {title: 'Location', className: ['office-header', 'text-success'], name: 'location', sort: 'asc',filter:'text'},
-    {title: 'Quantity', name: 'quantity', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
-    {title: 'Seraial No,', className: 'text-warning', name: 'serialNo',filter:'text'},
-    {title: 'Supplier', name: 'supplier',filter:'text'}
+    {title: 'Location', className: ['office-header', 'text-success'], name: 'location', sort: 'asc',filtering: {filterString: '', placeholder: 'Filter by location.'},filter:'text'},
+    {title: 'Quantity', name: 'quantity', sort: '', filtering: {filterString: '', placeholder: 'Filter by quantity.'},filter:'text'},
+    {title: 'Seraial No,', className: 'text-warning', name: 'serialNo',filtering: {filterString: '', placeholder: 'Filter by serialNo.'},filter:'text'},
+    {title: 'Supplier', name: 'supplier',filtering: {filterString: '', placeholder: 'Filter by supplier.'},filter:'text'}
   ];
   public agreementConfig:any = {
     paging: true,

@@ -1,15 +1,17 @@
 import { Metric } from "./metric";
 
 export interface Asset {
-  /* "id":string;
+  "id":string;
   "category": string;
   "name": string;
   "location": string;
   "serialno": string;
   "supplier":string;
   "img":string;
-  "status":Number; */
-  "id":string,
+  "status":Number;
+  
+  "metrics": Array<Metric>; 
+/*   "id":string,
   "category": string;
   "name": string;
   "location":string ,
@@ -27,7 +29,7 @@ export interface Asset {
   "rv": number,
   "registrationNumber":string ,
   "metrics": Array<Metric>; 
-}
+ */}
 
     /* {
       "id": "02",

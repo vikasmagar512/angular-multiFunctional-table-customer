@@ -5,17 +5,19 @@
   margin-bottom: 13px;
 }
 
-
+/* 
 .navbar img{
   margin-top: -14px;
   float: left;
-}
+} */
 
 .log{
   width: 71%;
   margin-top: -4%;
 }
-
+.navbar-nav>li>a {
+  line-height: 0px;
+}
 .navbar-header a{
   margin-top: 6px;
   padding-left: 30px;
@@ -27,20 +29,30 @@
 /*.mar-top{
     margin-bottom: 2px;
 }*/
-
+.flex-nav{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -15px;
+}
 
 .rlogo{
   max-width: none;
-  width: 29px;
-  height: 35px;
+  width: 35px;
+  /* height: 35px; */
 }
-
+.fs{
+  font-size: 35px;
+}
 .navbar li{
   top: 1px;
   padding: 12px 0px;
   cursor: pointer;
 }
 
+.marR-14{
+  margin-right: -14px;
+}
 
 /* CSS used here will be applied after bootstrap.css */
 
@@ -50,6 +62,11 @@
   padding:10px;
 }
 
+.mar-3{
+  margin-top: 3px;
+  width: 35px;
+  
+}
 /* CSS used here will be applied after bootstrap.css */
 
 .dropdown {
@@ -82,12 +99,14 @@
 
 .glyphicon-circle-arrow-right {
   margin-left:10px;
+}    
+.i-size{
+  font-size: 20px;
 }
-
 .dropdown-menu{
   min-width: 379px;
   height: 390px;
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .wd-300{
@@ -97,10 +116,11 @@
   align-items: center;
  /*  margin: 0; */
   /* padding: 0; */
+  border: none;
   padding-bottom: 20px;
 }
 .customClass{
-  background-color: red;
+  border:none;
 }
 .borderLeft{
   border-left: 1px solid black;
@@ -128,4 +148,25 @@ tabset.nav-tabs>ul {
 .nav-justified{
   border: none;
   color: red;
+}
+/* .customClass > a:hover {
+  background-color:grey !important;
+  border-bottom: none !important;
+  outline: 0 !important;
+
+} */
+::ng-deep .customClass.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
+  /* border-bottom-color: #fff; */
+  border: none;
+}
+
+tabset ::ng-deep .nav-tabs.nav-justified>li>a {
+  border-bottom: none;
+  /* border-radius: 4px 4px 0 0; */
+  background-color:grey !important;
+}
+
+.active>a{
+  border:none;
+
 }

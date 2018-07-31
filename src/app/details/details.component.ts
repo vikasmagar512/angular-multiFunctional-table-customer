@@ -36,7 +36,7 @@ export class DetailsComponent implements OnInit {
   }
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets();
-    // this.agreements = this.dataService.getAgreement();
+    this.agreements = this.dataService.getAgreement();
     this.category = this.dataService.getAssetCategory();
 
     console.log(this.assetDetail);
@@ -97,8 +97,8 @@ export class DetailsComponent implements OnInit {
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
-    {title: 'Unit',name: 'unit',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'},filter:'text'},
-    {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filter:'text'},
+    {title: 'Unit',name: 'unit',sort: false,filter:'text'},
+    {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filtering: {filterString: '', placeholder: 'Filter by category'},filter:'text'},
     {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'},filter:'text'},
     {title: 'Available', className: 'text-warning', name: 'available',filter:'text'},
     {title: 'Required', className: 'text-warning', name: 'required',filter:'text'},
@@ -113,7 +113,7 @@ export class DetailsComponent implements OnInit {
   public assetColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
     {title: 'Status',name: 'status',sort: false,filter:'text'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by location.'},filter:'text'},
     {title: 'Action', className:[ 'text-warning'], name: 'action',filter:'text'},
   ];
   public assetConfig:any = {
@@ -124,8 +124,8 @@ export class DetailsComponent implements OnInit {
   };
 
   public agreementColumns:Array<any> = [
-    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
-    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by Unit'},filter:'text'},
+    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by agreement_no'},filter:'text'},
+    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by location'},filter:'text'},
     {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'Filter by date.'},filter:'text'},
     {title: 'Action', name: 'action', sort: '',filter:'text'},
   ];

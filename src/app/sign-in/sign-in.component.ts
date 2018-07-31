@@ -59,7 +59,9 @@ export class SignInComponent implements OnInit {
     const password = this.frm.get('password').value;
 
     // Submit request to API
-    this.api
+    
+    this.router.navigate(['main']);
+    /* this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
@@ -75,6 +77,6 @@ export class SignInComponent implements OnInit {
           this.isBusy = false;
           this.hasFailed = true;
         }
-      );
+      ); */
   }
 }

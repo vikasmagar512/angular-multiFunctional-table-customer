@@ -7,9 +7,8 @@
         </a>
       </div>
 
-      <ul class="nav navbar-nav navbar-right mar-r">
-        <span class="clr-w">{{message}}</span>
-        <li class="nav-item dropdown">
+      <ul class="nav navbar-nav navbar-right mar-r flex-nav">
+        <!-- <li class="nav-item dropdown">
           <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
             <a class="nav-link dropdown-toggle mr-lg-2" id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
               <i class="fa fa-fw fa-envelope"></i>
@@ -19,23 +18,15 @@
               <span class="indicator text-primary d-none d-lg-block">
                 <i class="fa fa-fw fa-circle"></i>
               </span>
+              <img src="../assets/message.svg" class="img-responsive rlogo">
             </a>
             <div class="dropdown-menu notification">
               <app-notif-pop-upwrapper>
                 <app-real-notif></app-real-notif>
               </app-notif-pop-upwrapper>
             </div>
-            <!-- <app-nav-pop-up class="dropdown-menu notifications" aria-labelledby="dLabel">
-              <app-notif-pop-upwrapper>
-                  <app-real-notif></app-real-notif>
-              </app-notif-pop-upwrapper>
-            </app-nav-pop-up> -->
-            <!-- <ul class="dropdown-menu notifications" aria-labelledby="dLabel">
-              <app-notification [data]="notification"></app-notification>
-            </ul> -->
-
           </span>
-        </li>
+        </li> -->
         <li class="cust">
           <a href="javascript:void(0)" [popover]="popoverCustomer" placement="bottom" outsideClick="false">
             <span class="clr-w">{{customer.name}}</span>
@@ -52,17 +43,43 @@
             </div>
           </div>
         </ng-template>
-        <li>
+        <li class="marR-14">
           <a (click)="openModal(template)">
             <img src="../assets/setting.svg" class="img-responsive rlogo">
           </a>
           <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
         </li>
-        <li class="nav-item dropdown">
-          <a (click)="openModal(storeTemplate)">
+        <li>
+            <a (click)="openModal(storeTemplate)">
+              <img src="../assets/store.png" class="img-responsive rlogo">
+            <!--  <span class="fa fa-cart-arrow-down fs"></span> -->
+            </a>
+            <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+          </li>
+          <li class="nav-item dropdown">
+              <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
+                <a class="nav-link dropdown-toggle mr-lg-2 " id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
+                  <!-- <i class="fa fa-fw fa-envelope"></i>
+                  <span class="d-lg-none">Messages
+                    <span class="badge badge-pill badge-primary">12 New</span>
+                  </span>
+                  <span class="indicator text-primary d-none d-lg-block">
+                    <i class="fa fa-fw fa-circle"></i>
+                  </span> -->
+                  <img src="../assets/message.svg" class="img-responsive rlogo">
+                </a>
+                <div class="dropdown-menu notification">
+                  <app-notif-pop-upwrapper>
+                    <app-real-notif></app-real-notif>
+                  </app-notif-pop-upwrapper>
+                </div>
+              </span>
+            </li>
+        <!-- <li class="nav-item dropdown">
+          <a>
             <img src="../assets/message.svg" class="img-responsive rlogo">
           </a>
-        </li>
+        </li> -->
         <li (click)="doSignOut()">
           <a href="#">
             <img src="../assets/logout.svg" class="img-responsive rlogo">
@@ -90,7 +107,7 @@
     <div class="model-pass">
       <tabset [justified]="true" class="bclr-white mr-b">
           <!--<tab heading="DashBoard" id="tab1" customClass="customClass" class="wd-300">-->
-          <tab heading="DashBoard" id="tab1" class="wd-300">
+          <tab heading="DashBoard" id="tab1" class="wd-300" customClass="customClass active">
             <app-dashboard-setting></app-dashboard-setting>
           </tab>
           <tab heading="Notifications" id="tab2" class="wd-300">
