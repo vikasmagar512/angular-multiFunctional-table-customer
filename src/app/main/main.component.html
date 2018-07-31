@@ -27,7 +27,7 @@
             </div>
           </span>
         </li> -->
-        <li class="cust">
+        <li class="cust" style="margin-right: -5px">
           <a href="javascript:void(0)" [popover]="popoverCustomer" placement="bottom" outsideClick="false">
             <span class="clr-w">{{customer.name}}</span>
           </a>
@@ -44,7 +44,7 @@
           </div>
         </ng-template>
 
-        <li>
+        <li style="margin-right: -10px">
             <a (click)="openModal(storeTemplate)">
               <img src="../assets/store.png" class="img-responsive rlogo">
             <!--  <span class="fa fa-cart-arrow-down fs"></span> -->
@@ -52,14 +52,14 @@
             <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
           </li>
 
-          <li class="marR-14">
+          <li class="marR-14" style="margin-right: -10px">
             <a (click)="openModal(template)">
               <img src="../assets/setting.svg" class="img-responsive rlogo">
             </a>
             <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
           </li>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" style="margin-right: 5px">
               <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
                 <a class="nav-link dropdown-toggle mr-lg-2 " id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
                   <!-- <i class="fa fa-fw fa-envelope"></i>
