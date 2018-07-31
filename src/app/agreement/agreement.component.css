@@ -75,3 +75,6 @@
   margin-left: -12px;
   margin-right: 2px;
 }
+.table-responsive{
+  overflow-x: hidden;
+}

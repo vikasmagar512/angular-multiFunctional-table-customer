@@ -106,12 +106,4 @@ export class AssetComponent implements OnInit {
     filtering: {filterString: ''},
     className: ['third-t','s-table','table-bordered']
   };
-
-
-
-
-  /* public data:Array<any> = TableData; */
-
-
-
 }

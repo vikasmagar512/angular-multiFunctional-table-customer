@@ -228,8 +228,8 @@ button:hover, button:focus{
 }
 .s-table{
   box-sizing: border-box;
-  width: 99%;
-  max-width: 100%;
+  width: 98%;
+  max-width: 99%;
   margin-left: 5px;
   margin-bottom: 8px;
   border-collapse: collapse;
