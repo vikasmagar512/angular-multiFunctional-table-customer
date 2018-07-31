@@ -227,9 +227,10 @@ button:hover, button:focus{
   border: none;
 }
 .s-table{
+  overflow-y: hidden;
   box-sizing: border-box;
-  width: 99%;
-  max-width: 100%;
+  width: 98%;
+  max-width: 99%;
   margin-left: 5px;
   margin-bottom: 8px;
   border-collapse: collapse;
@@ -292,6 +293,8 @@ button:hover, button:focus{
   border-bottom: none;
   text-align: center;
 }
+
+.third-t>tbody>tr>td>input { width: 100% !important; }
 
 .fourth-t tr>td{
   padding: 10px;

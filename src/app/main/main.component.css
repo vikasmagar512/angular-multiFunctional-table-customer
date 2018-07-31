@@ -34,7 +34,7 @@
   display: flex;
     justify-content: center;
     align-items: center;
-    margin: -15px;
+    margin: -20px;
 }
 
 .rlogo{
@@ -156,14 +156,11 @@ tabset.nav-tabs>ul {
   outline: 0 !important;
 
 } */
-::ng-deep .customClass.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
-  /* border-bottom-color: #fff; */
-  border: none;
-}
+
 
 tabset ::ng-deep .nav-tabs.nav-justified>li>a {
   border-bottom: none;
-  /* border-radius: 4px 4px 0 0; */
+  
   background-color:grey !important;
 }
 
@@ -171,3 +168,4 @@ tabset ::ng-deep .nav-tabs.nav-justified>li>a {
   border:none;
 
 }
+
