@@ -6,7 +6,7 @@
   background-color: black;
 }
 
-/* 
+/*
 .navbar img{
   margin-top: -14px;
   float: left;
@@ -66,7 +66,7 @@
 .mar-3{
   margin-top: 3px;
   width: 35px;
-  
+
 }
 /* CSS used here will be applied after bootstrap.css */
 
@@ -100,13 +100,13 @@
 
 .glyphicon-circle-arrow-right {
   margin-left:10px;
-}    
+}
 .i-size{
   font-size: 20px;
 }
 .dropdown-menu{
   min-width: 379px;
-  height: 390px;
+  height: 360px;
   overflow-y: scroll;
 }
 .mr-10{
@@ -153,6 +153,9 @@ tabset.nav-tabs>ul {
   border:none;
 }
 
+.customClass li:active{
+  border-bottom: 2px solid red;
+}
 .customClass>a>.active{
   border-bottom: 2px solid red;
 }
@@ -165,7 +168,7 @@ tabset.nav-tabs>ul {
 
 /* tabset ::ng-deep .nav-tabs.nav-justified>li>a {
   border-bottom: none;
-  
+
   background-color:grey !important;
 } */
 

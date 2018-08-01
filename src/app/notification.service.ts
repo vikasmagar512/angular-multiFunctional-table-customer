@@ -65,7 +65,7 @@ export class NotificationService {
       "readFlag":false,
       "timeStamp":"5 Min"
     },
-    {
+    /*{
       "id": 'N5',
       "image":"../assets/FemaleAvatar.png",
       "headText":"Printer",
@@ -109,7 +109,7 @@ export class NotificationService {
       "link":'<a routerLink="main/asset/02" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"5 Min"
-    }
+    }*/
   ];
 
   getNotification(): NotificationMne[] {

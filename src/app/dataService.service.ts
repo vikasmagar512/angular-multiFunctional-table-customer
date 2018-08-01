@@ -32,13 +32,13 @@ export class dataService implements OnInit {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
     "Vaccum": "Vaccum"
-  } 
+  }
   customer:Customer={
     "id":"123",
-    "name":"vikas",
-    "email":"vikasmagar512@gmail.com",
-    "address":"vikasmagar512@gmail.com address address address address address ",
-    "contact":"12312312313",
+    "name":"demo Customer",
+    "email":"demo@demo.com",
+    "address":"address address address address address ",
+    "contact":"1234567890",
     "img":"../../../assets/machine.svg",
   }
   notificationOptions:Array<SettingOptions>=[
@@ -196,7 +196,7 @@ export class dataService implements OnInit {
   ];
 
  ngOnInit(){
-  alert('getAssets')   
+  alert('getAssets')
  }
   dashSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.dashboardOptions);
   currentDashSetting=this.dashSetting.asObservable();
@@ -205,7 +205,7 @@ export class dataService implements OnInit {
 
   changeSettings(options,typeOfSetting,isSuccess){
     /* debugger */
-    let k = [...options]    
+    let k = [...options]
     if(isSuccess){
       if(typeOfSetting===1){
         //dashboard
@@ -229,7 +229,7 @@ export class dataService implements OnInit {
     // if(response.status==200){
       this.changeSettings(options,typeOfSetting,1)
     // }ese{
-    //   this.changeSettings(options,typeOfSetting,0)  
+    //   this.changeSettings(options,typeOfSetting,0)
     // }
   }
   getAgreement(){

@@ -1,6 +1,6 @@
 <div class="row mar-t flex-r">
   <div class="col-xs-4 ">
-      <div class="mart-30 f-sw">Available KPI</div>
+      <div class="mart-15 f-sw">Available KPI</div>
     <select [ngModel]="selectedCountry" name="from" id="multiselect2" class="form-control" size="8" multiple="multiple" title="asdf">
       <ng-container *ngFor="let options of optionsSettings">
         <option class="mar" *ngIf="!options.selected" value={{options.id}} selected={{options.selected}}>{{options.name}}</option>
@@ -14,7 +14,7 @@
     <button type="button" id="multiselect2_leftAll" class="btn btn-block"><i class="glyphicon glyphicon-backward"></i></button>
   </div>
   <div class="col-xs-4 ">
-      <div class="mart-30 f-sw">Selected KPI</div>
+      <div class="mart-15 f-sw">Selected KPI</div>
     <select [ngModel]="selectedCountry"  name="to" id="multiselect2_to" class="form-control" size="8" multiple="multiple">
       <ng-container *ngFor="let options of optionsSettings">
         <option class="mar" *ngIf="options.selected" value={{options.id}}>{{options.name}}</option>
