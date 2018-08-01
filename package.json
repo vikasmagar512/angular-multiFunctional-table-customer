@@ -31,6 +31,7 @@
     "angular-datatables": "^6.0.0",
     "angular-font-awesome": "^3.1.2",
     "angular-in-memory-web-api": "^0.6.0",
+    "angular2-fontawesome": "^5.2.1",
     "body-parser": "^1.18.3",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.4",
