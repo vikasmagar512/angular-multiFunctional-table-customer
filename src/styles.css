@@ -185,8 +185,8 @@ button:hover, button:focus{
 .c-white{color: #fff;}
 
 .status{
-  width: 50%;
-  padding: 5px 15px;
+  width: 40%;
+  padding: 5px 9px;
 }
 .status .iconText{
   align-items: center;
@@ -253,9 +253,12 @@ button:hover, button:focus{
 .ser-icon{
   width: 14px;
 }
+.s-table .table>tbody>tr>td
+{ vertical-align:middle;}
 
 .s-table .table>tbody>tr>td {
   border-top: 1px solid #fff;
+  
 }
 
 .s-table thead,.s-table tbody{
@@ -291,10 +294,11 @@ button:hover, button:focus{
 .third-t tr>td{
   padding: 7px;
   border-bottom: none;
-  text-align: center;
 }
 
 .third-t>tbody>tr>td>input { width: 100% !important; }
+.third-t>tbody>tr>td { vertical-align: middle; }
+.third-t>tbody>tr>td>a { cursor: pointer !important; }
 
 .fourth-t tr>td{
   padding: 10px;
@@ -375,7 +379,7 @@ button:hover, button:focus{
   /*margin-right: 9px;*/
 }
 
-.ml-21{margin-left: 21px;}
+/* .ml-21{margin-left: 21px;} */
 
 .mt113{margin-top: 133px;}
 

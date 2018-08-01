@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-primary" (click)="exporttoCSV()">Export to Excel</button>
   </div>-->
   <div class="col-md-4">
-    <input *ngIf="config['filtering']" placeholder="Filter all columns"
+    <input *ngIf="!config['filtering']" placeholder="Filter all columns"
            [ngTableFiltering]="config['filtering']"
            class="form-control"
            (tableChanged)="onChangeTable(config)"/>
