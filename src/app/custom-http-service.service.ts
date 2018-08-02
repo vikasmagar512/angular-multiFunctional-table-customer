@@ -1,45 +1,48 @@
 import { Injectable } from '@angular/core';
-import {observable, Observable} from 'rxjs/index';
+import { observable, Observable } from 'rxjs/index';
 import {
   HttpClient, HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest,
   HttpResponse
 } from '@angular/common/http';
-import {LoaderServiceService} from './loader-service.service';
-import {SessionService} from './session.service';
+import { LoaderServiceService } from './loader-service.service';
+import { SessionService } from './session.service';
 import 'rxjs-compat/add/operator/do';
-import {ok} from 'assert';
+import { ok } from 'assert';
 @Injectable()
-export class CustomHttpService implements HttpInterceptor{
-  constructor( private session: SessionService, private loaderService:LoaderServiceService) {}
+export class CustomHttpService implements HttpInterceptor {
+  constructor(private session: SessionService, private loaderService: LoaderServiceService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.show()
-      req= req.clone({
+    if (this.session.accessToken) {
+      alert('accessToken present')
+      req = req.clone({
         setHeaders: {
           Authorization: `Bearer ${this.session.accessToken}`
         }
       });
+    }
     return next.handle(req)
-    .do((event: HttpEvent<any>) => {
-      if (event instanceof HttpResponse) {
-        if(event.status===200){
-          console.log('Request successful')
-          this.loaderService.hide()
+      .do((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) {
+          if (event.status === 200) {
+            console.log('Request successful')
+            this.loaderService.hide()
+          }
         }
-      }
-    }, (err: any) => {
-      if (err instanceof HttpErrorResponse) {
-        if (err.status === 401) {
-          console.log('401 Authentication issue')
-          // redirect to the login route
-          // or show a modal
+      }, (err: any) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            console.log('401 Authentication issue')
+            // redirect to the login route
+            // or show a modal
 
+          }
         }
-      }
-    });
+      });
   }
   private getRequestOptions() {
-    console.log('this.session.accessToken',this.session.accessToken)
+    console.log('this.session.accessToken', this.session.accessToken)
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + this.session.accessToken

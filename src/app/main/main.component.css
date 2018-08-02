@@ -6,6 +6,9 @@
   background-color: black;
 }
 
+/* #modal> tabset{
+  border: none !important;
+} */
 /* 
 .navbar img{
   margin-top: -14px;
@@ -153,24 +156,47 @@ tabset.nav-tabs>ul {
   border:none;
 }
 
-.customClass>a>.active{
+.customClass>a{
   border-bottom: 2px solid red;
 }
-.customClass>a:hover {
+/* .customClass>a:hover {
   background-color:rgb(250, 246, 246) !important;
   border: none !important;
   outline: 0 !important;
+} */
+.customClass>a{
+  background-color:#efefef !important; 
+  border: none !important;
+  outline: 0 !important;
+  border-radius: 0 !important;
+  color: #000;
+}
+.customClass.bor-l>a{
+  border-right: 1px solid rgb(163, 158, 158) !important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color:#000;
+  cursor: default;
+  /* background-color:green; */
+  border-bottom:2px solid rgb(38, 218, 218) !important;
 }
 
+.btn{
+  background-color: rgb(56, 55, 55);
+  padding: 3px 17px;
+  color:#fff;
+}
 
+.btn:hover{
+  background-color: aqua !important;
+  color:white !important;
+}
+/* .nav-tabs{
+  background-color:#f1f3f3;
+} */
 /* tabset ::ng-deep .nav-tabs.nav-justified>li>a {
   border-bottom: none;
   
   background-color:grey !important;
 } */
-
-.active>a{
-  border:none;
-
-}
 

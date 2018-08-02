@@ -59,7 +59,7 @@
         <h6 class="foot">Powered by SIEMENS SFS</h6>
       </div>
       <div class="dataInp">
-        <p>31st July 2018</p>
+        <p>{{now | date:'longDate'}}</p>
         <h1>Hello!</h1>
         <h3>Welcome to
           <br>SIECONNECT</h3>
@@ -98,7 +98,7 @@
                 <img src="../../assets/warning.svg" class="war-img">
                 <span >
                   <h6 class="war-font">Invalid Credintials</h6>
-                  <h6 class="war-font">Please enter Correct Credintials</h6>
+                  <h6 class="war-font mar-t">Please enter Correct Credintials</h6>
                 </span>
               </div>
             </form>
@@ -109,7 +109,7 @@
               <ng-template [ngIf]="!isBusy">Sign in</ng-template>
               <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
             </button>
-            <div *ngIf="defaultSignInMethod==1">
+            <div *ngIf="defaultSignInMethod==1" style="margin-top: 8px;">
               <span class="clr-w mart-10 cursor"  (click)="openModal(template)">Forget Password?
               </span>
             </div>

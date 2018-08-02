@@ -51,7 +51,7 @@ export class ReusableTableComponent implements OnInit {
     paging: true,
     sorting: {columns: this.columns},
     filtering: {filterString: ''},
-    className: ['het','table-striped', 'table-bordered']
+    className: ['het', 'table-bordered']
   };
 
   private data:Array<any> = TableData;

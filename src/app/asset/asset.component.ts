@@ -36,9 +36,10 @@ export class AssetComponent implements OnInit {
           "product_category":metric.category,
           "supplierName": this.assets.supplier,
           "requestDate": '15 Jan 2018',
-          "amount": "Kr 56",
+          // "amount": "Kr 56",
+          "amount": '<span class="bold">Kr</span>56',
           "invoice": '<span>'+
-                      '<img src="../../assets/pdf.svg">'+
+                      '<img src="../../assets/pdf.svg" class="ass-size">'+
                       '</span>'
         });
       },[]);
@@ -50,9 +51,9 @@ export class AssetComponent implements OnInit {
           "service_category":metric.category,
           "supplierName": this.assets.supplier,
           "serviceDate": '15 Jan 2018',
-          "amount": "Kr 56",
+          "amount": '<span class="bold">Kr</span>56',
           "invoice": '<span>'+
-                      '<img src="../../assets/pdf.svg">'+
+                      '<img src="../../assets/pdf.svg" class="ass-size">'+
                       '</span>'
         });
       },[]);

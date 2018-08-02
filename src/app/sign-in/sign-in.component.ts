@@ -16,7 +16,7 @@ export class SignInComponent implements OnInit {
   public isBusy = false;
   public hasFailed = false;
   public showInputErrors = false;
-
+  now:Date=new Date();
   constructor(
     private api: ApiService,
     private auth: AuthService,
@@ -57,19 +57,19 @@ export class SignInComponent implements OnInit {
     // Grab values from form
     const username = this.frm.get('username').value;
     const password = this.frm.get('password').value;
-
+    
     // Submit request to API
     
-    this.router.navigate(['main']);
-    /* this.api
+    // this.router.navigate(['main']);
+    this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
           console.log('response is ',response)
-          this.auth.doSignIn(
+         /*this.auth.doSignIn(
             response.token,
             response.name
-          );
+          );*/
           // this.router.navigate(['todos']);
           this.router.navigate(['main']);
         },
@@ -77,6 +77,6 @@ export class SignInComponent implements OnInit {
           this.isBusy = false;
           this.hasFailed = true;
         }
-      ); */
+      );
   }
 }

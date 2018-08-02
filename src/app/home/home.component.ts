@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.ads = this.adService.getAds();
-    this.activeComponent = 1;
+    this.activeComponent = 0;
     // setInterval(()=>
       this.getTodos(),5000
     // )

@@ -11,7 +11,6 @@ import 'rxjs-compat/add/operator/catch';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs-compat/add/operator/map';
 
-const API_URL ="http://192.168.10.33:8080";
 @Injectable({
   providedIn: 'root'
 })
@@ -50,12 +49,12 @@ export class dataService implements OnInit {
     {
       name:"Change in Asset status",
       id:"2",
-      selected:true
+      selected:false
     },
     {
       name:"Product Request",
       id:"3",
-      selected:true
+      selected:false
     },
     {
       name:"Change in Contract status",

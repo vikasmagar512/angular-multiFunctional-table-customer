@@ -1,13 +1,13 @@
 <div class="t-container m-top">
   <div class="row marginLRZero">
     <div class="col-sm-6">
-      <h4 class="fb-15 mar-lb">Asset View</h4>
+      <h4 class="fb-15">Asset View</h4>
       <div class="table-container">
         <div class="table-responsive box-border">
 
           <table class="asset-table">
             <thead>
-            <tr>
+            <tr class="border">
               <th>Asset Name</th>
               <td>{{assets.name}}</td>
             </tr>
@@ -15,12 +15,28 @@
               <th>Location</th>
               <td>{{assets.location}}</td>
             </tr>
+            <tr>
+              <th>Model</th>
+              <td>Image Runner</td>
+            </tr>
+            <tr>
+              <th>Serial No.</th>
+              <td>74792</td>
+            </tr>
+            <tr>
+              <th>Scheduled Maintainence</th>
+              <td><a>Click Here</a></td>
+            </tr>
+            <tr>
+              <th>Performance</th>
+              <td><a>Click Here</a></td>
+            </tr>
             </thead>
           </table>
         </div>
       </div>
       <div class="mt-60">
-        <h4 class="fb-15 mar-lb">Service Requests</h4>
+        <h4 class="fb-15 mar-lb mar-t">Service Requests</h4>
         <div class="table-container">
           <div class="table-responsive">
               <app-table-demo  [data]="serviceData" [config]="serviceConfig" [columns]="serviceColumns"></app-table-demo>
