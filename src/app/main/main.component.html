@@ -114,14 +114,14 @@
             <app-dashboard-setting></app-dashboard-setting>
           </tab>
           <tab heading="Notifications" id="tab2" class="wd-300" customClass="customClass">
-            <app-notification-setting></app-notification-setting>
+<app-notification-setting></app-notification-setting>
           </tab>
       </tabset>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn" (click)="modalRef.hide()">Cancel</button>
-    <button type="button" class="btn" (click)="modalRef.hide()">Done</button>
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancel</button>
+     <button type="button" class="btn btn-default" (click)="onDoneClick()">Done</button>
   </div>
 </ng-template>
 

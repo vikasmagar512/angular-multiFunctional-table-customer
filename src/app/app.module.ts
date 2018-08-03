@@ -37,7 +37,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { TableModuleModule } from './table-module/table-module.module';
 import { StoreComponent } from './store/store.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+/*
 const appRoutes: Routes = [
   {
     path: '',
@@ -58,11 +58,53 @@ const appRoutes: Routes = [
       { path: 'asset/:id',  component:AssetComponent},
       { path: 'agreementNo/:id',  component:AgreementComponent},
       { path: 'notifications/all',  component:DedicatedNotificationComponent},
-       /* { path: 'store',  component:StoreComponent } */
+       /!* { path: 'store',  component:StoreComponent } *!/
+    ]
+  },
+  { path: '**', component: PageNotFoundComponent }
+];*/
+const appRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: 'sign-in',
+    pathMatch: 'full'
+  },
+  {
+    path: 'sign-in',
+    component: SignInComponent
+  },
+  { path: 'main',
+    canActivate: [
+      CanActivateRoutesGuard
+    ],
+    component: MainComponent,
+    children:[
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: 'home',  component:HomeComponent,
+        children: [
+          {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+          {path: 'dashboard', component: DashboardComponent, data: { activeComponent: '0'}},
+          {path: 'details', component: DetailsComponent, data: { activeComponent: '1'}},
+          /*{path: 'details', component: DetailsComponent, pathMatch: 'full',
+            children:[
+              {path: '', redirectTo: 'details', pathMatch: 'full'},
+              {path: 'asset/:id', component: AssetComponent},
+              {path: 'agreementNo/:id', component: AgreementComponent},
+            ]
+          },*/
+          {path: 'asset/:id', component: AssetComponent},
+          {path: 'agreementNo/:id', component: AgreementComponent},
+        ]
+      },
+      // { path: 'asset/:id',  component:AssetComponent},
+      // { path: 'agreementNo/:id',  component:AgreementComponent},
+      { path: 'notifications/all',  component:DedicatedNotificationComponent},
+        // { path: 'store',  component:StoreComponent }
     ]
   },
   { path: '**', component: PageNotFoundComponent }
 ];
+
 @NgModule({
   imports: [ BrowserModule, DataTablesModule,ChartsAllModule,ChartsModule,  ReactiveFormsModule,
     HttpClientModule,

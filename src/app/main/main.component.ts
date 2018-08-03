@@ -24,8 +24,8 @@ export class MainComponent implements OnInit {
     @ViewChild(NotificationSettingComponent)
     private NotificationComponent: NotificationSettingComponent;
     message:string;
-  customer:Customer;
-  notification:Array<NotificationMne>;
+    customer:Customer;
+    notification:Array<NotificationMne>;
   constructor(private authService:AuthService,
     private dataService:dataService,
     private notifyService:NotificationService,
@@ -39,9 +39,9 @@ export class MainComponent implements OnInit {
     this.modalRef = this.modalService.show(template, {class: 'modal-lg'}); // {3}
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.notification=this.notifyService.getNotification();
-    
+
     // this.openModal(this.modalRef)
   }
   doSignOut(){

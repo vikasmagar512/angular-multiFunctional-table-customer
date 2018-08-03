@@ -203,7 +203,7 @@
   padding: 10px;
 }
 
-.asset-table >thead>tr.border{
+.asset-table >tr.border{
   border-bottom: 1px solid #9c9898;
   /* border-right: 1px solid #9c9898; */
 }
@@ -212,9 +212,6 @@
   border-right: 1px solid #9c9898;
 }
  */
-.asset-table th{
-  /* border-right: 1px solid #9c9898; */
-}
 
 .asset-table tr>th{padding: 10px;}
 

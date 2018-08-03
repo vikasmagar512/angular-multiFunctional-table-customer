@@ -162,10 +162,10 @@ export class TableDemoComponent implements OnInit {
     console.log(data)
     // If Button View
     if (data.column == "name") {
-      this.router.navigate(['/main/asset/',data.row['id'] ]);
+      this.router.navigate(['/main/home/asset/',data.row['id'] ]);
     }
     if (data.column == "agreement_no") {
-      this.router.navigate(['/main/agreementNo/',data.row['id'] ]);
+      this.router.navigate(['/main/home/agreementNo/',data.row['id'] ]);
     }
 
     // If Button View

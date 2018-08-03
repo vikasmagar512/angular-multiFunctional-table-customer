@@ -61,7 +61,7 @@ export class SignInComponent implements OnInit {
 
     // Submit request to API
 
-    this.router.navigate(['main']);
+    this.router.navigate(['main','home','dashboard']);
      /*this.api
       .signIn(username, password)
       .subscribe(
