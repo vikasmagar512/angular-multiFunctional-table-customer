@@ -58,7 +58,7 @@ export class DetailsComponent implements OnInit {
     this.assetData = this.assetDetail.map((asset: Asset) => ({
         "id":  asset.id,
         // "name":  asset.name,
-        "name":  '<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
+        "name":  '<a routerLink="main/home/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
         "status": '<img src="../../assets/'+ (!asset.status ? '09.png' : (asset.status ===1 ? '10.png' : '12.png')) +'" class="ass-size">',
         "location": asset.location,
         "action": '<div class="a-div bg-aqua mbot-2p">\n' +
@@ -91,15 +91,15 @@ export class DetailsComponent implements OnInit {
         '                  <span>\n' +
         '                    <img src="../../assets/terminated.svg" class="a-size wd-24">\n' +
         '                  </span>\n' +
-        '                <p class="c-white">Terminated</p>\n' +
+        '                <p class="c-white">Terminate</p>\n' +
         '              </div>',
       }));
   }
   public consumptionColumns:Array<any> = [
-    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Unit',name: 'unit',sort: false,filter:'text'},
-    {title: 'Catgory', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filtering: {filterString: '', placeholder: 'Filter by category'},filter:'text'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'},filter:'text'},
+    {title: 'Category', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'search'},filter:'text'},
     {title: 'Available', className: 'text-warning', name: 'available',filter:'text'},
     {title: 'Required', className: 'text-warning', name: 'required',filter:'text'},
   ];
@@ -111,9 +111,9 @@ export class DetailsComponent implements OnInit {
   };
 
   public assetColumns:Array<any> = [
-    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Status',name: 'status',sort: false,filter:'text'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by location.'},filter:'text'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'search'},filter:'text'},
     {title: 'Action', className:[ 'text-warning'], name: 'action',filter:'text'},
   ];
   public assetConfig:any = {
@@ -124,9 +124,9 @@ export class DetailsComponent implements OnInit {
   };
 
   public agreementColumns:Array<any> = [
-    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Filter by agreement_no'},filter:'text'},
-    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Filter by location'},filter:'text'},
-    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'Filter by date.'},filter:'text'},
+    {title: 'Agreement No', name: 'agreement_no', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
+    {title: 'Location',name: 'location',sort: false,filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
+    {title: 'Termination ', className: ['office-header', 'text-success'], name: 'termination_date', sort: 'asc', filtering: {filterString: '', placeholder: 'search'},filter:'text'},
     {title: 'Action', name: 'action', sort: '',filter:'text'},
   ];
   public agreementConfig:any = {

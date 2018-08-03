@@ -31,7 +31,7 @@ export class dataService implements OnInit {
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
-    "Vaccum": "Vaccum"
+    "Vaccum": "Vaccum Cleaner"
   }
   customer:Customer={
     "id":"123",
@@ -50,12 +50,12 @@ export class dataService implements OnInit {
     {
       name:"Change in Asset status",
       id:"2",
-      selected:true
+      selected:false
     },
     {
       name:"Product Request",
       id:"3",
-      selected:true
+      selected:false
     },
     {
       name:"Change in Contract status",
@@ -68,7 +68,7 @@ export class dataService implements OnInit {
     {
       name:"Overall Cost",
       id:"1",
-      selected:true
+      selected:false
     },
     {
       name:"Downtime",
@@ -104,7 +104,7 @@ export class dataService implements OnInit {
           "available": 45,
           "required": 10,
           "uptime": "80%",
-          "usage": "300"
+          "usage": "300 Cups"
         },
         {
           "category": "Milk Powder",
@@ -112,7 +112,7 @@ export class dataService implements OnInit {
           "available": 45,
           "required": 10,
           "uptime": "80%",
-          "usage": "300"
+          "usage": "300 Cups"
         },
       ]
     },
@@ -132,14 +132,14 @@ export class dataService implements OnInit {
           "available": 15,
           "required": 20,
           "uptime": "95%",
-          "usage": "2000"
+          "usage": "2000 Pages"
         }
       ]
     },
     {
       "id": "03",
       "category": "Vaccum",
-      "name": "Vaccum",
+      "name": "Vaccum Cleaner",
       "status": 2,
       "location": "Bromma",
       "serialno": "VC12190",
@@ -151,8 +151,8 @@ export class dataService implements OnInit {
           "unit": "#",
           "available": 1,
           "required": 2,
-          "uptime": "850%",
-          "usage": "20 Hrs 80m"
+          "uptime": "75%",
+          "usage": "20 Hrs 50m"
         }
       ]
     }
@@ -161,12 +161,12 @@ export class dataService implements OnInit {
   agreements: Array<Agreement> = [
     {
       "id": "AGR01",
-      "agreement_no": "AGR984567854",
+      "agreement_no": "GR9845678",
       "type": "Annual",
       "contact": "James Bond",
       "start_date": "12th Dec 2014",
       "end_date": "14th June 2020",
-      "termination_date": "14th June 2018",
+      "termination_date": "14 June 2018",
       "payment_freq": "Monthly",
       "Remaining_term": "18 months",
       "term": "80 months",
@@ -178,12 +178,12 @@ export class dataService implements OnInit {
     },
     {
       "id": "AGR02",
-      "agreement_no": "AGR984567888",
+      "agreement_no": "GR9845678",
       "type": "Month",
       "contact": "Tom Lee",
       "start_date": "12th Dec 2014",
       "end_date": "13th April 2022",
-      "termination_date": "14th April 2018",
+      "termination_date": "14 April 2018",
       "payment_freq": "Weekly",
       "Remaining_term": "17 months",
       "term": "70 months",

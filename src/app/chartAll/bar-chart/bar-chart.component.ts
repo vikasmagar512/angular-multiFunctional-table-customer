@@ -11,7 +11,7 @@ export class BarChartComponent {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels:string[] = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
 

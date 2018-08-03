@@ -116,7 +116,7 @@ body{
   margin-right: 0px !important;
 }
 */
-/* ********************Background color************************ */
+
 .bgl-grey{ background-color: #6f6b6b;}
 .bg-yellow{background-color: yellow}
 .bg-blue{background-color: blue}
@@ -172,7 +172,7 @@ button:hover, button:focus{
 
 .clr-w{color:#ffffff;}
 
-
+.mbot-2p{margin-bottom: 2%;}
 
 /*table styles*/
 .a-div{
@@ -180,7 +180,9 @@ button:hover, button:focus{
   width: 150px;
   border-radius: 9px;
 }
-
+.mr-b{
+  margin-bottom: 5px;
+}
 .wd-14{width: 14%;}
 .c-white{color: #fff;}
 
@@ -207,11 +209,17 @@ button:hover, button:focus{
   border-style: hidden;
   box-shadow: 0 0 3px 2px #9c9898;
 }
+.third-t .bold{
+  font-weight:600;
+}
 .s-table th{
   background-color:#000;
   color:#fff;
 }
-
+.third-t .ass-size{
+  width: 20px;
+  text-align: center;
+}
 .s-table , .s-table th{
   border:2px solid #cecbcb;
 }
@@ -258,7 +266,7 @@ button:hover, button:focus{
 
 .s-table .table>tbody>tr>td {
   border-top: 1px solid #fff;
-  
+
 }
 
 .s-table thead,.s-table tbody{
@@ -372,6 +380,7 @@ button:hover, button:focus{
 .flex-d{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .mr-LR{
@@ -379,7 +388,7 @@ button:hover, button:focus{
   /*margin-right: 9px;*/
 }
 
-/* .ml-21{margin-left: 21px;} */
+.ml-21{margin-left: 5px;}
 
 .mt113{margin-top: 133px;}
 
@@ -400,9 +409,9 @@ button:hover, button:focus{
   max-width: 100%;
 }
 
-.asset-table tr>th,tr>td {
+/* .asset-table tr>th,tr>td {
   padding: 18px;
-}
+} */
 
 .t-container{
   width: 95%;
@@ -413,23 +422,28 @@ button:hover, button:focus{
 }
 
 .asset-table tr{
-  border-bottom: 1px solid #9c9898;
-  border-right: 1px solid #9c9898;
+  /* border-bottom: 1px solid #9c9898; */
+  /* border-right: 1px solid #9c9898; */
 }
 
 .asset-table td{
-  border-right: 1px solid #9c9898;
+  /* border-right: 1px solid #9c9898; */
 }
 
 .asset-table th{
   border-right: 1px solid #9c9898;
 }
 
-.asset-table tr>th{padding: 16px;}
+.asset-table tr>th{padding: 10px;}
+
+.agree-table tr>th{padding: 10px !important;}
+.mar-t{
+  margin-top: -42px;
+}
 
 .mar-lb{
-  margin-left: 19px;
-  margin-bottom: 17px;
+  margin-left: 5px;
+  margin-bottom: -17px;
 }
 .mt-60{margin-top: 60px;}
 
@@ -483,15 +497,6 @@ button:hover, button:focus{
   margin-top: 0px;
   margin-bottom: 3px;
 }
-
-
-
-
-
-
-
-
-
 
 /************************ GENERIC STYLES *******************************/
 .cursorPointer{
