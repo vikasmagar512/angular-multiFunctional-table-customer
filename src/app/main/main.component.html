@@ -36,10 +36,10 @@
           <div>
             <img src="assets/pencil.svg" class="pull-right pop-img">
             <div class=popup-p>
-              <p>Name-{{customer.name}}</p>
-              <p>Address-{{customer.address}}</p>
-              <p>Email-{{customer.email}}</p>
-              <p>contact-{{customer.contact}}</p>
+              <p><span class="fw">Name-</span>{{customer.name}}</p>
+              <p><span class="fw">Address-</span>{{customer.address}}</p>
+              <p><span class="fw">Email-</span>{{customer.email}}</p>
+              <p><span class="fw">contact-</span>{{customer.contact}}</p>
             </div>
           </div>
         </ng-template>
@@ -107,21 +107,21 @@
     </button>
   </div>
   <div class="modal-body">
-    <div class="model-pass">
+    <div class="model-pass" id="modal">
       <tabset [justified]="true" class="bclr-white mr-b">
           <!--<tab heading="DashBoard" id="tab1" customClass="customClass" class="wd-300">-->
-          <tab heading="DashBoard" id="tab1" class="wd-300" style="border:none !important" customClass="customClass active">
+          <tab heading="DashBoard" id="tab1" class="wd-300" customClass="customClass active bor-l">
             <app-dashboard-setting></app-dashboard-setting>
           </tab>
-          <tab heading="Notifications" id="tab2" class="wd-300">
+          <tab heading="Notifications" id="tab2" class="wd-300" customClass="customClass">
             <app-notification-setting></app-notification-setting>
           </tab>
       </tabset>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancel</button>
-    <!-- <button type="button" class="btn btn-default" (click)="onDoneClick()">Done</button> -->
+    <button type="button" class="btn" (click)="modalRef.hide()">Cancel</button>
+    <button type="button" class="btn" (click)="modalRef.hide()">Done</button>
   </div>
 </ng-template>
 
@@ -137,7 +137,7 @@
   <div class="modal-body" style="background-color: #f6f3f3;">
     <app-store></app-store>
   </div>
-   <div class="modal-footer">
+  <!-- <div class="modal-footer">
     <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
-  </div>
+  </div>-->
 </ng-template>
