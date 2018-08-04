@@ -9,7 +9,7 @@
 /* #modal> tabset{
   border: none !important;
 } */
-/* 
+/*
 .navbar img{
   margin-top: -14px;
   float: left;
@@ -69,7 +69,7 @@
 .mar-3{
   margin-top: 3px;
   width: 35px;
-  
+
 }
 /* CSS used here will be applied after bootstrap.css */
 
@@ -103,13 +103,13 @@
 
 .glyphicon-circle-arrow-right {
   margin-left:10px;
-}    
+}
 .i-size{
   font-size: 20px;
 }
 .dropdown-menu{
   min-width: 379px;
-  height: 390px;
+  height: 355px;
   overflow-y: scroll;
 }
 .mr-10{
@@ -165,7 +165,7 @@ tabset.nav-tabs>ul {
   outline: 0 !important;
 } */
 .customClass>a{
-  background-color:#efefef !important; 
+  background-color:#efefef !important;
   border: none !important;
   outline: 0 !important;
   border-radius: 0 !important;
@@ -214,6 +214,6 @@ tabset.nav-tabs>ul {
 }
 /* tabset ::ng-deep .nav-tabs.nav-justified>li>a {
   border-bottom: none;
-  
+
   background-color:grey !important;
 } */

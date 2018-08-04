@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
 import { ChartsModule } from 'ng2-charts';
-import { BsDropdownModule, ModalModule, PopoverModule, ProgressbarModule, TabsModule, TooltipModule } from 'ngx-bootstrap';
+import {BsDropdownModule, ModalModule, PaginationModule, PopoverModule, ProgressbarModule, TabsModule, TooltipModule} from 'ngx-bootstrap';
 import { AdBannerComponent } from './ad-banner.component';
 import { AdDirective } from './ad.directive';
 import { AdService } from './ad.service';
@@ -17,6 +17,7 @@ import { AssetComponent } from './asset/asset.component';
 import { AuthService } from './auth.service';
 import { CanActivateRoutesGuard } from './can-activate-routes.guard';
 import { ChartsAllModule } from './chartAll/charts.module';
+
 // import { MaterialModule } from '@angular/material';
 import { CustomHttpService } from './custom-http-service.service';
 import { DashboardModuleModule } from './dashboard-module/dashboard-module.module';
@@ -37,6 +38,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { TableModuleModule } from './table-module/table-module.module';
 import { StoreComponent } from './store/store.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {Ng2TableModule} from 'ng2-table';
+
 /*
 const appRoutes: Routes = [
   {
@@ -122,6 +125,10 @@ const appRoutes: Routes = [
     TabsModule.forRoot(),
     DashboardModuleModule,
     AngularFontAwesomeModule,
+
+    Ng2TableModule,
+    PaginationModule.forRoot(),
+
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

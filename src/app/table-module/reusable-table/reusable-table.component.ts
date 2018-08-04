@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TableData} from '../../tableData';
 import {Format} from '../Format';
 
@@ -7,7 +7,10 @@ import {Format} from '../Format';
   templateUrl: './reusable-table.component.html',
   styleUrls: ['./reusable-table.component.css']
 })
-export class ReusableTableComponent implements OnInit {
+export class ReusableTableComponent implements OnInit,OnChanges {
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges')
+  }
   exportFileName:string = "csv";
 
   public rows:Array<any> = [];
@@ -65,12 +68,16 @@ export class ReusableTableComponent implements OnInit {
   }
 
   public changePage(page:any, data:Array<any> = this.data):Array<any> {
+    // alert('onChangeTable')
+
     let start = (page.page - 1) * page.itemsPerPage;
     let end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
     return data.slice(start, end);
   }
 
   public changeSort(data:any, config:any):any {
+    // alert('onChangeTable')
+
     if (!config.sorting) {
       return data;
     }
@@ -102,6 +109,8 @@ export class ReusableTableComponent implements OnInit {
   }
 
   public changeFilter(data:any, config:any):any {
+    // alert('onChangeTable')
+
     let filteredData:Array<any> = data;
     this.columns.forEach((column:any) => {
       if (column.filtering) {
@@ -137,6 +146,7 @@ export class ReusableTableComponent implements OnInit {
   }
 
   public onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
+    // alert('onChangeTable')
     if (config.filtering) {
       Object.assign(this.config.filtering, config.filtering);
     }
@@ -155,74 +165,73 @@ export class ReusableTableComponent implements OnInit {
     console.log(data);
   }
 
-  public static downloadcsv(data: any, exportFileName: string) {
-    var csvData = this.convertToCSV(data);
 
-    var blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
+   public static downloadcsv(data: any, exportFileName: string) {
+     var csvData = this.convertToCSV(data);
 
-    if (navigator.msSaveBlob) { // IE 10+
-      navigator.msSaveBlob(blob, this.createFileName(exportFileName))
-    } else {
-      var link = document.createElement("a");
-      if (link.download !== undefined) { // feature detection
-        // Browsers that support HTML5 download attribute
-        var url = URL.createObjectURL(blob);
-        link.setAttribute("href", url);
-        link.setAttribute("download", this.createFileName(exportFileName));
-        //link.style = "visibility:hidden";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    }
-  }
-  exporttoCSV() {
-    let exprtcsv: any[] = [];
-    // let columns = this.config.columns;
-    (<any[]>JSON.parse(JSON.stringify(this.data))).forEach(x => {
-        var obj = new Object();
-        var frmt = new Format();
-        for (var i = 0; i < this.columns.length; i++) {
-          let transfrmVal = frmt.transform(x[this.columns[i].name],
-            this.columns[i].filter);
-          obj[this.columns[i].title] = transfrmVal;
-        }
-        exprtcsv.push(obj);
-      }
-    );
-    ReusableTableComponent.downloadcsv(exprtcsv, this.exportFileName);
-  }
-  private static convertToCSV(objarray: any) {
-    var array = typeof objarray != 'object' ? JSON.parse(objarray) : objarray;
+     var blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
 
-    var str = '';
-    var row = "";
+     if (navigator.msSaveBlob) { // IE 10+
+       navigator.msSaveBlob(blob, this.createFileName(exportFileName))
+     } else {
+       var link = document.createElement("a");
+       if (link.download !== undefined) { // feature detection
+         // Browsers that support HTML5 download attribute
+         var url = URL.createObjectURL(blob);
+         link.setAttribute("href", url);
+         link.setAttribute("download", this.createFileName(exportFileName));
+         //link.style = "visibility:hidden";
+         document.body.appendChild(link);
+         link.click();
+         document.body.removeChild(link);
+       }
+     }
+   } exporttoCSV() {
+     let exprtcsv: any[] = [];
+     // let columns = this.config.columns;
+     (<any[]>JSON.parse(JSON.stringify(this.data))).forEach(x => {
+         var obj = new Object();
+         var frmt = new Format();
+         for (var i = 0; i < this.columns.length; i++) {
+           let transfrmVal = frmt.transform(x[this.columns[i].name],
+             this.columns[i].filter);
+           obj[this.columns[i].title] = transfrmVal;
+         }
+         exprtcsv.push(obj);
+       }
+     );
+     ReusableTableComponent.downloadcsv(exprtcsv, this.exportFileName);
+   }
+   private static convertToCSV(objarray: any) {
+     var array = typeof objarray != 'object' ? JSON.parse(objarray) : objarray;
 
-    for (var index in objarray[0]) {
-      //Now convert each value to string and comma-separated
-      row += index + ',';
-    }
-    row = row.slice(0, -1);
-    //append Label row with line break
-    str += row + '\r\n';
+     var str = '';
+     var row = "";
 
-    for (var i = 0; i < array.length; i++) {
-      var line = '';
-      for (var index in array[i]) {
-        if (line != '') line += ','
-        line += JSON.stringify(array[i][index]);
-      }
-      str += line + '\r\n';
-    }
-    return str;
-  }
+     for (var index in objarray[0]) {
+       //Now convert each value to string and comma-separated
+       row += index + ',';
+     }
+     row = row.slice(0, -1);
+     //append Label row with line break
+     str += row + '\r\n';
 
-  private static createFileName(exportFileName: string): string {
-    var date = new Date();
-    return (exportFileName +
-      date.toLocaleDateString() + "_" +
-      date.toLocaleTimeString()
-      + '.csv')
-  }
+     for (var i = 0; i < array.length; i++) {
+       var line = '';
+       for (var index in array[i]) {
+         if (line != '') line += ','
+         line += JSON.stringify(array[i][index]);
+       }
+       str += line + '\r\n';
+     }
+     return str;
+   }
 
+   private static createFileName(exportFileName: string): string {
+     var date = new Date();
+     return (exportFileName +
+       date.toLocaleDateString() + "_" +
+       date.toLocaleTimeString()
+       + '.csv')
+   }
 }
