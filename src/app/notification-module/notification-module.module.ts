@@ -4,12 +4,17 @@ import { NotificationComponent } from './notification/notification.component';
 import { DedicatedNotificationComponent } from './dedicated-notification/dedicated-notification.component';
 import { NotifPopUPWrapperComponent } from './notif-pop-upwrapper/notif-pop-upwrapper.component';
 import { RealNotifComponent } from './real-notif/real-notif.component';
+import { NotificationSettingComponent } from './notification-setting/notification-setting.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  exports: [NotificationComponent, DedicatedNotificationComponent, NotifPopUPWrapperComponent, RealNotifComponent],
-  declarations: [NotificationComponent, DedicatedNotificationComponent, NotifPopUPWrapperComponent, RealNotifComponent]
+  exports: [NotificationComponent, DedicatedNotificationComponent, NotifPopUPWrapperComponent,
+     RealNotifComponent,NotificationSettingComponent],
+  declarations: [NotificationComponent, DedicatedNotificationComponent,
+    NotifPopUPWrapperComponent, RealNotifComponent, NotificationSettingComponent]
 })
 export class NotificationModuleModule { }

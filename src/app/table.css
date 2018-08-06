@@ -1,6 +1,6 @@
 .status{
   width: 50%;
-  padding: 5px 15px;
+  padding: 5px 5px;
 }
 .status .iconText{
   align-items: center;
@@ -159,18 +159,20 @@
   border-radius: 9px;
   width: 165px;
 }
+.agree-table tr>th{padding: 10px !important;}
 
 .flex-d{
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .mr-LR{
-  margin-left: 25px;
+  margin-left: 7px;
   /*margin-right: 9px;*/
 }
 
-.ml-21{margin-left: 21px;}
+/* .ml-21{margin-left: 21px;} */
 
 .mt113{margin-top: 133px;}
 
@@ -185,16 +187,6 @@
 
 .m-top{margin-top: 2%;}
 
-.asset-table{
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-}
-
-.asset-table tr>th,tr>td {
-  padding: 18px;
-}
-
 .t-container{
   width: 95%;
   padding-right: 15px;
@@ -202,25 +194,31 @@
   margin-right: auto;
   margin-left: auto;
 }
+.asset-table{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
 
-.asset-table tr{
+.asset-table tr>th,tr>td {
+  padding: 10px;
+}
+
+.asset-table >tr.border{
   border-bottom: 1px solid #9c9898;
-  border-right: 1px solid #9c9898;
+  /* border-right: 1px solid #9c9898; */
 }
 
-.asset-table td{
+/* .asset-table td{
   border-right: 1px solid #9c9898;
 }
+ */
 
-.asset-table th{
-  border-right: 1px solid #9c9898;
-}
-
-.asset-table tr>th{padding: 16px;}
+.asset-table tr>th{padding: 10px;}
 
 .mar-lb{
-  margin-left: 19px;
-  margin-bottom: 17px;
+  margin-left: 5px;
+  margin-bottom: -15px;
 }
 .mt-60{margin-top: 60px;}
 

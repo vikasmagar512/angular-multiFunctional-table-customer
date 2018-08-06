@@ -17,6 +17,10 @@
   margin-left: auto;
 }
 
+.table-responsive{
+  overflow-x: hidden;
+}
+
 .asset-table tr{
   border-bottom: 1px solid #9c9898;
   border-right: 1px solid #9c9898;
@@ -74,4 +78,7 @@
   float: left;
   margin-left: -12px;
   margin-right: 2px;
+}
+.table-responsive{
+  overflow-x: hidden;
 }

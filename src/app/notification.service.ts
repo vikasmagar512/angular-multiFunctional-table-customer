@@ -18,7 +18,7 @@ export class NotificationService {
       "contentId":"02",
       // "link":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
       /* "link":'<a routerLink="main/asset/01" routerLinkActive="active">'+'link'+'</a>', */
-      "readFlag":false,
+      "readFlag":true,
       "timeStamp":"23 hours"
     },
     {
@@ -65,7 +65,7 @@ export class NotificationService {
       "readFlag":false,
       "timeStamp":"5 Min"
     },
-    {
+    /*{
       "id": 'N5',
       "image":"../assets/FemaleAvatar.png",
       "headText":"Printer",
@@ -109,7 +109,7 @@ export class NotificationService {
       "link":'<a routerLink="main/asset/02" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"5 Min"
-    }
+    }*/
   ];
 
   getNotification(): NotificationMne[] {

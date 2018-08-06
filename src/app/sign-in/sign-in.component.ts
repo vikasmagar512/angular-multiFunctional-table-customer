@@ -16,6 +16,7 @@ export class SignInComponent implements OnInit {
   public isBusy = false;
   public hasFailed = false;
   public showInputErrors = false;
+  public now: Date = new Date();
 
   constructor(
     private api: ApiService,
@@ -59,7 +60,9 @@ export class SignInComponent implements OnInit {
     const password = this.frm.get('password').value;
 
     // Submit request to API
-    this.api
+
+    this.router.navigate(['main','home','dashboard']);
+     /*this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
@@ -75,6 +78,6 @@ export class SignInComponent implements OnInit {
           this.isBusy = false;
           this.hasFailed = true;
         }
-      );
+      );*/
   }
 }

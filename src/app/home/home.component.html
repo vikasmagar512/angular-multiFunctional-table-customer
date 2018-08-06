@@ -1,12 +1,25 @@
+<!--<div class="container map-sec">
+  <div class="btn-div">
+    <button [ngClass]="(!activeComponent)?'mar-r bttn active':'mar-r bttn'" (click)="loadComponent(0)">
+      &lt;!&ndash;<img src="../assets/16.png" class="r-icon ">&ndash;&gt;
+      Dashboard</button>
+    <button [ngClass]="(activeComponent)?'mar-r mar bttn active':'mar-r bttn'" (click)="loadComponent(1)">
+      &lt;!&ndash;<img src="../assets/17.png" class="r-icon">&ndash;&gt;
+      Details</button>
+  </div>
+  &lt;!&ndash;<app-bar-chart></app-bar-chart>&ndash;&gt;
+  <router-outlet>
+    <app-ad-banner [ads]="ads" [activeComponent]="activeComponent" class="map"></app-ad-banner>
+  </router-outlet>
+</div>-->
 <div class="container map-sec">
   <div class="btn-div">
     <button [ngClass]="(!activeComponent)?'mar-r bttn active':'mar-r bttn'" (click)="loadComponent(0)">
-      <!--<img src="../assets/16.png" class="r-icon ">-->
-      Dashboard</button>
-    <button [ngClass]="(activeComponent)?'mar-r bttn active':'mar-r bttn'" (click)="loadComponent(1)">
-      <!--<img src="../assets/17.png" class="r-icon">-->
+    Dashboard</button>
+    <button [ngClass]="(activeComponent)?'mar-r mar bttn active':'mar-r bttn'" (click)="loadComponent(1)">
       Details</button>
   </div>
-  <!--<app-bar-chart></app-bar-chart>-->
-  <app-ad-banner [ads]="ads" [activeComponent]="activeComponent" class="map"></app-ad-banner>
+  <router-outlet>
+    <!--<app-ad-banner [ads]="ads" [activeComponent]="activeComponent" class="map"></app-ad-banner>-->
+  </router-outlet>
 </div>

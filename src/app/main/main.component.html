@@ -7,8 +7,8 @@
         </a>
       </div>
 
-      <ul class="nav navbar-nav navbar-right mar-r">
-        <li class="nav-item dropdown">
+      <ul class="nav navbar-nav navbar-right mar-r flex-nav">
+        <!-- <li class="nav-item dropdown">
           <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
             <a class="nav-link dropdown-toggle mr-lg-2" id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
               <i class="fa fa-fw fa-envelope"></i>
@@ -18,24 +18,16 @@
               <span class="indicator text-primary d-none d-lg-block">
                 <i class="fa fa-fw fa-circle"></i>
               </span>
+              <img src="../assets/message.svg" class="img-responsive rlogo">
             </a>
             <div class="dropdown-menu notification">
-                <app-notif-pop-upwrapper>
-                    <app-real-notif></app-real-notif>                
-                </app-notif-pop-upwrapper>
-            </div>
-            <!-- <app-nav-pop-up class="dropdown-menu notifications" aria-labelledby="dLabel">
               <app-notif-pop-upwrapper>
-                  <app-real-notif></app-real-notif>                
+                <app-real-notif></app-real-notif>
               </app-notif-pop-upwrapper>
-            </app-nav-pop-up> -->
-            <!-- <ul class="dropdown-menu notifications" aria-labelledby="dLabel">
-              <app-notification [data]="notification"></app-notification>
-            </ul> -->
-
+            </div>
           </span>
-        </li>
-        <li class="cust">
+        </li> -->
+        <li class="cust mr-10">
           <a href="javascript:void(0)" [popover]="popoverCustomer" placement="bottom" outsideClick="false">
             <span class="clr-w">{{customer.name}}</span>
           </a>
@@ -44,55 +36,53 @@
           <div>
             <img src="assets/pencil.svg" class="pull-right pop-img">
             <div class=popup-p>
-              <p>Name-{{customer.name}}</p>
-              <p>Address-{{customer.address}}</p>
-              <p>Email-{{customer.email}}</p>
-              <p>contact-{{customer.contact}}</p>
+              <p><span class="fw-600">Name-</span>{{customer.name}}</p>
+              <p><span class="fw-600">Address-</span>{{customer.address}}</p>
+              <p><span class="fw-600">Email-</span>{{customer.email}}</p>
+              <p><span class="fw-600">contact-</span>{{customer.contact}}</p>
             </div>
           </div>
         </ng-template>
-        <li>
-          <a href="#">
-            <img src="../assets/setting.svg" class="img-responsive rlogo">
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="javascript:void(0)" id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        <li class="mr-10">
+            <a (click)="openModal(storeTemplate)">
+              <img src="../assets/store.png" class="img-responsive rlogo">
+            <!--  <span class="fa fa-cart-arrow-down fs"></span> -->
+            </a>
+            <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+          </li>
+
+          <li class="marR-14 mr-10">
+            <a (click)="openModal(template)">
+              <img src="../assets/setting.svg" class="img-responsive rlogo">
+            </a>
+            <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+          </li>
+
+          <li class="nav-item dropdown" style="margin-right: 5px">
+              <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
+                <a class="nav-link dropdown-toggle mr-lg-2 " id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
+                  <!-- <i class="fa fa-fw fa-envelope"></i>
+                  <span class="d-lg-none">Messages
+                    <span class="badge badge-pill badge-primary">12 New</span>
+                  </span>
+                  <span class="indicator text-primary d-none d-lg-block">
+                    <i class="fa fa-fw fa-circle"></i>
+                  </span> -->
+                  <img src="../assets/message.svg" class="img-responsive rlogo">
+                </a>
+                <div class="dropdown-menu notification">
+                  <app-notif-pop-upwrapper>
+                    <app-real-notif></app-real-notif>
+                  </app-notif-pop-upwrapper>
+                </div>
+              </span>
+            </li>
+        <!-- <li class="nav-item dropdown">
+          <a>
             <img src="../assets/message.svg" class="img-responsive rlogo">
           </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-danger">
-                <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all alerts</a>
-          </div>
-        </li>
+        </li> -->
         <li (click)="doSignOut()">
           <a href="#">
             <img src="../assets/logout.svg" class="img-responsive rlogo">
@@ -104,6 +94,50 @@
   <!--<mat-progress-bar></mat-progress-bar>-->
   <!--<progressbar class="progress-striped active"  [value]="136" type="danger"><i>136 / 150</i></progressbar>-->
   <router-outlet>
-    <app-loader></app-loader>
+    <!--<app-loader></app-loader>-->
   </router-outlet>
 </div>
+<ng-template #template>
+  <div class="modal-header">
+    <!-- <h4 class="modal-title pull-left">Forgot Password ?</h4> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg">
+      </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="model-pass" id="modal">
+      <tabset [justified]="true" class="bclr-white mr-b">
+          <!--<tab heading="DashBoard" id="tab1" customClass="customClass" class="wd-300">-->
+          <tab heading="DashBoard" id="tab1" class="wd-300" customClass="customClass active bor-l">
+            <app-dashboard-setting></app-dashboard-setting>
+          </tab>
+          <tab heading="Notifications" id="tab2" class="wd-300" customClass="customClass">
+<app-notification-setting></app-notification-setting>
+          </tab>
+      </tabset>
+    </div>
+  </div>
+  <div class="modal-footer setting">
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancel</button>
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Done</button>
+  </div>
+</ng-template>
+
+<ng-template #storeTemplate>
+  <div class="modal-header">
+    <!-- <h4 class="modal-title pull-left">Forgot Password ?</h4> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg" class="log">
+      </span>
+    </button>
+  </div>
+  <div class="modal-body" style="background-color: #f6f3f3;">
+    <app-store></app-store>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
+  </div>-->
+</ng-template>

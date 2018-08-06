@@ -1,11 +1,12 @@
 
 <div class="t-container m-top">
+  <!--<button (click)="backClicked()">Go Back</button>-->
   <div class="row mar-l">
     <div class="col-md-4">
-      <h4 class="fb-15 mar-lb">Agreement View</h4>
+      <h4 class="fb-15">Agreement View</h4>
       <div >
         <div class="table-responsive box-border">
-          <table  class="asset-table">
+          <table  class="asset-table agree-table">
             <thead>
             <tr>
               <th>No.</th>
@@ -51,110 +52,24 @@
     </div>
     <div class="col-md-7">
       <h4 class="fb-15 mar-lb">List of Assets</h4>
-      <div>
-        <div class="table-responsive">
+        <div>
             <app-table-demo  [data]="agreementData" [config]="agreementConfig" [columns]="agreementColumns"></app-table-demo>
-          <!-- <table  class="asset-table">
-            <thead class="bg-black c-white">
-            <tr>
-              <th>Asset Name</th>
-              <th>Location</th>
-              <th>Quantity</th>
-              <th>Serial No.</th>
-              <th>Supplier</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let asset of coveredAssets">
-              <td>
-                <a routerLink="/main/asset/{{asset.id}}" routerLinkActive="active">Canon RW2014</a>
-              </td>
-              <td>{{asset.location}}</td>
-              <td>6</td>
-              <td>{{asset.serialno}}</td>
-              <td>{{asset.supplier}}</td>
-            </tr>
-            <!--
-              <td>
-                <a routerLink="/main/asset/12" routerLinkActive="active">Canon SW2017</a>
-              </td>
-              <td>Bromma</td>
-              <td>6</td>
-              <td>SR92912</td>
-              <td>ATOS LLP</td>
-            </tr>
-            <tr>
-              <td>
-                <a routerLink="/main/asset/12" routerLinkActive="active">Canon DW2014</a>
-              </td>
-              <td>Bromma</td>
-              <td>6</td>
-              <td>SR92918</td>
-              <td>ATOS LLP</td>
-            </tr>
-            <tr>
-              <td>
-                <a routerLink="/main/asset/12" routerLinkActive="active">Canon SW2014</a>
-              </td>
-              <td>Bromma</td>
-              <td>6</td>
-              <td>SR92912</td>
-              <td>ATOS LLP</td>
-            </tr>
-            <tr>
-              <td>
-                <a routerLink="/main/asset/12" routerLinkActive="active">Canon SW2014</a>
-              </td>
-              <td>Bromma</td>
-              <td>6</td>
-              <td>SR92912</td>
-              <td>ATOS LLP</td>
-            </tr
-            </tbody>
-          </table> -->
         </div>
-        <div class="popup" id="popup">
-            <div class="content">
-              <div>
-                <h4 class="fb-15 mar-lb">Total Overdue</h4>
-                <div>
-                  <div class="table-responsive">
-                      <app-table-demo  [data]="overDueData" [config]="overDueConfig" [columns]="overDueColumns"></app-table-demo>
-                   <!-- <table class="asset-table">
-                      <thead class="">
-                        <tr>
-                          <th>Due Date</th>
-                          <th>Open Amount</th>
-                          <th>Status Paid/Unpaid</th>
-                          <th>Invoice</th>
-                          <th colspan="2">Invoice Address</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>15 May 2020</td>
-                          <td><span class="fw-600">Kr</span>200</td>
-                          <td>Paid</td>
-                          <td>
-                            <span class="cursor">
-                              <img src="Assets/pdf.svg">
-                            </span>
-                          </td>
-                          <td>Bromma</td>
-                          <td>4455</td>
-                        </tr>
-                      </tbody>
-                    </table> -->
-                  </div>
-                </div>
-              </div>
-            </div>
+        <!--<div class="popup" *ngIf="overDueTableVisible">-->
+            <!--<div class="content">-->
+              <!--<div>-->
+        <div class="payment-d" (click)="showOverDueTable()">
+          <img src="../../assets/wallet.svg">
+          <span>Payment Info</span>
         </div>
-      </div>
-      <div class="payment-d">
-        <img src="../../assets/wallet.svg">
-        <span>Payment Info</span>
-      </div>
+        <div *ngIf="overDueTableVisible">
+        <h4 class="fb-15 mar-lb">Total Overdue</h4>
+        <div>
+          <div>
+              <app-table-demo  [data]="overDueData" [config]="overDueConfig" [columns]="overDueColumns"></app-table-demo>
+          </div>
+        </div>
+        </div>
     </div>
   </div>
 </div>

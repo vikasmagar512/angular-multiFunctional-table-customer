@@ -17,7 +17,6 @@ export class NotificationComponent implements OnInit {
   }
 
   navigateTo(notif:NotificationMne){
-    debugger
     switch(notif.type){
       case 'asset':
         this.router.navigate(['/main/asset/',notif['contentId'] ]);

@@ -10,13 +10,10 @@
   .notifications-wrapper {
     overflow:auto;
     max-height:250px;
+    background-color: #fff;
   }
   
-  .menu-title {
-    color:#ff7788;
-    font-size:1.5rem;
-    display:inline-block;
-  }
+ 
   
   .glyphicon-circle-arrow-right {
     margin-left:10px;
@@ -35,17 +32,25 @@
     background:#ccc;
   
   }
-  
   .notification-item {
     padding:10px;
     margin:5px;
-    background:#ccc;
-    border-radius:4px;
+    background:#fff;  
+    border-bottom: 1px solid black;
     cursor:pointer;
+    font-size: 16px;
   }
   
+  .notification-item.blur{
+    background: red;
+    color: #fff;
+  }
   
-  
-  
+  .fb{
+    font-weight: 600;
+  }
+  .clr-b{
+    color: #000;
+  }
   
   

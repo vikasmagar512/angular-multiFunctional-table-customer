@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Asset} from '../asset';
 import {Metric} from '../metric';
 import {TableData} from '../tableData';
-
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-asset',
   templateUrl: './asset.component.html',
@@ -18,10 +18,13 @@ export class AssetComponent implements OnInit {
   productData: Array<any>;
   serviceData:Array<any>;
   consumptionData: Array<any>;
-  constructor(private route: ActivatedRoute, private dataService: dataService) {
+  constructor(private route: ActivatedRoute, private dataService: dataService,private _location:Location) {
     this.productData=[]
     this.consumptionData = []
     this.serviceData = []
+  }
+  backClicked() {
+    this._location.back();
   }
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets()
@@ -36,10 +39,11 @@ export class AssetComponent implements OnInit {
           "product_category":metric.category,
           "supplierName": this.assets.supplier,
           "requestDate": '15 Jan 2018',
-          "amount": "Kr 56",
-          "invoice": '<span>'+
-                      '<img src="../../assets/pdf.svg">'+
-                      '</span>'
+
+        "amount": '<span class="bold">Kr</span> 56',
+        "invoice": '<span>'+
+          '<img src="../../assets/pdf.svg" class="ass-size">'+
+        '</span>'
         });
       },[]);
 
@@ -50,9 +54,9 @@ export class AssetComponent implements OnInit {
           "service_category":metric.category,
           "supplierName": this.assets.supplier,
           "serviceDate": '15 Jan 2018',
-          "amount": "Kr 56",
+          "amount": '<span class="bold">Kr</span>56',
           "invoice": '<span>'+
-                      '<img src="../../assets/pdf.svg">'+
+                      '<img src="../../assets/pdf.svg" class="ass-size">'+
                       '</span>'
         });
       },[]);
@@ -67,9 +71,9 @@ export class AssetComponent implements OnInit {
       },[]);
   }
   public productColumns:Array<any> = [
-    {title: 'Category of Products', name: 'product_category', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Category of Products', name: 'product_category', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Supplier Name', className: ['office-header', 'text-success'], name: 'supplierName', sort: 'asc',filter:'text'},
-    {title: 'Request Date', name: 'requestDate', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Request Date', name: 'requestDate', sort: '', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Amount', className: 'text-warning', name: 'amount',filter:'text'},
     {title: 'Invoice', name: 'invoice',filter:'text'}
   ];
@@ -81,9 +85,9 @@ export class AssetComponent implements OnInit {
   };
 
   public serviceColumns:Array<any> = [
-    {title: 'Category of service', name: 'service_category', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Category of service', name: 'service_category', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Supplier Name', className: ['office-header', 'text-success'], name: 'supplierName', sort: 'asc',filter:'text'},
-    {title: 'Date of service', name: 'serviceDate', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Date of service', name: 'serviceDate', sort: '', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Amount', className: 'text-warning', name: 'amount',filter:'text'},
     {title: 'Invoice', name: 'invoice',filter:'text'}
   ];
@@ -95,9 +99,9 @@ export class AssetComponent implements OnInit {
   };
 
   public consumptionColumns:Array<any> = [
-    {title: 'Category', name: 'category', filtering: {filterString: '', placeholder: 'Filter by name'},filter:'text'},
+    {title: 'Category', name: 'category', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Present Consumption', className: ['office-header', 'text-success'], name: 'presentConsum', sort: 'asc',filter:'text'},
-    {title: 'Forecasted Consumption', name: 'forecastedConsum', sort: '', filtering: {filterString: '', placeholder: 'Filter by extn.'},filter:'text'},
+    {title: 'Forecasted Consumption', name: 'forecastedConsum', sort: '', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Recomendation', className: 'text-warning', name: 'recommend',filter:'text'},
   ];
   public consumptionConfig:any = {
@@ -106,12 +110,4 @@ export class AssetComponent implements OnInit {
     filtering: {filterString: ''},
     className: ['third-t','s-table','table-bordered']
   };
-
-
-
-
-  /* public data:Array<any> = TableData; */
-
-
-
 }

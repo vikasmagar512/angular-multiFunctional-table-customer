@@ -1,0 +1,73 @@
+.multiSelect {
+    overflow: auto;
+}
+.multiSelect .select {
+    margin-right: 20px;
+    float: left;
+}
+.multiSelect .text {
+    clear: both;
+    font-size: 11px;
+}
+.multiSelect label::after {
+    content: ":";
+}
+.btn.mover {
+    display: block;
+    margin-top: 25px;
+    /* vertical-align: top; */
+}
+.btn.mover.left {
+    padding: 3px 8px 2px 6px;
+}
+.btn.mover.right {
+    margin-top: 24px;
+    padding: 3px 7px 2px;
+}
+.btn.mover i {
+    margin: 0;
+}
+
+/* demo css */
+li {
+    list-style-type: disc;
+}
+.mar{
+    margin-bottom: 10px;
+}
+.mar-t{
+    margin-top: 20px;
+}
+.glyphicon{
+    font-size: 18px;
+}
+.form-control{
+    background-color: #efefef;
+    overflow: hidden;
+    border: none;
+    padding: 20px 30px;
+    border-radius: none;
+     box-shadow: none;
+}
+.btn{background-color: #fff;}
+
+.flex-r{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.mart-6p{
+    margin-top: 6%;
+}
+.mart-30{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.mart-15{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.f-sw{
+    font-size: 15px;
+    font-weight: bold;
+}

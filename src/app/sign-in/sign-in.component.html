@@ -54,13 +54,12 @@
     <div class="col-sm-7 col-md-5 col-lg-5">
       <div class="logo">
         <img src="../../assets/siemens logo.png">
-        <h3>SEI
-          <span>CONNECT</span>
+        <h3>SIE<span>CONNECT</span>
         </h3>
-        <h6 class="foot">Powered by SEIMENS SFS</h6>
+        <h6 class="foot">Powered by SIEMENS SFS</h6>
       </div>
       <div class="dataInp">
-        <p>1st June 2018</p>
+        <p>{{now | date:'longDate'}}</p>
         <h1>Hello!</h1>
         <h3>Welcome to
           <br>SIECONNECT</h3>
@@ -99,7 +98,7 @@
                 <img src="../../assets/warning.svg" class="war-img">
                 <span >
                   <h6 class="war-font">Invalid Credintials</h6>
-                  <h6 class="war-font">Please enter Correct Credintials</h6>
+                  <h6 class="war-font mar-t">Please enter Correct Credintials</h6>
                 </span>
               </div>
             </form>
@@ -117,7 +116,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -126,7 +124,9 @@
     <h4 class="modal-title pull-left">Forgot Password ?</h4>
     <button type="button" class="close pull-right"
             aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg">
+      </span>
     </button>
   </div>
   <!--<div class="modal-body">

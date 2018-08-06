@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../environments/environment';
 import {SessionService} from './session.service';
-import {Observable} from 'rxjs/index';
-import 'rxjs-compat/add/operator/catch';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import 'rxjs-compat/add/operator/map';
+  import {Observable} from 'rxjs/index';
+  import 'rxjs-compat/add/operator/catch';
+  import {HttpClient, HttpHeaders} from '@angular/common/http';
+  import 'rxjs-compat/add/operator/map';
 
 const API_URL = environment.apiUrl;
 
