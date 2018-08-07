@@ -23,9 +23,9 @@ export class NotificationComponent implements OnInit {
         break;
       case 'agreement':
         this.router.navigate(['/main/agreement/',notif['contentId'] ]);
-        break;        
+        break;
       default:
-        alert('default')
+        // alert('default')
         console.log('default')
     }
   }

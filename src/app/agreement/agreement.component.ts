@@ -78,8 +78,6 @@ export class AgreementComponent implements OnInit {
     filtering: {filterString: ''},
     className: ['third-t','s-table','table-striped', 'table-bordered']
   };
-
-
   public overDueColumns:Array<any> = [
     {title: 'Due Date', name: 'dueDate',filter:'text'},
     {title: 'Open Amount', className: ['office-header', 'text-success'], name: 'amount', sort: 'asc',filter:'text'},

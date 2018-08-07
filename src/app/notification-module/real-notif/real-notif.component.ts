@@ -16,11 +16,11 @@ export class RealNotifComponent implements OnInit {
   notifications:Array<NotificationMne>;
   ngOnInit() {
     let that = this;
-    this.notifications = this.notifyService.getNotification(); 
-    setInterval(function(){
-      that.notifications = that.notifyService.getNotification(); 
+    this.notifications = this.notifyService.getNotification();
+    // setInterval(function(){
+    //   that.notifications = that.notifyService.getNotification();
       //console.log('getNotification')
-    }, 5000);
+    // }, 5000);
   }
 
   navigateTo(notif:NotificationMne){
@@ -31,9 +31,9 @@ export class RealNotifComponent implements OnInit {
         break;
       case 'agreement':
         this.router.navigate(['/main/agreement/',notif['contentId'] ]);
-        break;        
+        break;
       default:
-        alert('default')
+        // alert('default')
         console.log('default')
     }
   }

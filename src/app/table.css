@@ -80,11 +80,13 @@
   justify-content: space-between;*/
 }
 .s-table th span.right {
-  text-align: right;
+  
   float: right;
   margin-right: 11px;
 }
-
+.third-t>tbody>tr>td:nth-child(2) {
+  text-align: center;
+}
 .third-t tr>td{
   padding: 7px;
   border-bottom: none;
@@ -139,7 +141,7 @@
   float: left;
   margin-right: 5%;
   margin-left: 5%;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .wd-10{width: 10%;}
@@ -160,7 +162,6 @@
   width: 165px;
 }
 .agree-table tr>th{padding: 10px !important;}
-
 .flex-d{
   display: flex;
   justify-content: space-between;
