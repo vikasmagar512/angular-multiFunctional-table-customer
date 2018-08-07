@@ -8,67 +8,26 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right mar-r flex-nav">
-        <!-- <li class="nav-item dropdown">
-          <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
-            <a class="nav-link dropdown-toggle mr-lg-2" id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
-              <i class="fa fa-fw fa-envelope"></i>
-              <span class="d-lg-none">Messages
-                <span class="badge badge-pill badge-primary">12 New</span>
-              </span>
-              <span class="indicator text-primary d-none d-lg-block">
-                <i class="fa fa-fw fa-circle"></i>
-              </span>
-              <img src="../assets/message.svg" class="img-responsive rlogo">
-            </a>
-            <div class="dropdown-menu notification">
-              <app-notif-pop-upwrapper>
-                <app-real-notif></app-real-notif>
-              </app-notif-pop-upwrapper>
-            </div>
-          </span>
-        </li> -->
         <li class="cust mr-10">
           <a href="javascript:void(0)" [popover]="popoverCustomer" placement="bottom" outsideClick="false">
             <span class="clr-w">{{customer.name}}</span>
           </a>
         </li>
-        <ng-template #popoverCustomer>
-          <div>
-            <img src="assets/pencil.svg" class="pull-right pop-img">
-            <div class=popup-p>
-              <p><span class="fw">Name-</span>{{customer.name}}</p>
-              <p><span class="fw">Address-</span>{{customer.address}}</p>
-              <p><span class="fw">Email-</span>{{customer.email}}</p>
-              <p><span class="fw">contact-</span>{{customer.contact}}</p>
-            </div>
-          </div>
-        </ng-template>
-
         <li class="mr-10">
             <a (click)="openModal(storeTemplate)">
               <img src="../assets/store.png" class="img-responsive rlogo">
-            <!--  <span class="fa fa-cart-arrow-down fs"></span> -->
             </a>
-            <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
           </li>
 
           <li class="marR-14 mr-10">
             <a (click)="openModal(template)">
               <img src="../assets/setting.svg" class="img-responsive rlogo">
             </a>
-            <!--  <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
           </li>
 
-          <li class="nav-item dropdown" style="margin-right: 5px">
-              <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" style="display: block">
-                <a class="nav-link dropdown-toggle mr-lg-2 " id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
-                  <!-- <i class="fa fa-fw fa-envelope"></i>
-                  <span class="d-lg-none">Messages
-                    <span class="badge badge-pill badge-primary">12 New</span>
-                  </span>
-                  <span class="indicator text-primary d-none d-lg-block">
-                    <i class="fa fa-fw fa-circle"></i>
-                  </span> -->
+          <!-- <li class="nav-item dropdown" style="margin-right: 5px">
+              <span dropdown style="display: block">
+                <a class="nav-link dropdown-toggle mr-lg-2" id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
                   <img src="../assets/message.svg" class="img-responsive rlogo">
                 </a>
                 <div class="dropdown-menu notification">
@@ -77,17 +36,17 @@
                   </app-notif-pop-upwrapper>
                 </div>
               </span>
-            </li>
+            </li> -->
         <!-- <li class="nav-item dropdown">
           <a>
             <img src="../assets/message.svg" class="img-responsive rlogo">
           </a>
         </li> -->
-        <li (click)="doSignOut()">
+        <!-- <li (click)="doSignOut()">
           <a href="#">
             <img src="../assets/logout.svg" class="img-responsive rlogo">
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
@@ -121,7 +80,7 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancel</button>
-     <button type="button" class="btn btn-default" (click)="onDoneClick()">Done</button>
+     <button type="button" class="btn btn-default" (click)="modalRef.hide()">Done</button>
   </div>
 </ng-template>
 
@@ -141,3 +100,14 @@
     <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
   </div>-->
 </ng-template>
+<ng-template #popoverCustomer>
+    <div>
+      <img src="assets/pencil.svg" class="pull-right pop-img">
+      <div class=popup-p>
+        <p><span class="fw-600">Name-</span>{{customer.name}}</p>
+        <p><span class="fw-600">Address-</span>{{customer.address}}</p>
+        <p><span class="fw-600">Email-</span>{{customer.email}}</p>
+        <p><span class="fw-600">contact-</span>{{customer.contact}}</p>
+      </div>
+    </div>
+  </ng-template>

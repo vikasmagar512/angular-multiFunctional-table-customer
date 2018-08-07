@@ -293,7 +293,7 @@ button:hover, button:focus{
   justify-content: space-between;*/
 }
 .s-table th span.right {
-  text-align: right;
+  text-align: center;
   float: right;
   margin-right: 11px;
 }
@@ -302,7 +302,9 @@ button:hover, button:focus{
   padding: 7px;
   border-bottom: none;
 }
-
+.third-t>tbody>tr>td:nth-child(2) {
+  text-align: center;
+}
 .third-t>tbody>tr>td>input { width: 100% !important; }
 .third-t>tbody>tr>td { vertical-align: middle; }
 .third-t>tbody>tr>td>a { cursor: pointer !important; }
@@ -355,7 +357,7 @@ button:hover, button:focus{
   float: left;
   margin-right: 5%;
   margin-left: 5%;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .wd-10{width: 10%;}

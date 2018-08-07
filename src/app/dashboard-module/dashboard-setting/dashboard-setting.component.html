@@ -1,16 +1,13 @@
-
-    <div class="row mar-t flex-r">
-    <div class="col-xs-4">
+<!-- <div class="row mar-t flex-r">
+  <div class="col-xs-4">
     <div class="mart-15 f-sw">Available KPI</div>
-    <!-- {{message}}
-    <button (click)="newMessage()">New Message</button> -->
     <select [ngModel]="selectedCountry" name="from" id="multiselect1" class="form-control" size="8" multiple="multiple" title="asdf">
       <ng-container *ngFor="let options of optionsSettings">
         <option class="mar" *ngIf="!options.selected" value={{options.id}}>{{options.name}}</option>
       </ng-container>
     </select>
-    </div>
-    <div class="col-xs-1 mart-6p">
+  </div>
+  <div class="col-xs-1 mart-6p">
     <button type="button" id="multiselect1_rightAll" class="btn btn-block">
       <i class="glyphicon glyphicon-forward"></i>
     </button>
@@ -23,16 +20,51 @@
     <button type="button" id="multiselect1_leftAll" class="btn btn-block">
       <i class="glyphicon glyphicon-backward"></i>
     </button>
-    </div>
-    <div class="col-xs-4">
-        <div class="mart-15 f-sw">Selected KPI</div>
-        <select [ngModel]="selectedCountry" name="to" id="multiselect1_to" class="form-control" size="8" multiple="multiple">
-          <ng-container *ngFor="let options of optionsSettings">
-            <option class="mar" *ngIf="options.selected" value={{options.id}}>{{options.name}}</option>
-          </ng-container>
-        </select>
-    </div>
-    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="mart-15 f-sw">Selected KPI</div>
+    <select [ngModel]="selectedCountry" name="to" id="multiselect1_to" class="form-control" size="8" multiple="multiple">
+      <ng-container *ngFor="let options of optionsSettings">
+        <option class="mar" *ngIf="options.selected" value={{options.id}}>{{options.name}}</option>
+      </ng-container>
+    </select>
+  </div>
+</div> -->
 
-    <!--<select name="to" id="multiselect_to" class="form-control" size="8" multiple="multiple">
+<!--<select name="to" id="multiselect_to" class="form-control" size="8" multiple="multiple">
       </select>-->
+
+<div class="row mar-t flex-r">
+  <div class="col-xs-4 ">
+    <div class="mart-15 f-sw">Available KPI</div>
+    <select multiple="multiple" #field class="col-lg-12 col-md-12 col-sm-12 scroll h-190 form-control">
+      &lt;!&ndash;
+      <img src="assets/img/profile.png" class="w-20 mr-55" alt="group"> &ndash;&gt;
+      <option class="userimage mar" *ngFor="let user of notSelectedUserList" [value]="user.name" title="{{user.name}}">
+        &nbsp; &nbsp; &nbsp; &nbsp;{{user.name}}</option>
+    </select>
+  </div>
+  <div class="col-xs-1 mart-6p">
+    <button type="button" class="btn btn-block" (click)="arrowClick(true)">
+      <i class="glyphicon glyphicon-chevron-right"></i>
+    </button>
+    <button type="button" class="btn btn-block" (click)="arrowClick(true,1)">
+      <i class="glyphicon glyphicon-forward"></i>
+    </button>
+    <button type="button" class="btn btn-block" (click)="arrowClick(false)">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+    </button>
+    <button type="button" class="btn btn-block" (click)="arrowClick(false,1)">
+      <i class="glyphicon glyphicon-backward"></i>
+    </button>
+  </div>
+  <div class="col-xs-4 ">
+    <div class="mart-15 f-sw">Selected KPI</div>
+    <select multiple="multiple" #selectField class="col-lg-12 col-md-12 col-sm-12 scroll h-190 form-control">
+      &lt;!&ndash;
+      <img src="assets/img/profile.png" class="w-20 mr-55" alt="group"> &ndash;&gt;
+      <option class="userimage mar" *ngFor="let user of selectedUserList" [value]="user.name" title="{{user.name}}">
+        &nbsp; &nbsp; &nbsp; &nbsp;{{user.name}}</option>
+    </select>
+  </div>
+</div>

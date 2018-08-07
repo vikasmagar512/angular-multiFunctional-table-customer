@@ -8,11 +8,10 @@
     background-color: #efefef;
     overflow: hidden;
     border: none;
-    padding: 20px 30px;
+    padding: 20px 10px;
     border-radius: none;
      box-shadow: none;
 }
-.btn{background-color: #fff;}
 
 .glyphicon{
     font-size: 18px;
@@ -40,4 +39,19 @@
 }
 .mar{
     margin-bottom: 10px;
+}
+
+.btn{
+    background-color: #fff;
+    /* padding: 3px 17px; */
+    color:#000;
+  }
+  
+  .btn:hover{   
+    background-color: #fff !important;
+    color:#000 !important;
+  }
+
+  select[multiple], select[size] {
+    height: 160px;
 }

@@ -89,13 +89,13 @@ export class DetailsComponent implements OnInit {
         '                  <span>\n' +
         '                    <img src="../../assets/upgrade.svg" class="a-size wd-24">\n' +
         '                  </span>\n' +
-        '                <p class="c-white">Upgrade</p>\n' +
+        '                <p class="c-white">Uprade</p>\n' +
         '              </div>\n' +
         '              <div class="a-div bg-lgrey">\n' +
         '                  <span>\n' +
         '                    <img src="../../assets/terminated.svg" class="a-size wd-24">\n' +
         '                  </span>\n' +
-        '                <p class="c-white">Terminate</p>\n' +
+        '                <p class="c-white">Terminated</p>\n' +
         '              </div>',
       }));
   }
@@ -124,6 +124,7 @@ export class DetailsComponent implements OnInit {
     paging: true,
     sorting: {columns: this.assetColumns},
     filtering: {filterString: ''},
+    /* id: */
     className: ['third-t','s-table','table-striped', 'table-bordered']
   };
 

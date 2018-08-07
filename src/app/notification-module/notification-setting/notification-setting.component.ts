@@ -45,6 +45,7 @@ export class NotificationSettingComponent implements OnInit {
     return null;
   }
   findNotSelectedVariable(nm: string): number {
+    // debugger
     for (let i: number = 0; i < this.notSelectedUserList.length; i++){
       if (nm === this.notSelectedUserList[i].name)
         return i;
@@ -52,13 +53,16 @@ export class NotificationSettingComponent implements OnInit {
     return -1;
   }
   findSelectedVariable(nm: string) {
+    // debugger
       for (let i: number = 0; i < this.selectedUserList.length; i++)
         if (nm === this.selectedUserList[i].name)
           return i;
     return -1;
   }
   arrowClick(valueStatus: boolean, all:boolean=false) {
+    // debugger
     let option = valueStatus ? this.elField.nativeElement.options : this.elSelectField.nativeElement.options;
+    // debugger
     for (let l of option) {
       let v: any = this.findField(l.value);
       if (l.selected || all) {
@@ -74,30 +78,6 @@ export class NotificationSettingComponent implements OnInit {
       }
     }
   }
-/*
-  arrowClick(value: boolean, all:boolean=false) {
-    let option = this.elField.nativeElement.options;
-    if (value) {
-      //right arrow click
-      for (let l of option)
-        if (l.selected || all) {
-          let value = l.value
-          let v: any = this.findField(value);
-          this.selectedUserList.push(v);
-          this.notSelectedUserList.splice(this.findNotSelectedVariable(v.name), 1);
-        }
-    } else {
-      //left arrow click
-      // let option = this.elSelectField.nativeElement.options;
-      for (let l of option)
-        if (l.selected || all) {
-          let value = l.value
-          let v: any = this.findField(value);
-          this.notSelectedUserList.push(v);
-          this.selectedUserList.splice(this.findSelectedVariable(v.name), 1);
-        }
-    }
-  }*/
 
   ngOnInit() {
     this._options.currentNotifSetting.subscribe(message => {
@@ -131,10 +111,12 @@ export class NotificationSettingComponent implements OnInit {
           console.log('k',k)
           that._options.sendSettings(k,2)
       },
+      
       afterMoveToLeft:function ($left, $right,options) {
         console.log('afterMoveToLeft values length',options.length)
         console.log('afterMoveToLeft values length',options)
         const arr = []
+        debugger
         for (let i = 0; i < options.length; i++) {
              console.log('options[i] ',options[i])
              console.log('options[i] ',options[i].value.split(`'`)[1])
