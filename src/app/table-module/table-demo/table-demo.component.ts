@@ -56,6 +56,21 @@ export class TableDemoComponent implements OnInit {
 
     this.length = this.data.length;
     this.onChangeTable(this.config);
+
+    $(document).on('click','.service',function(data:any){
+      let j=$(this).attr('data-id');
+      debugger
+
+      // moduleviewservice.putSingleId(j);
+      // route.navigate( ['/home', {outlets: {'menu': 'home/singleViewModule'}}]);
+    });
+    $(document).on('click','.report',function(data:any){
+      let j=$(this).attr('data-id');
+      debugger
+
+      // moduleviewservice.putSingleId(j);
+      // route.navigate( ['/home', {outlets: {'menu': 'home/editModule'}}]);
+    });
   }
 
   public changePage(page:any, data:Array<any> = this.data):Array<any> {

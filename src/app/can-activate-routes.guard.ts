@@ -18,16 +18,10 @@ export class CanActivateRoutesGuard implements CanActivate {
     private router: Router
   ) {
   }
-
   public canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    /* if (!this.auth.isSignedIn()) {
-      this.router.navigate(['/sign-in']);
-      return false;
-    }
-    return true; */
     if(this.auth.isSignedIn()){
       debugger
       if(state.url === '/sign-in'){

@@ -69,13 +69,13 @@ export class DetailsComponent implements OnInit {
         '                  <span>\n' +
         '                    <img src="../../assets/wrench.svg" class="a-size wd-10">\n' +
         '                  </span>\n' +
-        '                <p class="c-white">Do it yourself</p>\n' +
+        '                <p class="c-white service" data-id="'+asset.id+'">Do it yourself</p>\n' +
         '              </div>\n' +
         '              <div class="a-div bg-lgrey">\n' +
         '                  <span>\n' +
         '                    <img src="../../assets/problem.svg" class="a-size wd-14">\n' +
         '                  </span>\n' +
-        '                <p class="c-white">Report Incident</p>\n' +
+        '                <p class="c-white report"  data-id="'+asset.id+'">Report Incident</p>\n' +
         '              </div>',
       }));
     this.agreementData = this.agreements.map((agreement:Agreement) =>({
