@@ -16,8 +16,7 @@ export class ApiService{
   constructor( private http: HttpClient,
                private session: SessionService) { }
   public signIn(username: string, password: string) {
-    const url = API_URL + 'users/sign-in'
-    // const url = API_URL+'/users/signin'
+    const url = API_URL+'/users/signin'
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'

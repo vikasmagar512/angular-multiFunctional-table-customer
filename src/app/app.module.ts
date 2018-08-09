@@ -69,7 +69,7 @@ const appRoutes: Routes = [
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: 'main',
     pathMatch: 'full'
   },
   {

@@ -14,11 +14,11 @@ export class CustomHttpService implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.show()
-      req= req.clone({
-        setHeaders: {
-          Authorization: `Bearer ${this.session.accessToken}`
-        }
-      });
+      // req= req.clone({
+      //   setHeaders: {
+      //     Authorization: `Bearer ${this.session.accessToken}`
+      //   }
+      // });
     return next.handle(req)
     .do((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {

@@ -14,8 +14,8 @@ export class AuthService {
   }
 
   public isSignedIn() {
-    // return !!this.session.accessToken;
-    return true;
+    return !!this.session.accessToken;
+    // return true;
   }
 
   public doSignOut() {
@@ -29,7 +29,6 @@ export class AuthService {
     // store username and jwt token in local storage to keep user logged in between page refreshes
     localStorage.setItem('userData', JSON.stringify({ name, accessToken}));
     // return true to indicate successful login
-    // this.session.accessToken = accessToken;
     this.session.accessToken = accessToken;
     this.session.name= name;
   }

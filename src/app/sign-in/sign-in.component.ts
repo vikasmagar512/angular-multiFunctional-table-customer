@@ -2,7 +2,7 @@ import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {ApiService} from '../api.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({
@@ -18,12 +18,15 @@ export class SignInComponent implements OnInit {
   public showInputErrors = false;
   public now: Date = new Date();
 
+  public returnUrl: string;
+
   constructor(
     private api: ApiService,
     private auth: AuthService,
     private fb: FormBuilder,
     private router: Router,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private route: ActivatedRoute,
   ) {
     this.frm = fb.group({
       username: ['', Validators.required],
@@ -37,6 +40,8 @@ export class SignInComponent implements OnInit {
   }
   ngOnInit() {
     this.defaultSignInMethod = 0;
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
   openCity(type) {
     console.log(type)
@@ -61,8 +66,8 @@ export class SignInComponent implements OnInit {
 
     // Submit request to API
 
-    this.router.navigate(['main','home','dashboard']);
-     /*this.api
+    // this.router.navigate(['main','home','dashboard']);
+     this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
@@ -71,13 +76,18 @@ export class SignInComponent implements OnInit {
             response.token,
             response.name
           );
-          // this.router.navigate(['todos']);
-          this.router.navigate(['main']);
+          debugger
+          if(!this.returnUrl){
+            this.router.navigate(['main']);
+          }else{
+          // get return url from route parameters or default to '/'
+            this.router.navigateByUrl(this.returnUrl);
+          }
         },
         (error) => {
           this.isBusy = false;
           this.hasFailed = true;
         }
-      );*/
+      );
   }
 }
