@@ -24,13 +24,14 @@ export class MainComponent implements OnInit {
     @ViewChild(NotificationSettingComponent)
     private NotificationComponent: NotificationSettingComponent;
     message:string;
-    customer:Customer;
+    customer:any;
     notification:Array<NotificationMne>;
   constructor(private authService:AuthService,
     private dataService:dataService,
     private notifyService:NotificationService,
-    private modalService: BsModalService) {
-    this.customer = dataService.getCustomer()
+    private modalService: BsModalService,
+    private apiService:ApiService) {
+    /* this.customer = dataService.getCustomer() */
   }
 
   public modalRef: BsModalRef; // {1}
@@ -41,7 +42,20 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.notification=this.notifyService.getNotification();
-
+    this.apiService.getLoggedInUserData().subscribe(
+      data =>{
+      
+          console.log(data);
+          data["address"]= "address address address address address "
+          data["contact"]= "1234567890"
+/*           "id": "123",
+          "name": "demo Customer",
+          "email": "demo@demo.com",
+          "address": "address address address address address ",
+          "img": "../../../assets/machine.svg",
+ */          
+this.customer=data;
+      });
     // this.openModal(this.modalRef)
   } 
   doSignOut(){
@@ -52,17 +66,6 @@ export class MainComponent implements OnInit {
     'And another choice for you.',
     'but wait! A third!'
   ];
-
-  onHidden(): void {
-    console.log('Dropdown is hidden');
-  }
-  onShown(): void {
-    console.log('Dropdown is shown');
-  }
-  isOpenChange(): void {
-    console.log('Dropdown state is changed');
-  }
-
   /* onDoneClick(){
     alert("done click");
     console.log(this.dashboardComponent.setDashboardOptions());

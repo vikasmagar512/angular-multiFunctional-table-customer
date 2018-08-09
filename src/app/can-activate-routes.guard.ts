@@ -23,10 +23,21 @@ export class CanActivateRoutesGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.auth.isSignedIn()) {
+    /* if (!this.auth.isSignedIn()) {
       this.router.navigate(['/sign-in']);
       return false;
     }
-    return true;
+    return true; */
+    if(this.auth.isSignedIn()){
+      debugger
+      if(state.url === '/sign-in'){
+        this.router.navigate(['/main/home/dashboard']);
+        return true;
+      }
+      return true;
+    }else{
+      this.router.navigate(['/sign-in']);
+      return false
+    } 
   }
 }

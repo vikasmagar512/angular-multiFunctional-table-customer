@@ -1,11 +1,11 @@
 
-<div class="t-container m-top">
+<div class="agree">
   <!--<button (click)="backClicked()">Go Back</button>-->
   <div class="row mar-l">
     <div class="col-md-4">
       <h4 class="fb-15">Agreement View</h4>
       <div >
-        <div class="table-responsive box-border">
+        <div class="box-border">
           <table  class="asset-table agree-table">
             <thead>
             <tr>
@@ -43,16 +43,16 @@
             </thead>
           </table>
         </div>
-      </div>
+      </div> 
     </div>
-    <div class="mt-20 arr-agr">
+    <div class="mt-20 col-md-1 arr-agr">
 				<span>
 					<img src="../../assets/Group 2.svg" class="wd-34p">
 				</span>
     </div>
     <div class="col-md-7">
-      <h4 class="fb-15 mar-lb">List of Assets</h4>
-        <div>
+      <h4 class="fb-15">List of Assets</h4>
+        <div class="table-responsive">
             <app-table-demo  [data]="agreementData" [config]="agreementConfig" [columns]="agreementColumns"></app-table-demo>
         </div>
         <!--<div class="popup" *ngIf="overDueTableVisible">-->
@@ -65,7 +65,7 @@
         <div *ngIf="overDueTableVisible">
         <h4 class="fb-15 mar-lb">Total Overdue</h4>
         <div>
-          <div>
+          <div class="table-responsive">
               <!--<app-reusable-table></app-reusable-table>-->
               <app-table-demo  [data]="overDueData" [config]="overDueConfig" [columns]="overDueColumns"></app-table-demo>
           </div>

@@ -2,16 +2,16 @@ import { Injectable, OnInit } from '@angular/core';
 import { Asset } from './asset';
 import { Metric } from "./metric";
 import { Agreement } from './agreement';
-import {Customer} from './customer';
+import { Customer } from './customer';
 import { SettingOptions } from './SettingOptions';
 import { BehaviorSubject } from 'rxjs';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/index';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/index';
 import 'rxjs-compat/add/operator/catch';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs-compat/add/operator/map';
 
-const API_URL ="http://192.168.10.33:8080";
+const API_URL = "http://192.168.10.33:8080";
 @Injectable({
   providedIn: 'root'
 })
@@ -20,74 +20,76 @@ export class dataService implements OnInit {
   /* private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable(); */
 
-  constructor(private http:HttpClient) {
-   /*  this.http.get<Asset[]>(API_URL + '/getAssetDetails')
-   .subscribe(
-    res =>{
-      console.log('res is ',res)
-      this.assets=res['response'];
-    }); */
-   }
+  constructor(private http: HttpClient) {
+    /*  this.http.get<Asset[]>(API_URL + '/getAssetDetails')
+    .subscribe(
+     res =>{
+       console.log('res is ',res)
+       this.assets=res['response'];
+     }); */
+    console.log("In data service")
+    this.getRequest();
+  }
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
     "Vaccum": "Vaccum Cleaner"
   }
-  customer:Customer={
-    "id":"123",
-    "name":"demo Customer",
-    "email":"demo@demo.com",
-    "address":"address address address address address ",
-    "contact":"1234567890",
-    "img":"../../../assets/machine.svg",
-  }
-  notificationOptions:Array<SettingOptions>=[
+  // customer: Customer = {
+  //   "id": "123",
+  //   "name": "demo Customer",
+  //   "email": "demo@demo.com",
+  //   "address": "address address address address address ",
+  //   "contact": "1234567890",
+  //   "img": "../../../assets/machine.svg",
+  // }
+  notificationOptions: Array<SettingOptions> = [
     {
-      name:"Service Request",
-      id:"1",
-      selected:false
+      name: "Service Request",
+      id: "1",
+      selected: false
     },
     {
-      name:"Change in Asset status",
-      id:"2",
-      selected:false
+      name: "Change in Asset status",
+      id: "2",
+      selected: false
     },
     {
-      name:"Product Request",
-      id:"3",
-      selected:false
+      name: "Product Request",
+      id: "3",
+      selected: false
     },
     {
-      name:"Change in Contract status",
-      id:"4",
-      selected:false
+      name: "Change in Contract status",
+      id: "4",
+      selected: false
     }
   ];
 
-  dashboardOptions:Array<SettingOptions>=[
+  dashboardOptions: Array<SettingOptions> = [
     {
-      name:"Overall Cost",
-      id:"1",
-      selected:false
+      name: "Overall Cost",
+      id: "1",
+      selected: false
     },
     {
-      name:"Downtime",
-      id:"2",
-      selected:false
+      name: "Downtime",
+      id: "2",
+      selected: false
     },
     {
-      name:"Usage",
-      id:"3",
-      selected:false
+      name: "Usage",
+      id: "3",
+      selected: false
     },
     {
-      name:"Utilization",
-      id:"4",
-      selected:false
+      name: "Utilization",
+      id: "4",
+      selected: false
     }
   ];
   /* selectedOptions:Array<SettingOptions>=[]; */
-  assets: Array<Asset>=[
+  assets: Array<Asset> = [
     {
       "id": "01",
       "category": "Coffee_Machine",
@@ -195,44 +197,44 @@ export class dataService implements OnInit {
     }
   ];
 
- ngOnInit(){
-  alert('getAssets')
- }
+  ngOnInit() {
+    alert('getAssets')
+  }
   dashSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.dashboardOptions);
-  currentDashSetting=this.dashSetting.asObservable();
+  currentDashSetting = this.dashSetting.asObservable();
   notifSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.notificationOptions);
-  currentNotifSetting=this.notifSetting.asObservable();
+  currentNotifSetting = this.notifSetting.asObservable();
 
-  changeSettings(options,typeOfSetting,isSuccess){
-    /* debugger */
+  changeSettings(options, typeOfSetting, isSuccess) {
+   
     let k = [...options]
-    if(isSuccess){
-      if(typeOfSetting===1){
+    if (isSuccess) {
+      if (typeOfSetting === 1) {
         //dashboard
         this.dashSetting.next(k);
-      }else{
+      } else {
         //notifi
         this.notifSetting.next(k);
       }
-    }else{
-      if(typeOfSetting===1){
+    } else {
+      if (typeOfSetting === 1) {
         //dashboard
         this.dashSetting.next(this.dashboardOptions);
-      }else{
+      } else {
         //notifi
         this.notifSetting.next(this.notificationOptions);
       }
     }
   }
-  sendSettings(options:Array<SettingOptions>,typeOfSetting){
+  sendSettings(options: Array<SettingOptions>, typeOfSetting) {
     //api request
     // if(response.status==200){
-      this.changeSettings(options,typeOfSetting,1)
+    this.changeSettings(options, typeOfSetting, 1)
     // }ese{
     //   this.changeSettings(options,typeOfSetting,0)
     // }
   }
-  getAgreement(){
+  getAgreement() {
     // getAgreement(): Observable<Agreement[]> {
     return this.agreements;
     // return this.http.get<Agreement[]>(API_URL + '/getAgreementDetails');
@@ -247,9 +249,9 @@ export class dataService implements OnInit {
     //   console.log("Asset Array",res);
     //  });
   }
-  getCustomer():Customer {
+  /* getCustomer(): Customer {
     return this.customer;
-  }
+  } */l
   getAssetCategory() {
     return this.assetCategory;
   }
@@ -262,4 +264,42 @@ export class dataService implements OnInit {
     return this.dashboardOptions;
   }
 
+  /* getRequest(id:string){
+    const url = API_URL + '/getRequestDetails/customer'
+    // const url = API_URL+'/users/signin'
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':''
+      })
+    };
+    console.log(url)
+    return this.http
+      .post(url, {
+          id
+      },httpOptions)
+      .map(response => {
+        console.log(response)
+        return response})
+  } */
+
+  getRequest() {
+    const url = API_URL + '/getRequestDetails/customer'
+    // const url = API_URL+'/users/signin'
+    /* let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW1vQGRlbW8uY29tIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNTMzNjQ1OTczLCJleHAiOjE1MzM2NDk1NzN9.lz2dObbeYMQ1a-pB93gLq0yzeoT_QkVVV5374l1Ztkg'
+      })
+    }; */
+    console.log(url)
+    return this.http
+      .post(url, {
+        "asset_id": "ITE3061"
+      })
+      .map(response => {
+        console.log(response)
+        return response
+      })
+  }
 }

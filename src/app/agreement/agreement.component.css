@@ -19,6 +19,7 @@
 
 .table-responsive{
   overflow-x: hidden;
+  margin-top: -20px;
 }
 
 .asset-table tr{
@@ -42,7 +43,7 @@
 }
 
 
-.mt-60{margin-top: 60px;}
+.mt-60{margin-top: 15px;}
 
 .mt-20{margin-top: 20%}
 
@@ -79,6 +80,17 @@
   margin-left: -12px;
   margin-right: 2px;
 }
-.table-responsive{
+/* .table-responsive{
   overflow-x: hidden;
+} */
+
+.agree .col-md-1 {
+  width: 4.333333%;
+}
+.agree .col-md-4 {
+  width: 34.333333%;
+}
+
+.agree .col-md-7 {
+  width: 61.333333%;
 }

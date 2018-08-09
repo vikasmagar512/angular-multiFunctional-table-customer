@@ -161,7 +161,7 @@
   border-radius: 9px;
   width: 165px;
 }
-.agree-table tr>th{padding: 10px !important;}
+.agree-table tr>th{padding: 15px !important;}
 .flex-d{
   display: flex;
   justify-content: space-between;
@@ -221,7 +221,7 @@
   margin-left: 5px;
   margin-bottom: -15px;
 }
-.mt-60{margin-top: 60px;}
+.mt-60{margin-top: 15px;}
 
 .mt-20{margin-top: 20%}
 

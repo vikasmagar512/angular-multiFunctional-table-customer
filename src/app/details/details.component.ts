@@ -262,7 +262,6 @@ export class DetailsComponent implements OnInit {
     console.log(data);
   }
   public tableChanged(data:any){
-    debugger
   }*/
   /*public columns:Array<any> = [{
     name: "id",

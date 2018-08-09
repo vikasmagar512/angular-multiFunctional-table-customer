@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit,OnDestroy {
   segments: UrlSegment[]
   constructor(private adService: AdService,private api:ApiService, private router:Router,private activatedRoute: ActivatedRoute) {
     this.segments = activatedRoute.snapshot.url;
-    // debugger
+  
   }
 
   ngOnDestroy(){
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit,OnDestroy {
       .filter((event: any) => event instanceof NavigationEnd)
       .subscribe((val) => {
       const currentPage = this.router.url; // Current page route
-      // debugger
+      
       if(!currentPage.includes('details')){
         // alert('dashboard')
         this.activeComponent = 0;
@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit,OnDestroy {
         var root = this.router.routerState.url;
         console.log('root ',root )
         while (root) {
-          debugger
+        
           if (root.children && root.children.length) {
-            debugger
+    
             root = root.children[0];
           } else if (root.data && root.data["activeComponent"]) {
             console.log('root.data  ',root.data )
