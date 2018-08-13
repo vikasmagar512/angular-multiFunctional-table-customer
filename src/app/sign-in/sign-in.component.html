@@ -109,7 +109,7 @@
               <ng-template [ngIf]="!isBusy">Sign in</ng-template>
               <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
             </button>
-            <div *ngIf="defaultSignInMethod==1">
+            <div *ngIf="defaultSignInMethod==1" style="margin-top: 8px;">
               <span class="clr-w mart-10 cursor"  (click)="openModal(template)">Forget Password?
               </span>
             </div>

@@ -68,12 +68,13 @@ export class SignInComponent implements OnInit {
 
     // Submit request to API
     this.router.navigate(['main','home','dashboard']);
-     /*this.api
+     /*
+    this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
           console.log('response is ',response)
-          this.auth.doSignIn(
+         /*this.auth.doSignIn(
             response.token,
             response.name
           );
@@ -97,6 +98,7 @@ export class SignInComponent implements OnInit {
           this.isBusy = false;
           this.hasFailed = true;
         }
+      );
       );*/
   }
 }

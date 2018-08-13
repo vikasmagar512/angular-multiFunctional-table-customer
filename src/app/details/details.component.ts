@@ -102,8 +102,9 @@ export class DetailsComponent implements OnInit {
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Unit',name: 'unit',sort: false,filter:'text'},
-    {title: 'Category', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
-    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'search'},filter:'text'},
+
+    {title: 'Category', className: ['office-header', 'text-success'], name: 'category', sort: 'asc',filtering: {filterString: '', placeholder: 'Filter by category'},filter:'text'},
+    {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'Filter by Location.'},filter:'text'},
     {title: 'Available', className: 'text-warning', name: 'available',filter:'text'},
     {title: 'Required', className: 'text-warning', name: 'required',filter:'text'},
   ];
@@ -111,7 +112,7 @@ export class DetailsComponent implements OnInit {
     paging: true,
     sorting: {columns: this.consumptionColumns},
     filtering: {filterString: ''},
-    className: ['third-t','s-table','table-striped', 'table-bordered']
+    className: ['third-t','s-table', 'table-bordered']
   };
 
   public assetColumns:Array<any> = [

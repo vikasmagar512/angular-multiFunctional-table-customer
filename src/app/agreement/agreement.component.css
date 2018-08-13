@@ -76,9 +76,13 @@
 
 .arr-agr{
   float: left;
-  margin-left: -12px;
-  margin-right: 2px;
+  /*margin-left: -12px;*/
+  /*margin-right: 2px;*/
 }
 .table-responsive{
   overflow-x: hidden;
+}
+.agreeSepetation{
+  display: flex;
+  justify-content: space-around;
 }

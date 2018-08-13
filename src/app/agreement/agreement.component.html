@@ -1,55 +1,58 @@
 
-<div class="t-container m-top">
+<div class=" m-top">
   <!--<button (click)="backClicked()">Go Back</button>-->
   <div class="row mar-l">
-    <div class="col-md-4">
-      <h4 class="fb-15">Agreement View</h4>
-      <div >
-        <div class="table-responsive box-border">
-          <table  class="asset-table agree-table">
-            <thead>
-            <tr>
-              <th>No.</th>
-              <td class="fw-600">{{agreement.agreement_no}}</td>
-            </tr>
-            <tr>
-              <th>Type</th>
-              <td>{{agreement.type}}</td>
-            </tr>
-            <tr>
-              <th>Contact</th>
-              <td>{{agreement.contact}}</td>
-            </tr>
-            <tr>
-              <th>Start Date</th>
-              <td>{{agreement.start_date}}</td>
-            </tr>
-            <tr>
-              <th>End Date</th>
-              <td><div class="bg-aqua fw-600">{{agreement.end_date}}</div></td>
-            </tr>
-            <tr>
-              <th>Payment Frequency</th>
-              <td>{{agreement.payment_freq}}</td>
-            </tr>
-            <tr>
-              <th>Remaining Term</th>
-              <td>{{agreement.Remaining_term}}</td>
-            </tr>
-            <tr>
-              <th>Term</th>
-              <td>{{agreement.term}}</td>
-            </tr>
-            </thead>
-          </table>
+    <div class="col-md-5">
+      <div class="agreeSepetation" >
+        <div style="width:80%">
+          <h4 class="fb-15">Agreement View</h4>
+          <div class="table-responsive box-border">
+            <table  class="asset-table agree-table">
+              <thead>
+              <tr>
+                <th>No.</th>
+                <td class="fw-600">{{agreement.agreement_no}}</td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td>{{agreement.type}}</td>
+              </tr>
+              <tr>
+                <th>Contact</th>
+                <td>{{agreement.contact}}</td>
+              </tr>
+              <tr>
+                <th>Start Date</th>
+                <td>{{agreement.start_date}}</td>
+              </tr>
+              <tr>
+                <th>End Date</th>
+                <td><div class="bg-aqua fw-600">{{agreement.end_date}}</div></td>
+              </tr>
+              <tr>
+                <th>Payment Frequency</th>
+                <td>{{agreement.payment_freq}}</td>
+              </tr>
+              <tr>
+                <th>Remaining Term</th>
+                <td>{{agreement.Remaining_term}}</td>
+              </tr>
+              <tr>
+                <th>Term</th>
+                <td>{{agreement.term}}</td>
+              </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div class="mt-20 arr-agr">
+          <span>
+            <img src="../../assets/Group 2.svg" class="wd-34p">
+          </span>
         </div>
       </div>
     </div>
-    <div class="mt-20 arr-agr">
-				<span>
-					<img src="../../assets/Group 2.svg" class="wd-34p">
-				</span>
-    </div>
+
     <div class="col-md-7">
       <h4 class="fb-15 mar-lb">List of Assets</h4>
         <div>

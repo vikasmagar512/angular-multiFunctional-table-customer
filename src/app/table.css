@@ -80,7 +80,7 @@
   justify-content: space-between;*/
 }
 .s-table th span.right {
-  
+
   float: right;
   margin-right: 11px;
 }
@@ -161,7 +161,7 @@
   border-radius: 9px;
   width: 165px;
 }
-.agree-table tr>th{padding: 10px !important;}
+.agree-table tr>th{padding: 15px !important;}
 .flex-d{
   display: flex;
   justify-content: space-between;
@@ -217,11 +217,11 @@
 
 .asset-table tr>th{padding: 10px;}
 
-.mar-lb{
+/* .mar-lb{
   margin-left: 5px;
   margin-bottom: -15px;
-}
-.mt-60{margin-top: 60px;}
+} */
+.mt-60{margin-top: 15px;}
 
 .mt-20{margin-top: 20%}
 
@@ -255,8 +255,6 @@
 
 .arr-agr{
   float: left;
-  margin-left: -12px;
-  margin-right: 2px;
 }
 
 .bg-aqua{background-color:#00f3ff;}

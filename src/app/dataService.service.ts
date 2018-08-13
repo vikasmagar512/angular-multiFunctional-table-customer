@@ -11,7 +11,6 @@ import 'rxjs-compat/add/operator/catch';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs-compat/add/operator/map';
 
-const API_URL ="http://192.168.10.33:8080";
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +30,7 @@ export class dataService implements OnInit {
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
-    "Vaccum": "Vaccum Cleaner"
+    "Vacuum": "Vacuum Cleaner"
   }
   customer:Customer={
     "id":"123",
@@ -138,8 +137,8 @@ export class dataService implements OnInit {
     },
     {
       "id": "03",
-      "category": "Vaccum",
-      "name": "Vaccum Cleaner",
+      "category": "Vacuum",
+      "name": "Vacuum Cleaner",
       "status": 2,
       "location": "Bromma",
       "serialno": "VC12190",

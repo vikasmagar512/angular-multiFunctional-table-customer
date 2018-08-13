@@ -2,9 +2,10 @@
   width: 18px;
 }
 .table-responsive{
-overflow-x: hidden;
-margin-top: -20px;
+
+  overflow-x: hidden;
+  margin-top: -20px;
 }
 .card{
-margin-top: 30px;
+  margin-top: 30px;
 }

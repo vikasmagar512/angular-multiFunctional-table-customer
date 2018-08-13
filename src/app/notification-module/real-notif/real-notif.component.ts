@@ -27,10 +27,10 @@ export class RealNotifComponent implements OnInit {
 
     switch(notif.type){
       case 'asset':
-        this.router.navigate(['/main/asset/',notif['contentId'] ]);
+        this.router.navigate(['/main/home/asset/',notif['contentId'] ]);
         break;
       case 'agreement':
-        this.router.navigate(['/main/agreement/',notif['contentId'] ]);
+        this.router.navigate(['/main/home/agreement/',notif['contentId'] ]);
         break;
       default:
         // alert('default')
