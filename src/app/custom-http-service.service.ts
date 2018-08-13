@@ -8,9 +8,11 @@ import {LoaderServiceService} from './loader-service.service';
 import {SessionService} from './session.service';
 import 'rxjs-compat/add/operator/do';
 import {ok} from 'assert';
+import {AuthService} from './auth.service';
+import {Router} from '@angular/router';
 @Injectable()
 export class CustomHttpService implements HttpInterceptor{
-  constructor( private session: SessionService, private loaderService:LoaderServiceService) {}
+  constructor( private session: SessionService,private authService: AuthService,private router: Router, private loaderService:LoaderServiceService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.show()
@@ -33,7 +35,10 @@ export class CustomHttpService implements HttpInterceptor{
           console.log('401 Authentication issue')
           // redirect to the login route
           // or show a modal
-
+            this.authService.doSignOut()
+            //logout users, redirect to login page
+            //redirect to the signin page or show login modal here
+            this.router.navigate(['/sign-in']);
         }
       }
     });

@@ -4,6 +4,7 @@ import {AuthService} from '../auth.service';
 import {ApiService} from '../api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {Observable} from 'rxjs/index';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,6 +28,7 @@ export class SignInComponent implements OnInit {
     private router: Router,
     private modalService: BsModalService,
     private route: ActivatedRoute,
+    private authService:AuthService
   ) {
     this.frm = fb.group({
       username: ['', Validators.required],
@@ -65,9 +67,8 @@ export class SignInComponent implements OnInit {
     const password = this.frm.get('password').value;
 
     // Submit request to API
-
-    // this.router.navigate(['main','home','dashboard']);
-     this.api
+    this.router.navigate(['main','home','dashboard']);
+     /*this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
@@ -85,9 +86,17 @@ export class SignInComponent implements OnInit {
           }
         },
         (error) => {
+          if (error.status === 401) {
+            this.authService.doSignOut()
+            //logout users, redirect to login page
+            //redirect to the signin page or show login modal here
+            this.router.navigate(['/sign-in']);
+            //remember to import router class and declare it in the class
+          }
+          Observable.throw(error);
           this.isBusy = false;
           this.hasFailed = true;
         }
-      );
+      );*/
   }
 }
