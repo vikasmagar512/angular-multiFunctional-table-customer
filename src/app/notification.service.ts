@@ -17,7 +17,7 @@ export class NotificationService {
       "type":"asset",
       "contentId":"02",
       // "link":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
-      /* "link":'<a routerLink="main/asset/01" routerLinkActive="active">'+'link'+'</a>', */
+      /* "link":'<a routerLink="main/home/asset/01" routerLinkActive="active">'+'link'+'</a>', */
       "readFlag":true,
       "timeStamp":"23 hours"
     },
@@ -39,7 +39,7 @@ export class NotificationService {
       "type":"asset",
       "contentId":"03",
       "shortText":"Motor needs to be replace",
-      "link":'<a routerLink="main/asset/03" routerLinkActive="active">'+'link'+'</a>',
+      "link":'<a routerLink="main/home/asset/03" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"14 hours"
     },
@@ -50,7 +50,7 @@ export class NotificationService {
       "type":"asset",
       "contentId":"01",
       "shortText":"Coffee Powder Required",
-      "link":'<a routerLink="main/asset/01" routerLinkActive="active">'+'link'+'</a>',
+      "link":'<a routerLink="main/home/asset/01" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"13 hours"
     },
@@ -61,7 +61,7 @@ export class NotificationService {
       "type":"asset",
       "contentId":"02",
       "shortText":"Needs servicing for coffee machine",
-      //"link":'<a routerLink="main/asset/02" routerLinkActive="active">'+'link'+'</a>',
+      "link":'<a routerLink="main/home/asset/02" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"5 Min"
     },
@@ -111,7 +111,6 @@ export class NotificationService {
       "timeStamp":"5 Min"
     }*/
   ];
-
   getNotification(): NotificationMne[] {
     return this.notification;
   }

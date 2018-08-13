@@ -4,6 +4,7 @@
   border-radius: 0px;
   margin-bottom: 13px;
   background-color: black;
+  height: 65px;
 }
 
 /* #modal> tabset{
@@ -60,11 +61,6 @@
 
 /* CSS used here will be applied after bootstrap.css */
 
-.dropdown {
-  display:inline-block;
-  margin-left:20px;
-  padding:10px;
-}
 
 .mar-3{
   margin-top: 3px;

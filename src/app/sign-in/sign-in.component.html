@@ -78,7 +78,8 @@
             <form [formGroup]="frm">
 
               <span class="glyphicon glyphicon-envelope glyphy"></span>
-              <input type="email" class="inputType mar-l mar-t23" formControlName="username">
+              <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
+              <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)">
 
               <div class="input-errors" *ngIf="(frm.get('username').invalid && frm.get('username').touched) || showInputErrors">
                 <div *ngIf="frm.get('username').hasError('required')">

@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit,TemplateRef,ViewChild, Output, EventEmitter} from '@angular/core';
 import {TableData} from '../../tableData';
 import {Router} from '@angular/router';
 import {Format} from '../Format';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 // import any = jasmine.any;
 
 @Component({
@@ -13,7 +14,11 @@ export class TableDemoComponent implements OnInit {
   @Input() columns: any[];
   @Input() config: Object;
   @Input() data: Array<any>;
+  @Output() change: EventEmitter<string> = new EventEmitter<string>();
+
   exportFileName:string = "csv";
+  /* @ViewChild('template')
+  public assetRef: TemplateRef<any>;  */ 
 
   public rows:Array<any> = [];
   /*public columns:Array<any> = [
@@ -57,7 +62,7 @@ export class TableDemoComponent implements OnInit {
     this.length = this.data.length;
     this.onChangeTable(this.config);
 
-    $(document).on('click','.service',function(data:any){
+   /*  $(document).on('click','.service',function(data:any){
       let j=$(this).attr('data-id');
       debugger
 
@@ -70,7 +75,7 @@ export class TableDemoComponent implements OnInit {
 
       // moduleviewservice.putSingleId(j);
       // route.navigate( ['/home', {outlets: {'menu': 'home/editModule'}}]);
-    });
+    }); */
   }
 
   public changePage(page:any, data:Array<any> = this.data):Array<any> {
@@ -181,8 +186,17 @@ export class TableDemoComponent implements OnInit {
     }
     if (data.column == "agreement_no") {
       this.router.navigate(['/main/home/agreementNo/',data.row['id'] ]);
+    }    
+    if (data.column == "actionAsset") {
+      // data.row['id']
+      // alert("actionAsset")
+      this.change.emit(data.row['id']);
     }
-
+    if (data.column == "actionAgreement") {
+      // data.row['id']
+      // alert("actionAsset")
+      this.change.emit(data.row['id']);
+    }
     // If Button View
     // if (data.column == "action") {
     //   this.router.navigate(['/view', this.selectedDocument.doknr]);

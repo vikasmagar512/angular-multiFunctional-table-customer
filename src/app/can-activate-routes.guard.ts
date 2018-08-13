@@ -23,14 +23,14 @@ export class CanActivateRoutesGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     if(this.auth.isSignedIn()){
-      debugger
+      // debugger
       if(state.url === '/sign-in'){
         this.router.navigate(['/main/home/dashboard']);
         return true;
       }
       return true;
     }else{
-      this.router.navigate(['/sign-in']);
+      this.router.navigate(['/sign-in'],{queryParams:{returnUrl:state.url}});
       return false
     } 
   }
