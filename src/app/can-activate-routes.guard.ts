@@ -29,7 +29,6 @@ export class CanActivateRoutesGuard implements CanActivate {
       }
       return true;
     }else{
-
       // not logged in so redirect to login page with the return url and return false
       this.router.navigate(['sign-in'], { queryParams: { returnUrl: state.url }});
       // this.router.navigate(['/sign-in']);

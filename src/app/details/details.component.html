@@ -3,10 +3,10 @@
     <div class="flex-d mr-LR">
       <h3 class="fb-15">Asset Status</h3>
       <div class="flex-d box-border status">
-          <div class="iconText">
-              <img src="../../assets/12.png" class="ass-size">
-              <p>Working</p>
-            </div>
+        <div class="iconText">
+          <img src="../../assets/12.png" class="ass-size">
+          <p>Working</p>
+        </div>
         <div class="iconText">
           <img src="../../assets/09.png" class="ass-size">
           <p>Not Working</p>
@@ -16,12 +16,12 @@
           <p>Service Required</p>
         </div>
       </div>
-    </div>  
+    </div>
     <!--<div class="row">-->
     <div class="table-container">
 
       <div class="table-responsive">
-        <app-table-demo #assetTable [data]="assetData" [config]="assetConfig" [columns]="assetColumns"></app-table-demo>
+        <app-table-demo (change)="openAssetModal($event)" #assetTable [data]="assetData" [config]="assetConfig" [columns]="assetColumns"></app-table-demo>
         <!-- <app-reusable-table></app-reusable-table> -->
       </div>
 
@@ -29,34 +29,78 @@
       <div class="table-container tb" id="table1">
         <div class="table-responsive">
           <!--<app-reusable-table></app-reusable-table>-->
-          <app-table-demo #agreementTable [data]="agreementData" [config]="agreementConfig" [columns]="agreementColumns"></app-table-demo>
+          <app-table-demo (change)="openAgreementModal($event)" #agreementTable [data]="agreementData" [config]="agreementConfig" [columns]="agreementColumns"></app-table-demo>
         </div>
 
       </div>
 
     </div>
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="card">
+      <h3 class="fb-15">Search for Agreement No., Type / Asset</h3>
+      <div>
+        <span>
+          <img src="">
+        </span>
+        <input class="input-lg wd-85" #search (keyup)="onSearchKey(search.value)" type="text" name="" placeholder="Type here to search by Agreement No./Type / Asset">
+      </div>
     </div>
 
-    <div class="col-md-6">
-
-      <div class="card">
-        <h3 class="fb-15">Search for Agreement No., Type / Asset</h3>
-        <div>
-          <span>
-            <img src="">
-          </span>
-          <input class="input-lg wd-85" #search (keyup)="onSearchKey(search.value)" type="text" name="" placeholder="Type here to search by Agreement No./Type / Asset">
-        </div>
-      </div>
-
-      <div class="mt113">
-        <h3 class="ml-21 fb-15">Consumption Status</h3>
-        <div class="table-container tb">
-          <div class="table-responsive">
-            <app-table-demo #consumptionTable [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
-          </div>
-
+    <div class="mt113">
+      <h3 class="ml-21 fb-15">Consumption Status</h3>
+      <div class="table-container tb">
+        <div class="table-responsive">
+          <app-table-demo #consumptionTable [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<ng-template #AssetTemplate>
+  <div class="modal-header">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg" class="log">
+      </span>
+    </button>
+  </div>
+  <div class="modal-body" style="background-color: #f6f3f3;">
+    <form action="">
+      <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+      <br>
+      <br>
+      <textarea class="assTemp" row="5"></textarea>
+      <br>
+      <br>
+      <input type="submit">
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #AgreementTemplate>
+  <div class="modal-header">
+    <!-- <h4 class="modal-title pull-left">Agreement</h4> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg">
+      </span>
+    </button>
+  </div>
+  <div class="modal-body" style="background-color: #f6f3f3;">
+    <form action="">
+      <textarea class="assTemp" row="5" class="txt-lg-100"></textarea>
+      <br>
+      <br>
+      <input type="submit" class="txt-lg">
+    </form>
+  </div>
+</ng-template>
