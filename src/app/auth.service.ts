@@ -19,6 +19,7 @@ export class AuthService {
   }
 
   public doSignOut() {
+    
     this.session.destroy();
   }
 

@@ -49,7 +49,7 @@ export interface Agreement {
 	"actualAge":number ,
 	"actualRemaining":number ,
 	"activationDate":number ,
-	"activationUser":string,
+	"activationUser":string,	
 	"activationUserDescription":string,
 	"originalMaturityDate": number,
 	"dealerArrears": number,
