@@ -80,7 +80,7 @@
   justify-content: space-between;*/
 }
 .s-table th span.right {
-  
+
   float: right;
   margin-right: 11px;
 }
@@ -255,8 +255,6 @@
 
 .arr-agr{
   float: left;
-  margin-left: -12px;
-  margin-right: 2px;
 }
 
 .bg-aqua{background-color:#00f3ff;}

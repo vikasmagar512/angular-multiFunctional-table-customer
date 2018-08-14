@@ -15,7 +15,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 })
 export class DetailsComponent implements OnInit {
 
-  
+
 
   assetDetail: Array<Asset>;
   agreements: Array<Agreement>;
@@ -31,7 +31,7 @@ export class DetailsComponent implements OnInit {
   // AssetTemplate: TemplateRef<any>
   @ViewChild('AssetTemplate') assetTemplate: TemplateRef<any>;
   @ViewChild('AgreementTemplate') agreementTemplate: TemplateRef<any>;
- 
+
   public modalRef: BsModalRef; // {1}
 
   public openModal(template: TemplateRef<any>) {
@@ -46,7 +46,7 @@ export class DetailsComponent implements OnInit {
     this.agreementTableRef.globalSearch(this.searchValue)
   }
   constructor(private dataService: dataService,
-    private modalService: BsModalService) {
+              private modalService: BsModalService) {
     this.consumptionData=[]
     // this.length = this.data.length;
   }
@@ -76,59 +76,59 @@ export class DetailsComponent implements OnInit {
     console.log(this.assetDetail);
     this.consumptionData = this.assetDetail.reduce((accumulator,asset: Asset) =>{
       return asset.metrics.reduce((acc,metric:Metric) =>{
-        return acc.concat({
-          "id":  asset.id,
-          "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
-          "unit": metric.unit,
-          "category": metric.category,
-          "location": asset.location,
-          "available": metric.available,
-          "required": metric.required
-        })}
+          return acc.concat({
+            "id":  asset.id,
+            "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
+            "unit": metric.unit,
+            "category": metric.category,
+            "location": asset.location,
+            "available": metric.available,
+            "required": metric.required
+          })}
         ,accumulator)
     },[])
 
     console.log('this.consumptionData ',this.consumptionData)
     this.assetData = this.assetDetail.map((asset: Asset) => ({
-        "id":  asset.id,
-        // "name":  asset.name,
-        "name":  '<a routerLink="main/home/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
-        // "status": '<span class="fa fa-file-text-o if-size"></span>',
-        "status": '<img src="../../assets/'+ (!asset.status ? '09.png' : (asset.status ===1 ? '10.png' : '12.png')) +'" class="ass-size">',
-        "location": asset.location,
-        "actionAsset": '<div class="a-div bg-aqua mbot-2p">\n' +
-        '                  <span>\n' +
-        '                    <img src="../../assets/wrench.svg" class="a-size wd-10">\n' +
-        '                  </span>\n' +
-        '                <p class="c-white service" data-id="'+asset.id+'">Do it yourself</p>\n' +
-        '              </div>\n' 
-       /*  '              <div class="a-div bg-lgrey">\n' +
-        '                  <span>\n' +
-        '                    <img src="../../assets/problem.svg" class="a-size wd-14">\n' +
-        '                  </span>\n' +
-        '                <p class="c-white report"  data-id="'+asset.id+'">Report Incident</p>\n' +
-        '              </div>' */,
-      }));
+      "id":  asset.id,
+      // "name":  asset.name,
+      "name":  '<a routerLink="main/home/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
+      // "status": '<span class="fa fa-file-text-o if-size"></span>',
+      "status": '<img src="../../assets/'+ (!asset.status ? '09.png' : (asset.status ===1 ? '10.png' : '12.png')) +'" class="ass-size">',
+      "location": asset.location,
+      "actionAsset": '<div class="a-div bg-aqua mbot-2p">\n' +
+      '                  <span>\n' +
+      '                    <img src="../../assets/wrench.svg" class="a-size wd-10">\n' +
+      '                  </span>\n' +
+      '                <p class="c-white service" data-id="'+asset.id+'">Do it yourself</p>\n' +
+      '              </div>\n'
+      /*  '              <div class="a-div bg-lgrey">\n' +
+       '                  <span>\n' +
+       '                    <img src="../../assets/problem.svg" class="a-size wd-14">\n' +
+       '                  </span>\n' +
+       '                <p class="c-white report"  data-id="'+asset.id+'">Report Incident</p>\n' +
+       '              </div>' */,
+    }));
     this.agreementData = this.agreements.map((agreement:Agreement) =>({
-        "id":  agreement.id,
-        // "name":  asset.name,
-        "agreement_no":  '<a routerLink="main/agreementNo/'+agreement.id+'" routerLinkActive="active">'+agreement.agreement_no+'</a>',
-        /* "agreement_no":  agreement.agreement_no, */
-        "termination_date": agreement.termination_date,
-        "location": "Bromma",
-        "actionAgreement": '<div class="a-div bg-aqua mbot-2p">\n' +
-        '                  <span>\n' +
-        '                    <img src="../../assets/upgrade.svg" class="a-size wd-24">\n' +
-        '                  </span>\n' +
-        '                <p class="c-white">Uprade</p>\n' +
-        '              </div>\n' /* +
+      "id":  agreement.id,
+      // "name":  asset.name,
+      "agreement_no":  '<a routerLink="main/agreementNo/'+agreement.id+'" routerLinkActive="active">'+agreement.agreement_no+'</a>',
+      /* "agreement_no":  agreement.agreement_no, */
+      "termination_date": agreement.termination_date,
+      "location": "Bromma",
+      "actionAgreement": '<div class="a-div bg-aqua mbot-2p">\n' +
+      '                  <span>\n' +
+      '                    <img src="../../assets/upgrade.svg" class="a-size wd-24">\n' +
+      '                  </span>\n' +
+      '                <p class="c-white">Uprade</p>\n' +
+      '              </div>\n' /* +
         '              <div class="a-div bg-lgrey">\n' +
         '                  <span>\n' +
         '                    <img src="../../assets/terminated.svg" class="a-size wd-24">\n' +
         '                  </span>\n' +
         '                <p class="c-white">Terminated</p>\n' +
         '              </div>', */
-      }));
+    }));
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},

@@ -93,7 +93,7 @@ body{
 .mar-t3{margin-top: 3%}
 .mar-top{margin-top: -10px;}
 .mart-10{margin-top: 10px;}
-.mbot-2p{margin-bottom: 2%;}
+
 .ml-21{margin-left: 21px;}
 .m-tb{
   margin-top: 5px;
@@ -478,8 +478,6 @@ button:hover, button:focus{
 
 .arr-agr{
   float: left;
-  margin-left: -12px;
-  margin-right: 2px;
 }
 
 .bg-aqua{background-color:#00f3ff;}

@@ -36,9 +36,9 @@
 }*/
 .flex-nav{
   display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin: -20px; */
+  justify-content: center;
+  align-items: center;
+  /* margin: -20px; */
 }
 
 .rlogo{
@@ -50,7 +50,7 @@
   font-size: 35px;
 }
 .navbar li{
-  /* top: 1px; */
+  top: 1px;
   /* padding: 12px 0px; */
   cursor: pointer;
 }
@@ -116,7 +116,7 @@
   justify-content: center;
   float: none;
   align-items: center;
- /*  margin: 0; */
+  /*  margin: 0; */
   /* padding: 0; */
   border: none;
   padding-bottom: 20px;

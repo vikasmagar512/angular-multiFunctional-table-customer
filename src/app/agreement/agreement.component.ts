@@ -76,7 +76,7 @@ export class AgreementComponent implements OnInit {
     paging: true,
     sorting: {columns: this.agreementColumns},
     filtering: {filterString: ''},
-    className: ['third-t','s-table','table-striped', 'table-bordered']
+    className: ['third-t','s-table', 'table-bordered']
   };
   public overDueColumns:Array<any> = [
     {title: 'Due Date', name: 'dueDate',filter:'text'},
@@ -89,6 +89,6 @@ export class AgreementComponent implements OnInit {
     paging: true,
     sorting: {columns: this.overDueColumns},
     filtering: {filterString: ''},
-    className: ['third-t','s-table','table-striped', 'table-bordered']
+    className: ['third-t','s-table', 'table-bordered']
   };
 }

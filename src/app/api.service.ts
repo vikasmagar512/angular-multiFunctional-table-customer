@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import {environment} from '../environments/environment';
-import {SessionService} from './session.service';
-  import {Observable} from 'rxjs/index';
-  import 'rxjs-compat/add/operator/catch';
-  import {HttpClient, HttpHeaders} from '@angular/common/http';
-  import 'rxjs-compat/add/operator/map';
+import { environment } from '../environments/environment';
+import { SessionService } from './session.service';
+import { Observable } from 'rxjs/index';
+import 'rxjs-compat/add/operator/catch';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs-compat/add/operator/map';
 
 const API_URL = environment.apiUrl;
 
 @Injectable(/*{
   providedIn: 'root'
 }*/)
-export class ApiService{
+export class ApiService {
 
-  constructor( private http: HttpClient,
-               private session: SessionService) { }
+  constructor(private http: HttpClient,
+    private session: SessionService) { }
   public signIn(username: string, password: string) {
     const url = API_URL+'/users/signin'
     let httpOptions = {
@@ -25,12 +25,12 @@ export class ApiService{
     console.log(url)
     return this.http
       .post(url, {
-        username,
-        password
+        "username": username,
+        "password": password
       })
-      .map(response => {
-        console.log(response)
-        return response})
+      //.map(response => {
+      // console.log(response)
+      //return response})
       .catch(this.handleError);
   }
 

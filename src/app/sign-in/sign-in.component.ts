@@ -1,9 +1,10 @@
-import {Component, OnInit, TemplateRef, ViewChild, Renderer, Renderer2, ElementRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {ApiService} from '../api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {Observable} from 'rxjs/index';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,8 +28,7 @@ export class SignInComponent implements OnInit {
     private router: Router,
     private modalService: BsModalService,
     private route: ActivatedRoute,
-    private renderer2:Renderer2
-    , private el: ElementRef
+    private authService:AuthService
   ) {
     this.frm = fb.group({
       username: ['', Validators.required],
@@ -44,25 +44,12 @@ export class SignInComponent implements OnInit {
     this.defaultSignInMethod = 0;
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    // debugger
   }
   openCity(type) {
     console.log(type)
     this.defaultSignInMethod = type;
   }
-  keytab(event){
-    let element = event.srcElement.nextElementSibling; // get the sibling element
-    debugger
-    if(element == null){  // check if its null
-      return;
-    }else{
-      element.focus();   // focus if not null
-    }
-}
-takeMeNext(){
-  debugger  
-  this.renderer2.parentNode(this.el.nativeElement.nextElementSibling).focus();
-}
+
   public doSignIn() {
 
     // Make sure form values are valid
@@ -80,14 +67,14 @@ takeMeNext(){
     const password = this.frm.get('password').value;
 
     // Submit request to API
-
     this.router.navigate(['main','home','dashboard']);
-  /*    this.api
+     /*
+    this.api
       .signIn(username, password)
       .subscribe(
         (response:any) => {
           console.log('response is ',response)
-          this.auth.doSignIn(
+         /*this.auth.doSignIn(
             response.token,
             response.name
           );
@@ -100,10 +87,18 @@ takeMeNext(){
           }
         },
         (error) => {
+          if (error.status === 401) {
+            this.authService.doSignOut()
+            //logout users, redirect to login page
+            //redirect to the signin page or show login modal here
+            this.router.navigate(['/sign-in']);
+            //remember to import router class and declare it in the class
+          }
+          Observable.throw(error);
           this.isBusy = false;
           this.hasFailed = true;
         }
       );
-      */
+      );*/
   }
 }

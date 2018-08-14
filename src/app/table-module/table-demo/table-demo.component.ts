@@ -18,7 +18,7 @@ export class TableDemoComponent implements OnInit {
 
   exportFileName:string = "csv";
   /* @ViewChild('template')
-  public assetRef: TemplateRef<any>;  */ 
+  public assetRef: TemplateRef<any>;  */
 
   public rows:Array<any> = [];
   /*public columns:Array<any> = [
@@ -62,20 +62,20 @@ export class TableDemoComponent implements OnInit {
     this.length = this.data.length;
     this.onChangeTable(this.config);
 
-   /*  $(document).on('click','.service',function(data:any){
-      let j=$(this).attr('data-id');
-      debugger
+    /*  $(document).on('click','.service',function(data:any){
+       let j=$(this).attr('data-id');
+       debugger
 
-      // moduleviewservice.putSingleId(j);
-      // route.navigate( ['/home', {outlets: {'menu': 'home/singleViewModule'}}]);
-    });
-    $(document).on('click','.report',function(data:any){
-      let j=$(this).attr('data-id');
-      debugger
+       // moduleviewservice.putSingleId(j);
+       // route.navigate( ['/home', {outlets: {'menu': 'home/singleViewModule'}}]);
+     });
+     $(document).on('click','.report',function(data:any){
+       let j=$(this).attr('data-id');
+       debugger
 
-      // moduleviewservice.putSingleId(j);
-      // route.navigate( ['/home', {outlets: {'menu': 'home/editModule'}}]);
-    }); */
+       // moduleviewservice.putSingleId(j);
+       // route.navigate( ['/home', {outlets: {'menu': 'home/editModule'}}]);
+     }); */
   }
 
   public changePage(page:any, data:Array<any> = this.data):Array<any> {
@@ -186,7 +186,7 @@ export class TableDemoComponent implements OnInit {
     }
     if (data.column == "agreement_no") {
       this.router.navigate(['/main/home/agreementNo/',data.row['id'] ]);
-    }    
+    }
     if (data.column == "actionAsset") {
       // data.row['id']
       // alert("actionAsset")

@@ -40,10 +40,11 @@ export class AssetComponent implements OnInit {
           "supplierName": this.assets.supplier,
           "requestDate": '15 Jan 2018',
 
-        "amount": '<span class="bold">Kr</span> 56',
-        "invoice": '<span>'+
-          '<img src="../../assets/pdf.svg" class="ass-size">'+
-        '</span>'
+          // "amount": "Kr 56",
+          "amount": '<span class="bold">Kr</span>56',
+          "invoice": '<span>'+
+                      '<img src="../../assets/pdf.svg" class="ass-size">'+
+                      '</span>'
         });
       },[]);
 

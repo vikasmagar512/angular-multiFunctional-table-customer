@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit,OnDestroy {
         }
       });*/
     this.ads = this.adService.getAds();
-    // this.activeComponent = 0;
+
     // setInterval(()=>
     //   this.getTodos(),5000
     // )

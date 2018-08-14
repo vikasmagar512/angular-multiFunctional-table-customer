@@ -35,7 +35,7 @@ export class NotificationService {
     {
       "id": 'N2',
       "image":"../assets/FemaleAvatar.png",
-      "headText":"Vaccum",
+      "headText":"Vacuum",
       "type":"asset",
       "contentId":"03",
       "shortText":"Motor needs to be replace",
@@ -80,7 +80,7 @@ export class NotificationService {
     {
       "id": 'N6',
       "image":"../assets/FemaleAvatar.png",
-      "headText":"Vaccum",
+      "headText":"Vacuum",
       "type":"asset",
       "contentId":"03",
       "shortText":"Motor needs to be replace",
