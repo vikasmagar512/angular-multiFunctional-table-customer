@@ -50,7 +50,7 @@
   font-size: 35px;
 }
 .navbar li{
-  top: 1px;
+  /* top: 1px; */
   /* padding: 12px 0px; */
   cursor: pointer;
 }

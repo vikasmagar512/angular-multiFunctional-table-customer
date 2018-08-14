@@ -20,17 +20,18 @@ export class RealNotifComponent implements OnInit {
     // setInterval(function(){
     //   that.notifications = that.notifyService.getNotification();
       //console.log('getNotification')
-    // }, 5000);
+    // }, 5000);  
   }
 
   navigateTo(notif:NotificationMne){
 
     switch(notif.type){
       case 'asset':
-        this.router.navigate(['/main/asset/',notif['contentId'] ]);
+      console.log(notif['contentId']);
+        this.router.navigate(['/main/home/asset/',notif['contentId'] ]);
         break;
       case 'agreement':
-        this.router.navigate(['/main/agreement/',notif['contentId'] ]);
+        this.router.navigate(['/main/home/agreement/',notif['contentId'] ]);
         break;
       default:
         // alert('default')
