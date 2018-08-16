@@ -9,8 +9,8 @@ export interface Asset {
   "supplier":string;
   "img":string;
   "status":Number;
-  
-  "metrics": Array<Metric>; 
+
+  "metrics": Array<Metric>;
 /*   "id":string,
   "category": string;
   "name": string;
@@ -28,14 +28,14 @@ export interface Asset {
   "cost": number,
   "rv": number,
   "registrationNumber":string ,
-  "metrics": Array<Metric>; 
+  "metrics": Array<Metric>;
  */}
 
     /* {
       "id": "02",
       "category": "Printer",
       "name": "Canon SW2014",
-      "location": "Bromma",
+      "location": "Solna",
       "serialno": "SR12190",
       "supplier":"ATOS LLP",
       "img":"../../../assets/printer.svg",

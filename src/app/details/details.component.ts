@@ -115,7 +115,7 @@ export class DetailsComponent implements OnInit {
       "agreement_no":  '<a routerLink="main/agreementNo/'+agreement.id+'" routerLinkActive="active">'+agreement.agreement_no+'</a>',
       /* "agreement_no":  agreement.agreement_no, */
       "termination_date": agreement.termination_date,
-      "location": "Bromma",
+      "location": "Solna",
       "actionAgreement": '<div class="a-div bg-aqua mbot-2p">\n' +
       '                  <span>\n' +
       '                    <img src="../../assets/upgrade.svg" class="a-size wd-24">\n' +

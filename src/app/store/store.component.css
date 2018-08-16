@@ -1,6 +1,6 @@
 .img-size{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 .flex-D{
@@ -26,6 +26,7 @@
 }
 
 .f-store{
+  margin-top: 10px;
     display: flex;
     justify-content: space-around;
 }
