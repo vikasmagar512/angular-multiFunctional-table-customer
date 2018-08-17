@@ -54,12 +54,14 @@
     <div class="col-sm-7 col-md-5 col-lg-5">
       <div class="logo">
         <img src="../../assets/siemens logo.png">
-        <h3>SIE<span>CONNECT</span>
+        <h3>SIE
+          <span>CONNECT</span>
         </h3>
         <h6 class="foot">Powered by SIEMENS SFS</h6>
       </div>
       <div class="dataInp">
-        <p>{{now | date:'longDate'}}</p>
+        <!-- <p>{{now | date:'longDate'}}</p> -->
+        <p>{{myMoment}}</p>
         <h1>Hello!</h1>
         <h3>Welcome to
           <br>SIECONNECT</h3>
@@ -91,7 +93,7 @@
               <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
               <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)">
 
-              <div class="input-errors" *ngIf="(frm.get('username').invalid && frm.get('username').touched) || showInputErrors">
+              <div class="input-errors mrl clr-red" *ngIf="(frm.get('username').invalid && frm.get('username').touched) || showInputErrors">
                 <div *ngIf="frm.get('username').hasError('required')">
                   Please enter your username
                 </div>
@@ -99,7 +101,7 @@
 
               <span class="glyphicon glyphicon-lock glyphy"></span>
               <input type="password" formControlName="password" class="inputType mar-l mar-t15">
-              <div class="input-errors" *ngIf="(frm.get('password').invalid && frm.get('password').touched) || showInputErrors">
+              <div class="input-errors mrl clr-red" *ngIf="(frm.get('password').invalid && frm.get('password').touched) || showInputErrors">
                 <div *ngIf="frm.get('password').hasError('required')">
                   Please enter your password
                 </div>
@@ -107,7 +109,7 @@
               <div class="sign-in-error war-div" *ngIf="hasFailed">
                 <!-- <div class="war-div"> -->
                 <img src="../../assets/warning.svg" class="war-img">
-                <span >
+                <span>
                   <h6 class="war-font">Invalid Credintials</h6>
                   <h6 class="war-font mar-t">Please enter Correct Credintials</h6>
                 </span>
@@ -117,11 +119,11 @@
           <div class="log-btn">
             <!--<input type="button" name="" value="LOGIN" class="img-rounded" onclick="login()">-->
             <button class="img-rounded btn-style" (click)="doSignIn()" [disabled]="isBusy">
-              <ng-template [ngIf]="!isBusy">Sign in</ng-template>
+              <ng-template [ngIf]="!isBusy">Login</ng-template>
               <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
             </button>
             <div *ngIf="defaultSignInMethod==1" style="margin-top: 8px;">
-              <span class="clr-w mart-10 cursor"  (click)="openModal(template)">Forget Password?
+              <span class="clr-w mart-10 cursor" (click)="openModal(template)">Forget Password?
               </span>
             </div>
           </div>
@@ -131,22 +133,27 @@
   </div>
 </div>
 <ng-template #template>
-  <div class="modal-header">
+  <!-- <div class="modal-header">
     <h4 class="modal-title pull-left">Forgot Password ?</h4>
-    <button type="button" class="close pull-right"
-            aria-label="Close" (click)="modalRef.hide()">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">
         <img src="../assets/cross.svg">
       </span>
     </button>
-  </div>
+  </div> -->
   <!--<div class="modal-body">
     This is a modal.
   </div>-->
   <div class="modal-body" style="background-color: #f6f3f3;">
-    <div class="model-pass" >
-      <img src="../../assets/siemens logo.png" class="wd-10p">
-      <h6>Please enter Email Address to reset the password</h6>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg" class="log">
+      </span>
+    </button>
+    <div class="model-pass">
+      <img src="../../assets/siemens logo.png" class="wd-10p mar-t20">
+      <h6 class="f-sz f-bld">Forget Password ?</h6>
+      <h6 class="f-sz">Please enter Email Address to reset the password</h6>
       <input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">
       <input type="button" name="" value="Submit" class="btn-fp">
     </div>

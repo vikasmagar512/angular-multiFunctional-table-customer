@@ -39,7 +39,7 @@ import { TableModuleModule } from './table-module/table-module.module';
 import { StoreComponent } from './store/store.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {Ng2TableModule} from 'ng2-table';
-
+  import * as moment from 'moment';
 /*
 const appRoutes: Routes = [
   {

@@ -216,6 +216,14 @@ button:hover, button:focus{
   background-color:#000;
   color:#fff;
 }
+
+.s-table th:last-child{
+  border-radius:0 10px 0 0;
+}
+
+.s-table th:first-child{
+  border-radius:10px 0 0 0;
+}
 .third-t .ass-size{
   width: 20px;
 }
@@ -498,4 +506,8 @@ button:hover, button:focus{
 /************************ GENERIC STYLES *******************************/
 .cursorPointer{
   cursor: pointer;
+}
+
+.log{
+  width: 22px;
 }

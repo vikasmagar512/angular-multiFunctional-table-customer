@@ -31,12 +31,12 @@ export class HomeComponent implements OnInit,OnDestroy {
       .subscribe((val) => {
       const currentPage = this.router.url; // Current page route
 
-      if(!currentPage.includes('details')){
+      if(!currentPage.includes('dashboard')){
         // alert('dashboard')
-        this.activeComponent = 0;
+        this.activeComponent = 1;
       }else {
         // alert('details')
-        this.activeComponent = 1;
+        this.activeComponent = 0;
       }
     });
     /*this.router.events.filter((event: any) => event instanceof NavigationEnd)
