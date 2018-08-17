@@ -61,7 +61,7 @@
     <!-- <h4 class="modal-title pull-left">Forgot Password ?</h4> -->
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">
-        <img src="../assets/cross.svg">
+        <img src="../assets/cross.svg" class="log">
       </span>
     </button>
   </div>
@@ -98,13 +98,13 @@
   <div class="modal-body" style="background-color: #f6f3f3;">
     <app-store></app-store>
   </div>
-  <!-- <div class="modal-footer">
+  <div class="modal-footer">
     <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
-  </div>-->
+  </div>
 </ng-template>
 <ng-template #popoverCustomer>
     <div>
-      <img src="assets/pencil.svg" class="pull-right pop-img">
+      <!-- <img src="assets/pencil.svg" class="pull-right pop-img"> -->
       <div class=popup-p>
         <p><span class="fw-600">Name-</span>{{customer.name}}</p>
         <p><span class="fw-600">Address-</span>{{customer.address}}</p>

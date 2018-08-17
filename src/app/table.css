@@ -79,6 +79,7 @@
   /*display: flex;
   justify-content: space-between;*/
 }
+
 .s-table th span.right {
 
   float: right;
@@ -175,14 +176,14 @@
 
 /* .ml-21{margin-left: 21px;} */
 
-.mt113{margin-top: 133px;}
+.mt113{margin-top: 35px;}
 
 .fb-15{
   font-size: 23px;
   font-weight: 700;
 }
 
-.wd-85{width: 85%;}
+.wd-85{width: 95%;}
 .iconText p{margin: 0px;}
 
 
