@@ -70,7 +70,17 @@
             Email & Password</button>
 
           <div class="tabcontent" *ngIf="defaultSignInMethod==0">
-            <input type="text" name="" placeholder="YYYYDDMMXXXX" class="inputType mar-t23">
+            <!--<input type="text" name="" placeholder="YYYYDDMMXXXX" class="inputType mar-t23">-->
+            <form [formGroup]="frm1">
+              <input type="number" class="inputType mar-l mar-t23" formControlName="personalNumber" (keyup.enter)="keytab($event)">
+
+              <div class="input-errors" *ngIf="(frm1.get('personalNumber').invalid && frm1.get('personalNumber').touched) || showInputErrors">
+                <div *ngIf="frm1.get('personalNumber').hasError('required')">
+                  Please enter your personalNumber
+                </div>
+              </div>
+            </form>
+
             <br>
           </div>
 
