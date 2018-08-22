@@ -34,14 +34,24 @@ export class SignInComponent implements OnInit {
     private authService:AuthService
   ) {
     this.frm = fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
     this.frm1 = fb.group({
-      personalNumber: ['', Validators.required]
+      personalNumber: ['',[
+        Validators.required,
+        Validators.pattern('[0-9]'),
+        Validators.minLength(3),
+        Validators.maxLength(5)
+      ]
+      ]
     });
   }
   public modalRef: BsModalRef; // {1}
+
+  // convenience getter for easy access to form fields
+  get emailPasswordFieldGetter() { return this.frm.controls; }
+  get bankIDFieldGetter() { return this.frm1.controls; }
 
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template); // {3}
@@ -62,28 +72,33 @@ export class SignInComponent implements OnInit {
 
     // Make sure form values are valid
     if (this.defaultSignInMethod){
+      alert('error')
       if(this.frm.invalid) {
+        alert('error Email Passw 123')
         this.showInputErrors = true;
+        debugger
         return;
       }
     }else{
       if(this.frm1.invalid) {
+        alert('error Email Passw 456')
+        debugger
         this.showInputErrors = true;
         return;
       }
     }
 
-    // Reset status
-    this.isBusy = true;
-    this.hasFailed = false;
-
-    // Grab values from form
-    const username = this.frm.get('username').value;
-    const password = this.frm.get('password').value;
-    const personalNumber = this.frm1.get('personalNumber').value;
-
-    // Submit request to API
-    this.router.navigate(['main','home','dashboard']);
+    // // Reset status
+    // this.isBusy = true;
+    // this.hasFailed = false;
+    //
+    // // Grab values from form
+    // const username = this.frm.get('username').value;
+    // const password = this.frm.get('password').value;
+    // const personalNumber = this.frm1.get('personalNumber').value;
+    //
+    // // Submit request to API
+    // this.router.navigate(['main','home','dashboard']);
     /*let payload = this.defaultSignInMethod
       ?
       {

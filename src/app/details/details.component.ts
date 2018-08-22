@@ -56,6 +56,7 @@ export class DetailsComponent implements OnInit {
     // console.log(event)
     // alert(event)
     this.assetIdSelected = event;
+
     this.openModal(this.assetTemplate)
   }
 
@@ -96,6 +97,7 @@ export class DetailsComponent implements OnInit {
       // "status": '<span class="fa fa-file-text-o if-size"></span>',
       "status": '<img src="../../assets/'+ (!asset.status ? '09.png' : (asset.status ===1 ? '10.png' : '12.png')) +'" class="ass-size">',
       "location": asset.location,
+      // "location": asset.location,
       "actionAsset": '<div class="a-div bg-aqua mbot-2p">\n' +
       '                  <span>\n' +
       '                    <img src="../../assets/wrench.svg" class="a-size wd-10">\n' +
