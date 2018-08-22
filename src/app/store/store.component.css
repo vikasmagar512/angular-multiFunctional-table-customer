@@ -1,6 +1,6 @@
 .img-size{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 .flex-D{
@@ -8,9 +8,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 0 20px;
-    height: 400px;
+    height: 250px;
     max-height: 400px;
     overflow-y: scroll;
 }
@@ -26,6 +26,7 @@
 }
 
 .f-store{
+  margin-top: 10px;
     display: flex;
     justify-content: space-around;
 }

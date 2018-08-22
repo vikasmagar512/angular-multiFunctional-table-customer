@@ -24,13 +24,12 @@ export class RealNotifComponent implements OnInit {
   }
 
   navigateTo(notif:NotificationMne){
-
     switch(notif.type){
       case 'asset':
         this.router.navigate(['/main/home/asset/',notif['contentId'] ]);
         break;
-      case 'agreement':
-        this.router.navigate(['/main/home/agreement/',notif['contentId'] ]);
+      case 'contract':
+        this.router.navigate(['/main/home/agreementNo/',notif['contentId'] ]);
         break;
       default:
         // alert('default')

@@ -1,11 +1,48 @@
-.ass-size{
-  width: 18px;
-}
-.table-responsive{
+  .ass-size{
+    width: 18px;
+  }
+  .table-responsive{
 
-  overflow-x: hidden;
-  margin-top: -20px;
-}
-.card{
-  margin-top: 30px;
-}
+    overflow-x: hidden;
+    margin-top: -20px;
+  }
+  .card{
+    margin-top: 30px;
+  }
+  .input-group-addon{
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  }
+  ::placeholder{
+    font-style: italic;
+    opacity: 0;
+    color: orange;
+
+  }
+  /*
+  ::placeholder.details{
+    color: orange;
+  }
+
+  ::placeholder.signIn{
+    color: white;
+  }
+  */
+
+  input{
+    outline: none;
+  }
+  .input-lg{
+    border: none;
+    padding: 10px 0px;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: orange;
+    opacity: 1; /* Firefox */
+  }
+
+  .input-group{
+    width: 555px !important;
+  }

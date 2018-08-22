@@ -90,11 +90,11 @@ export class dataService implements OnInit {
     {
       "id": "01",
       "category": "Coffee_Machine",
-      "name": "Coffee Machine",
+      "name": "Tech Lab Jura E8",
       "status": 0,
-      "location": "Bromma",
+      "location": "Solna",
       "serialno": "CM12190",
-      "supplier": "Siemens LLP",
+      "supplier": "ITS Nordic AB ",
       "img": "../../../assets/machine.svg",
       "metrics": [
         {
@@ -118,11 +118,11 @@ export class dataService implements OnInit {
     {
       "id": "02",
       "category": "Printer",
-      "name": "Canon SW2014",
+      "name": "Tech Lab Konica Minolta",
       "status": 1,
-      "location": "Bromma",
+      "location": "Solna",
       "serialno": "SR12190",
-      "supplier": "ATOS LLP",
+      "supplier": "ITS Nordic AB",
       "img": "../../../assets/printer.svg",
       "metrics": [
         {
@@ -131,7 +131,7 @@ export class dataService implements OnInit {
           "available": 15,
           "required": 20,
           "uptime": "95%",
-          "usage": "2000 Pages"
+          "usage": "27 Pages"
         }
       ]
     },
@@ -140,9 +140,9 @@ export class dataService implements OnInit {
       "category": "Vacuum",
       "name": "Vacuum Cleaner",
       "status": 2,
-      "location": "Bromma",
+      "location": "Solna",
       "serialno": "VC12190",
-      "supplier": "ATOS LLP",
+      "supplier": "ITS Nordic AB ",
       "img": "../../../assets/broom.svg",
       "metrics": [
         {
@@ -154,42 +154,102 @@ export class dataService implements OnInit {
           "usage": "20 Hrs 50m"
         }
       ]
-    }
+    },
+    /*{
+      "id": "03",
+      "category": "Vacuum",
+      "name": "Vacuum Cleaner",
+      "status": 2,
+      "location": "Solna",
+      "serialno": "VC12190",
+      "supplier": "ITS Nordic AB ",
+      "img": "../../../assets/broom.svg",
+      "metrics": [
+        {
+          "category": "Motor",
+          "unit": "#",
+          "available": 1,
+          "required": 2,
+          "uptime": "75%",
+          "usage": "20 Hrs 50m"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "category": "Vacuum",
+      "name": "Vacuum Cleaner",
+      "status": 2,
+      "location": "Solna",
+      "serialno": "VC12190",
+      "supplier": "ITS Nordic AB ",
+      "img": "../../../assets/broom.svg",
+      "metrics": [
+        {
+          "category": "Motor",
+          "unit": "#",
+          "available": 1,
+          "required": 2,
+          "uptime": "75%",
+          "usage": "20 Hrs 50m"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "category": "Vacuum",
+      "name": "Vacuum Cleaner",
+      "status": 2,
+      "location": "Solna",
+      "serialno": "VC12190",
+      "supplier": "ITS Nordic AB ",
+      "img": "../../../assets/broom.svg",
+      "metrics": [
+        {
+          "category": "Motor",
+          "unit": "#",
+          "available": 1,
+          "required": 2,
+          "uptime": "75%",
+          "usage": "20 Hrs 50m"
+        }
+      ]
+    }*/
   ];
 
   agreements: Array<Agreement> = [
     {
-      "id": "AGR01",
-      "agreement_no": "GR9845678",
-      "type": "Annual",
-      "contact": "James Bond",
+      "id": "A7815875",
+      "agreement_no": "A7815875",
+      "type": "Hyra",
+      "contact": "Paal Vaage",
       "start_date": "12th Dec 2014",
       "end_date": "14th June 2020",
       "termination_date": "14 June 2018",
-      "payment_freq": "Monthly",
+      "payment_freq": "Quaterly",
       "Remaining_term": "18 months",
       "term": "80 months",
-      "dueDate": '15 May 2020',
+      "dueDate": '15 May 2018',
       "amount": 'Kr 200',
       "status": 'Paid',
-      "invoiceAddress": 'Bromma',
+      "invoiceAddress": 'Solna',
       "assets_covered": ["01", "02"]
     },
     {
-      "id": "AGR02",
-      "agreement_no": "GR9845678",
-      "type": "Month",
-      "contact": "Tom Lee",
+      "id": "A7860136",
+      "agreement_no": "A7860136",
+      "type": "Leie",
+      "contact": "Tomas Lind",
       "start_date": "12th Dec 2014",
       "end_date": "13th April 2022",
       "termination_date": "14 April 2018",
-      "payment_freq": "Weekly",
+      "payment_freq": "Quaterly",
       "Remaining_term": "17 months",
       "term": "70 months",
-      "dueDate": '15 May 2020',
+      "dueDate": '15 June 2018',
       "amount": 'Kr 200',
       "status": 'Paid',
-      "invoiceAddress": 'Bromma',
+      "invoiceAddress": 'Solna',
       "assets_covered": ["03"]
     }
   ];

@@ -5,6 +5,8 @@ import {ApiService} from '../api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {Observable} from 'rxjs/index';
+import { moment } from 'ngx-bootstrap/chronos/test/chain';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -14,11 +16,12 @@ import {Observable} from 'rxjs/index';
 export class SignInComponent implements OnInit {
   public defaultSignInMethod :number;
   public frm: FormGroup;
+  public frm1: FormGroup;
   public isBusy = false;
   public hasFailed = false;
   public showInputErrors = false;
-  public now: Date = new Date();
-
+  // public now: Date = new Date();
+  public  myMoment;active
   public returnUrl: string;
 
   constructor(
@@ -34,6 +37,9 @@ export class SignInComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+    this.frm1 = fb.group({
+      personalNumber: ['', Validators.required]
+    });
   }
   public modalRef: BsModalRef; // {1}
 
@@ -42,6 +48,8 @@ export class SignInComponent implements OnInit {
   }
   ngOnInit() {
     this.defaultSignInMethod = 0;
+    this.myMoment= moment().format("Do MMM YYYY");
+
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -53,9 +61,16 @@ export class SignInComponent implements OnInit {
   public doSignIn() {
 
     // Make sure form values are valid
-    if (this.frm.invalid) {
-      this.showInputErrors = true;
-      return;
+    if (this.defaultSignInMethod){
+      if(this.frm.invalid) {
+        this.showInputErrors = true;
+        return;
+      }
+    }else{
+      if(this.frm1.invalid) {
+        this.showInputErrors = true;
+        return;
+      }
     }
 
     // Reset status
@@ -65,19 +80,26 @@ export class SignInComponent implements OnInit {
     // Grab values from form
     const username = this.frm.get('username').value;
     const password = this.frm.get('password').value;
+    const personalNumber = this.frm1.get('personalNumber').value;
 
     // Submit request to API
     this.router.navigate(['main','home','dashboard']);
-     /*
-    this.api
-      .signIn(username, password)
-      .subscribe(
+    /*let payload = this.defaultSignInMethod
+      ?
+      {
+        username, password
+      }:
+      {
+        // pno:personalNumber
+        personalNo:personalNumber
+      }
+    this.api.signIn(payload).subscribe(
         (response:any) => {
           console.log('response is ',response)
-         /*this.auth.doSignIn(
+         /!*this.auth.doSignIn(
             response.token,
             response.name
-          );
+          );*!/
           debugger
           if(!this.returnUrl){
             this.router.navigate(['main']);
@@ -98,7 +120,6 @@ export class SignInComponent implements OnInit {
           this.isBusy = false;
           this.hasFailed = true;
         }
-      );
       );*/
   }
 }

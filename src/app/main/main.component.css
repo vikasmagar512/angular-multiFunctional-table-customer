@@ -4,7 +4,7 @@
   border-radius: 0px;
   margin-bottom: 13px;
   background-color: black;
-  height: 65px;
+  /* height: 65px; */
 }
 
 /* #modal> tabset{
@@ -18,7 +18,7 @@
 
 .log{
   width: 71%;
-  /* margin-top: -3%; */
+  margin-top: -3%;
 }
 .navbar-nav>li>a {
   line-height: 0px;
@@ -31,9 +31,9 @@
   margin-bottom: 0px;
   margin-top: 0px;
 }
-/*.mar-top{
-    margin-bottom: 2px;
-}*/
+.mar{
+    margin:-7px;
+}
 .flex-nav{
   display: flex;
   justify-content: center;

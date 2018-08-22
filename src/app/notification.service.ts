@@ -17,7 +17,7 @@ export class NotificationService {
       "type":"asset",
       "contentId":"02",
       // "link":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
-      /* "link":'<a routerLink="main/home/asset/01" routerLinkActive="active">'+'link'+'</a>', */
+      "link":'main/home/asset/02' ,
       "readFlag":true,
       "timeStamp":"23 hours"
     },
@@ -26,9 +26,9 @@ export class NotificationService {
       "image":"../assets/MaleAvatar.png",
       "headText":"Agreement Expired",
       "type":"contract",
-      "link":"anything",
+      "link":'main/home/agreementNo/A7815875' ,
       "shortText":"Needs servicing for Agreement",
-      "contentId":"AGR01",
+      "contentId":"A7860136",
       "readFlag":false,
       "timeStamp":"5 Min"
     },
@@ -38,30 +38,30 @@ export class NotificationService {
       "headText":"Vacuum",
       "type":"asset",
       "contentId":"03",
+      "link":'main/home/asset/03' ,
       "shortText":"Motor needs to be replace",
-      "link":'<a routerLink="main/home/asset/03" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"14 hours"
     },
     {
       "id": 'N3',
       "image":"../assets/MaleAvatar.png",
-      "headText":"Coffee Machine",
+      "headText":"Tech Lab Jura E8",
       "type":"asset",
       "contentId":"01",
       "shortText":"Coffee Powder Required",
-      "link":'<a routerLink="main/home/asset/01" routerLinkActive="active">'+'link'+'</a>',
+      "link":'main/home/asset/01' ,
       "readFlag":false,
       "timeStamp":"13 hours"
     },
     {
       "id": 'N4',
       "image":"../assets/FemaleAvatar.png",
-      "headText":"Coffee Machine",
+      "headText":"Tech Lab Jura E8",
       "type":"asset",
-      "contentId":"02",
+      "contentId":"01",
+      "link":'main/home/asset/01' ,
       "shortText":"Needs servicing for coffee machine",
-      "link":'<a routerLink="main/home/asset/02" routerLinkActive="active">'+'link'+'</a>',
       "readFlag":false,
       "timeStamp":"5 Min"
     },
@@ -91,7 +91,7 @@ export class NotificationService {
     {
       "id": 'N7',
       "image":"../assets/MaleAvatar.png",
-      "headText":"Coffee Machine",
+      "headText":"Tech Lab Jura E8",
       "type":"asset",
       "contentId":"01",
       "shortText":"Coffee Powder Required",
@@ -102,7 +102,7 @@ export class NotificationService {
     {
       "id": 'N8',
       "image":"../assets/FemaleAvatar.png",
-      "headText":"Coffee Machine",
+      "headText":"Tech Lab Jura E8",
       "type":"asset",
       "contentId":"01",
       "shortText":"Needs servicing for coffee machine",

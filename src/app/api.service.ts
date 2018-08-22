@@ -14,20 +14,25 @@ const API_URL = environment.apiUrl;
 export class ApiService {
 
   constructor(private http: HttpClient,
-    private session: SessionService) { }
-  public signIn(username: string, password: string) {
-    const url = API_URL+'/users/signin'
+  private session: SessionService) { }
+  // personalNumber= '198112289874') {
+  public signIn(payload) {
+    // http://192.168.10.224:8081/bankidauth
+    // const url ='http://192.168.10.224:8081/'+'bankidauth'
+    let url = API_URL+'/users/signin'
+    if(payload['personalNo']){
+      // url ='http://localhost:8081/api/authenticate'
+      url ='http://192.168.10.224:8081/'+'bankidauth'
+    }
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
+    debugger
     console.log(url)
     return this.http
-      .post(url, {
-        "username": username,
-        "password": password
-      })
+      .post(url, payload)
       //.map(response => {
       // console.log(response)
       //return response})

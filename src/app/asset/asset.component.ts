@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {dataService} from '../dataService.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Asset} from '../asset';
 import {Metric} from '../metric';
 import {TableData} from '../tableData';
@@ -18,17 +18,32 @@ export class AssetComponent implements OnInit {
   productData: Array<any>;
   serviceData:Array<any>;
   consumptionData: Array<any>;
-  constructor(private route: ActivatedRoute, private dataService: dataService,private _location:Location) {
+  routeNow:string;
+  constructor(private route: ActivatedRoute, private dataService: dataService,
+              private _location:Location,
+              router: Router) {
     this.productData=[]
     this.consumptionData = []
     this.serviceData = []
+    this.id = this.route.snapshot.paramMap.get('id');
+    // router.events.subscribe((val) => {
+    //   this.id = this.route.snapshot.paramMap.get('id');
+    //   debugger
+    /*
+          if(_location.path() != ''){
+            this.routeNow = _location.path();
+          } else {
+            this.routeNow= 'Home'
+          }
+    */
+    // });
   }
   backClicked() {
     this._location.back();
   }
   ngOnInit() {
     this.assetDetail = this.dataService.getAssets()
-    this.id = this.route.snapshot.paramMap.get('id');
+    // this.id = this.route.snapshot.paramMap.get('id');
 
     this.assets = this.assetDetail.find((agr) => agr.id == this.id)
 
