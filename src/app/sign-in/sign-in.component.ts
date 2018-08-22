@@ -1,11 +1,12 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {ApiService} from '../api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {Observable} from 'rxjs/index';
 import { moment } from 'ngx-bootstrap/chronos/test/chain';
+import { CustomValidators } from '../CustomValidators';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class SignInComponent implements OnInit {
   // public now: Date = new Date();
   public  myMoment;active
   public returnUrl: string;
-
+  
   constructor(
     private api: ApiService,
     private auth: AuthService,
@@ -34,8 +35,9 @@ export class SignInComponent implements OnInit {
     private authService:AuthService
   ) {
     this.frm = fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      // username: ['', Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')],
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required,Validators.minLength(10),Validators.maxLength(12)]]
     });
     this.frm1 = fb.group({
       personalNumber: ['', Validators.required]
@@ -64,26 +66,28 @@ export class SignInComponent implements OnInit {
     if (this.defaultSignInMethod){
       if(this.frm.invalid) {
         this.showInputErrors = true;
+        alert('email password')
         return;
       }
     }else{
       if(this.frm1.invalid) {
         this.showInputErrors = true;
+        alert('Bankid error')
         return;
       }
     }
 
     // Reset status
-    this.isBusy = true;
-    this.hasFailed = false;
+    // this.isBusy = true;
+    // this.hasFailed = false;
 
-    // Grab values from form
-    const username = this.frm.get('username').value;
-    const password = this.frm.get('password').value;
-    const personalNumber = this.frm1.get('personalNumber').value;
+    // // Grab values from form
+    // const username = this.frm.get('username').value;
+    // const password = this.frm.get('password').value;
+    // const personalNumber = this.frm1.get('personalNumber').value;
 
-    // Submit request to API
-    this.router.navigate(['main','home','dashboard']);
+    // // Submit request to API
+    // this.router.navigate(['main','home','dashboard']);
     /*let payload = this.defaultSignInMethod
       ?
       {

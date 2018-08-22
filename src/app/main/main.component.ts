@@ -9,6 +9,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import { DashboardSettingComponent } from '../dashboard-module/dashboard-setting/dashboard-setting.component';
 import { NotificationSettingComponent } from '../notification-module/notification-setting/notification-setting.component';
 import {ViewEncapsulation} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -29,7 +30,8 @@ export class MainComponent implements OnInit {
   constructor(private authService:AuthService,
     private dataService:dataService,
     private notifyService:NotificationService,
-    private modalService: BsModalService) {
+    private modalService: BsModalService,
+    private router:Router) {
     this.customer = dataService.getCustomer()
   }
 
@@ -63,6 +65,9 @@ export class MainComponent implements OnInit {
     console.log('Dropdown state is changed');
   }
 
+  navigateTo(){
+    this.router.navigate(['main/home/dashboard']);
+  }
   /* onDoneClick(){
     alert("done click");
     console.log(this.dashboardComponent.setDashboardOptions());

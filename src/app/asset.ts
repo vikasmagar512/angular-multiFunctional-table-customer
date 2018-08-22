@@ -10,6 +10,5 @@ export interface Asset {
   "supplier":string;
   "img":string;
   "status":Number;
-  
   "metrics": Array<Metric>; 
 }

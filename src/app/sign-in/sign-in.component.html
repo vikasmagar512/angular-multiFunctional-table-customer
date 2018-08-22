@@ -54,7 +54,7 @@
     <div class="col-sm-7 col-md-5 col-lg-5">
       <div class="logo">
         <img src="../../assets/siemens logo.png">
-        <h3>SFS_CONNECT
+        <h3>SFS<span>Connect</span>
         </h3>
         <h6 class="foot">Powered by SIEMENS SFS</h6>
       </div>
@@ -63,7 +63,7 @@
         <p>{{myMoment}}</p>
         <h1>Hello!</h1>
         <h3>Welcome to
-          <br>SFS_Connect</h3>
+          <br>SFSConnect</h3>
         <div class="input">
           <button [ngClass]="defaultSignInMethod == 0 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(0)">Mobile Bank ID</button>
           <span> OR</span>
@@ -73,10 +73,10 @@
           <div class="tabcontent" *ngIf="defaultSignInMethod==0">
             <!--<input type="text" name="" placeholder="YYYYDDMMXXXX" class="inputType mar-t23">-->
             <form [formGroup]="frm1">
-              <input type="number" class="inputType mar-l mar-t23" formControlName="personalNumber" (keyup.enter)="keytab($event)">
+              <input type="number" class="inputType mar-l mar-t23" formControlName="personalNumber" (keyup.enter)="keytab($event)" placeholder="YYYYDDMMXXXX">
 
               <div class="input-errors" *ngIf="(frm1.get('personalNumber').invalid && frm1.get('personalNumber').touched) || showInputErrors">
-                <div *ngIf="frm1.get('personalNumber').hasError('required')">
+                <div *ngIf="frm1.get('personalNumber').hasError('required')" class="text-danger">
                   Please enter your personalNumber
                 </div>
               </div>
@@ -93,16 +93,26 @@
               <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)">
 
               <div class="input-errors mrl clr-red" *ngIf="(frm.get('username').invalid && frm.get('username').touched) || showInputErrors">
-                <div *ngIf="frm.get('username').hasError('required')">
+                <!-- <div *ngIf="frm.get('username').hasError('required')">
                   Please enter your username
-                </div>
+                </div> -->
+                <div *ngIf="frm.get('username').hasError('required')">
+                  Please enter correct username
+                <!-- </div>       
+                <div *ngIf="frm.get('username').hasError('pattern')">
+                  Please enter correct username
+                </div>                 -->
               </div>
+            </div>
 
               <span class="glyphicon glyphicon-lock glyphy"></span>
               <input type="password" formControlName="password" class="inputType mar-l mar-t15">
               <div class="input-errors mrl clr-red" *ngIf="(frm.get('password').invalid && frm.get('password').touched) || showInputErrors">
                 <div *ngIf="frm.get('password').hasError('required')">
                   Please enter your password
+                </div>
+                <div *ngIf="frm.get('password').hasError('minLength')">
+                  Please enter valid password
                 </div>
               </div>
               <div class="sign-in-error war-div" *ngIf="hasFailed">
@@ -117,7 +127,7 @@
           </div>
           <div class="log-btn">
             <!--<input type="button" name="" value="LOGIN" class="img-rounded" onclick="login()">-->
-            <button class="img-rounded btn-style" (click)="doSignIn()" [disabled]="isBusy">
+            <button class="img-rounded btn-style" (click)="doSignIn()" [disabled]="isBusy" [ngClass]="!isBusy?'btn-enable':'btn-disable'">
               <ng-template [ngIf]="!isBusy">Login</ng-template>
               <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
             </button>

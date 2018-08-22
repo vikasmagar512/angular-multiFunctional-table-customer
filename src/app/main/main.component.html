@@ -2,7 +2,7 @@
   <nav class="navbar navbar-inverse custom noTopBottomMargin">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" (click)="navigateTo()" >
           <img src="../assets/Sieconnect.png" class="log">
         </a>
       </div>
@@ -81,7 +81,7 @@
   </div>
   <div class="modal-footer">
 
-    <button type="button" class="btn" (click)="modalRef.hide()">Cancel</button>
+    <!-- <button type="button" class="btn" (click)="modalRef.hide()">Cancel</button> -->
     <button type="button" class="btn" (click)="modalRef.hide()">Done</button>
   </div>
 </ng-template>
@@ -98,9 +98,9 @@
   <div class="modal-body" style="background-color: #f6f3f3;">
     <app-store></app-store>
   </div>
-  <div class="modal-footer">
+  <!-- <div class="modal-footer">
     <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
-  </div>
+  </div> -->
 </ng-template>
 <ng-template #popoverCustomer>
     <div>
