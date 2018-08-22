@@ -11,7 +11,7 @@
   margin: 0px;
   position: absolute;
   height: 100%;
-  width: 100%;
+  /* width: 99%; */
   overflow: hidden;
 }
 
@@ -139,7 +139,10 @@
   align-content: center; */
   position: absolute;
   bottom: 20px;
-  margin-left: 74px;
+  /* margin-left: 74px; */
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
 }
 .log-btn .mart-10{margin-top: 30px;}
 .btn-style{
@@ -149,8 +152,11 @@
   background-color: #FFFFFE;
   border: none;
   width: 100px;
-  color: #b9b6b6;
 }
+
+.btn-enable{color: #b9b6b6;}
+
+.btn-disable{color: #000;}
 /* .input input[type="button"]{
   text-decoration: none;
   padding: 16px;
@@ -252,7 +258,7 @@ input:focus, button:focus{
 }*/
 ::placeholder{
   font-style: italic;
-  opacity: 0;
+  opacity: 1;
   color: white;
 }
 /************************************second page**************************************/

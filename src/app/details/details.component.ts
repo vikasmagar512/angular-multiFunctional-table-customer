@@ -102,7 +102,7 @@ export class DetailsComponent implements OnInit {
       '                  <span>\n' +
       '                    <img src="../../assets/wrench.svg" class="a-size wd-10">\n' +
       '                  </span>\n' +
-      '                <p class="c-white service" data-id="'+asset.id+'">Do it yourself</p>\n' +
+      '                <p class="c-white service" data-id="'+asset.id+'">Report</p>\n' +
       '              </div>\n'
       /*  '              <div class="a-div bg-lgrey">\n' +
        '                  <span>\n' +
@@ -122,7 +122,7 @@ export class DetailsComponent implements OnInit {
       '                  <span>\n' +
       '                    <img src="../../assets/upgrade.svg" class="a-size wd-24">\n' +
       '                  </span>\n' +
-      '                <p class="c-white">Uprade</p>\n' +
+      '                <p class="c-white">Report</p>\n' +
       '              </div>\n' /* +
         '              <div class="a-div bg-lgrey">\n' +
         '                  <span>\n' +

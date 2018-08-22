@@ -1,11 +1,12 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {ApiService} from '../api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {Observable} from 'rxjs/index';
 import { moment } from 'ngx-bootstrap/chronos/test/chain';
+import { CustomValidators } from '../CustomValidators';
 
 
 @Component({
@@ -76,7 +77,6 @@ export class SignInComponent implements OnInit {
       if(this.frm.invalid) {
         alert('error Email Passw 123')
         this.showInputErrors = true;
-        debugger
         return;
       }
     }else{
@@ -84,57 +84,58 @@ export class SignInComponent implements OnInit {
         alert('error Email Passw 456')
         debugger
         this.showInputErrors = true;
+        alert('Bankid error')
         return;
       }
     }
+    if(!this.showInputErrors){
+      // Reset status
+      // this.isBusy = true;
+      // this.hasFailed = false;
 
-    // // Reset status
-    // this.isBusy = true;
-    // this.hasFailed = false;
-    //
-    // // Grab values from form
-    // const username = this.frm.get('username').value;
-    // const password = this.frm.get('password').value;
-    // const personalNumber = this.frm1.get('personalNumber').value;
-    //
-    // // Submit request to API
-    // this.router.navigate(['main','home','dashboard']);
-    /*let payload = this.defaultSignInMethod
-      ?
-      {
-        username, password
-      }:
-      {
-        // pno:personalNumber
-        personalNo:personalNumber
-      }
-    this.api.signIn(payload).subscribe(
-        (response:any) => {
-          console.log('response is ',response)
-         /!*this.auth.doSignIn(
-            response.token,
-            response.name
-          );*!/
-          debugger
-          if(!this.returnUrl){
-            this.router.navigate(['main']);
-          }else{
-          // get return url from route parameters or default to '/'
-            this.router.navigateByUrl(this.returnUrl);
-          }
-        },
-        (error) => {
-          if (error.status === 401) {
-            this.authService.doSignOut()
-            //logout users, redirect to login page
-            //redirect to the signin page or show login modal here
-            this.router.navigate(['/sign-in']);
-            //remember to import router class and declare it in the class
-          }
-          Observable.throw(error);
-          this.isBusy = false;
-          this.hasFailed = true;
+      // // Grab values from form
+      // const username = this.frm.get('username').value;
+      // const password = this.frm.get('password').value;
+      // const personalNumber = this.frm1.get('personalNumber').value;
+      // // Submit request to API
+      // this.router.navigate(['main','home','dashboard']);
+      /*let payload = this.defaultSignInMethod
+        ?
+        {
+          username, password
+        }:
+        {
+          // pno:personalNumber
+          personalNo:personalNumber
         }
-      );*/
+      this.api.signIn(payload).subscribe(
+          (response:any) => {
+            console.log('response is ',response)
+           /!*this.auth.doSignIn(
+              response.token,
+              response.name
+            );*!/
+            debugger
+            if(!this.returnUrl){
+              this.router.navigate(['main']);
+            }else{
+            // get return url from route parameters or default to '/'
+              this.router.navigateByUrl(this.returnUrl);
+            }
+          },
+          (error) => {
+            if (error.status === 401) {
+              this.authService.doSignOut()
+              //logout users, redirect to login page
+              //redirect to the signin page or show login modal here
+              this.router.navigate(['/sign-in']);
+              //remember to import router class and declare it in the class
+            }
+            Observable.throw(error);
+            this.isBusy = false;
+            this.hasFailed = true;
+          }
+        );*/
+    }
   }
 }
