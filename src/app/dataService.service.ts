@@ -314,11 +314,13 @@ export class dataService implements OnInit {
   }
 
   getNotificationOptions() {
-    return this.notificationOptions;
+    // return this.notificationOptions;
+    return this.currentNotifSetting;
   }
 
   getDashboardOptions() {
-    return this.dashboardOptions;
+    // return this.dashboardOptions;
+    return this.currentDashSetting;
   }
 
 }
