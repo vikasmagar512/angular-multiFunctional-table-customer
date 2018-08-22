@@ -21,7 +21,7 @@ export class SignInComponent implements OnInit {
   public hasFailed = false;
   public showInputErrors = false;
   // public now: Date = new Date();
-  public  myMoment;
+  public  myMoment;active
   public returnUrl: string;
 
   constructor(
@@ -49,7 +49,7 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
     this.defaultSignInMethod = 0;
     this.myMoment= moment().format("Do MMM YYYY");
-    
+
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }

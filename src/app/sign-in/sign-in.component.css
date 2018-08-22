@@ -246,6 +246,15 @@ input:focus, button:focus{
 .war-font.mar-t{
   margin-top: -10px;
 }
+
+/*::placeholder.signIn{
+  color: white;
+}*/
+::placeholder{
+  font-style: italic;
+  opacity: 0;
+  color: white;
+}
 /************************************second page**************************************/
 /* .marginLRZero{
   margin-left: 0px !important;

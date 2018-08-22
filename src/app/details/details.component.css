@@ -14,6 +14,21 @@
   border: none;
   border-radius: 10px;
   }
+  ::placeholder{
+    font-style: italic;
+    opacity: 0;
+    color: orange;
+
+  }
+  /*
+  ::placeholder.details{
+    color: orange;
+  }
+
+  ::placeholder.signIn{
+    color: white;
+  }
+  */
 
   input{
     outline: none;
