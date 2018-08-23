@@ -52,7 +52,7 @@ export class NotificationSettingComponent implements OnInit {
           //left arrow click
           this.notSelectedUserList.push(v);
           this.selectedUserList.splice(this.findSelectedVariable(this.selectedUserList,v.name), 1);
-        }
+        } 
       }
     }
   }

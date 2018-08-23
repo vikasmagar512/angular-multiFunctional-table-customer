@@ -22,4 +22,41 @@
   <router-outlet>
     <!--<app-ad-banner [ads]="ads" [activeComponent]="activeComponent" class="map"></app-ad-banner>-->
   </router-outlet>
+  <!-- feedback popover -->
+  <a [popover]="feedback" placement="right" [outsideClick]="true">
+    <img src="../assets/feed-icon.png" class="feedback-img">
+  </a>
+  <ng-template #feedback>
+    <div>
+      <!-- <img src="assets/pencil.svg" class="pull-right pop-img"> -->
+      <div class=popup-p>
+        <a>
+            <img src="../assets/GreenFace.png" class="feedback-icon">
+        </a>
+        <a>
+            <img src="../assets/YellowFace.png" class="feedback-icon">
+        </a>
+        <a>
+            <img src="../assets/RedFace.png" class="feedback-icon">
+        </a>
+      </div>
+    </div>
+  </ng-template>
+
+  <a [popover]="message" placement="left" [outsideClick]="true" class="pull-right">
+    <img src="../assets/messageIcon.png" class="feedback-img">
+  </a>
+  <ng-template #message>
+    <div>
+      <!-- <img src="assets/pencil.svg" class="pull-right pop-img"> -->
+      <div class=popup-p>
+        <textarea rows="4">
+        </textarea>
+        <a>
+            <img src="../assets/message-arrow.png" class="msg-img">
+        </a>
+        <!-- <img src="../assets/feedback.jpg" style="width:100px;"> -->
+      </div>
+    </div>
+  </ng-template>
 </div>
