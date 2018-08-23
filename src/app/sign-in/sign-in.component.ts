@@ -24,6 +24,7 @@ export class SignInComponent implements OnInit {
   // public now: Date = new Date();
   public  myMoment;active
   public returnUrl: string;
+  mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
 
   constructor(
     private api: ApiService,
@@ -41,9 +42,10 @@ export class SignInComponent implements OnInit {
     this.frm1 = fb.group({
       personalNumber: ['',[
         Validators.required,
-        Validators.pattern('[0-9]'),
-        Validators.minLength(3),
-        Validators.maxLength(5)
+        Validators.pattern('[0-9]{12}$'),
+        // Validators.pattern(this.mobnumPattern),
+        // Validators.minLength(3),
+        // Validators.maxLength(5)
       ]
       ]
     });
@@ -70,35 +72,20 @@ export class SignInComponent implements OnInit {
   }
 
   public doSignIn() {
-
-    // Make sure form values are valid
-    if (this.defaultSignInMethod){
-      alert('error')
-      if(this.frm.invalid) {
-        alert('error Email Passw 123')
-        this.showInputErrors = true;
-        return;
-      }
-    }else{
-      if(this.frm1.invalid) {
-        alert('error Email Passw 456')
-        debugger
-        this.showInputErrors = true;
-        alert('Bankid error')
-        return;
-      }
-    }
+    this.showInputErrors = this.defaultSignInMethod ? (this.frm.invalid) : (this.frm1.invalid)
+    debugger
     if(!this.showInputErrors){
+
       // Reset status
-      // this.isBusy = true;
-      // this.hasFailed = false;
+      this.isBusy = true;
+      this.hasFailed = false;
 
       // // Grab values from form
-      // const username = this.frm.get('username').value;
-      // const password = this.frm.get('password').value;
-      // const personalNumber = this.frm1.get('personalNumber').value;
+      const username = this.frm.get('username').value;
+      const password = this.frm.get('password').value;
+      const personalNumber = this.frm1.get('personalNumber').value;
       // // Submit request to API
-      // this.router.navigate(['main','home','dashboard']);
+      this.router.navigate(['main','home','dashboard']);
       /*let payload = this.defaultSignInMethod
         ?
         {
@@ -136,6 +123,10 @@ export class SignInComponent implements OnInit {
             this.hasFailed = true;
           }
         );*/
+    }else{
+      debugger
+      alert('Please enter correct credentials')
+      return
     }
   }
 }
