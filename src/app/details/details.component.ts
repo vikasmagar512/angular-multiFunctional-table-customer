@@ -142,7 +142,7 @@ export class DetailsComponent implements OnInit {
     paging: true,
     sorting: {columns: this.consumptionColumns},
     filtering: {filterString: ''},
-    className: ['third-t','s-table','table-striped', 'table-bordered']
+    className: ['third-t','s-table', 'table-bordered']
   };
 
   public assetColumns:Array<any> = [
@@ -156,7 +156,7 @@ export class DetailsComponent implements OnInit {
     sorting: {columns: this.assetColumns},
     filtering: {filterString: ''},
     /* id: */
-    className: ['third-t','s-table','table-striped', 'table-bordered']
+    className: ['third-t','s-table', 'table-bordered']
   };
 
   public agreementColumns:Array<any> = [

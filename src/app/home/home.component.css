@@ -27,8 +27,8 @@
   margin: 10px 0px;
   padding-right: 5px;
 }
-.popover-content {
-  /* padding: 4px 16px; */
+.popover .popover-content {
+  padding: 4px 16px !important;
 }
 
 .feedback-img{
@@ -39,9 +39,17 @@
   width: 45px;
   padding: 5px;
 }
+popover-container{
+  top: 813px !important;
+}
 .msg-img{
     width: 20px;
     display: table;
     margin-top: 95px;
     float: right;
+}
+
+.bs-popover-left[_nghost-c10] .arrow[_ngcontent-c10], .bs-popover-right[_nghost-c10] .arrow[_ngcontent-c10] {
+  top: 50%;
+  margin-top: 30px;
 }
