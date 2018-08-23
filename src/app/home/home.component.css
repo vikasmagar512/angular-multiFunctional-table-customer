@@ -38,10 +38,12 @@
 .feedback-icon{
   width: 45px;
   padding: 5px;
+
 }
 .msg-img{
     width: 20px;
     display: table;
-    margin-top: 95px;
+    /*margin-top: 95px;*/
     float: right;
+  margin-bottom: 10px;
 }

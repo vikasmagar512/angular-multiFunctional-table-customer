@@ -24,35 +24,35 @@
   </router-outlet>
   <!-- feedback popover -->
   <a [popover]="feedback" placement="right" [outsideClick]="true">
-    <img src="../assets/feed-icon.png" class="feedback-img">
+    <img src="../assets/feedback-icon.png" class="feedback-img">
   </a>
   <ng-template #feedback>
     <div>
       <!-- <img src="assets/pencil.svg" class="pull-right pop-img"> -->
       <div class=popup-p>
         <a>
-            <img src="../assets/GreenFace.png" class="feedback-icon">
+            <img src="../assets/GreenFace.png" class="feedback-icon cursor">
         </a>
         <a>
-            <img src="../assets/YellowFace.png" class="feedback-icon">
+            <img src="../assets/YellowFace.png" class="feedback-icon  cursor">
         </a>
         <a>
-            <img src="../assets/RedFace.png" class="feedback-icon">
+            <img src="../assets/RedFace.png" class="feedback-icon  cursor">
         </a>
       </div>
     </div>
   </ng-template>
 
-  <a [popover]="message" placement="left" [outsideClick]="true" class="pull-right">
+  <a [popover]="message" placement="left" [outsideClick]="true" class="pull-right cursor">
     <img src="../assets/messageIcon.png" class="feedback-img">
   </a>
   <ng-template #message>
     <div>
       <!-- <img src="assets/pencil.svg" class="pull-right pop-img"> -->
       <div class=popup-p>
-        <textarea rows="4">
+        <textarea rows="4" placeholder="Please type in your feedback">
         </textarea>
-        <a>
+        <a style="display: block;">
             <img src="../assets/message-arrow.png" class="msg-img">
         </a>
         <!-- <img src="../assets/feedback.jpg" style="width:100px;"> -->
