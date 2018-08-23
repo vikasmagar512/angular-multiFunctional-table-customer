@@ -27,13 +27,21 @@
   margin: 10px 0px;
   padding-right: 5px;
 }
-
-/*
-.mar-r{
-  margin-right: -4px;
+.popover-content {
+  /* padding: 4px 16px; */
 }
 
-.mar{
-  margin-left:10px;
+.feedback-img{
+  width: 40px;
+  margin: 10px;
 }
-*/
+.feedback-icon{
+  width: 45px;
+  padding: 5px;
+}
+.msg-img{
+    width: 20px;
+    display: table;
+    margin-top: 95px;
+    float: right;
+}
