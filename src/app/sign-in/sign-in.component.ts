@@ -85,22 +85,22 @@ export class SignInComponent implements OnInit {
       const personalNumber = this.frm1.get('personalNumber').value;
       // // Submit request to API
       this.router.navigate(['main','home','dashboard']);
-      /*let payload = this.defaultSignInMethod
+      let payload = this.defaultSignInMethod
         ?
         {
           username, password
         }:
         {
-          // pno:personalNumber
-          personalNo:personalNumber
+          pno:personalNumber
+          // personalNo:personalNumber
         }
       this.api.signIn(payload).subscribe(
           (response:any) => {
             console.log('response is ',response)
-           /!*this.auth.doSignIn(
+            this.auth.doSignIn(
               response.token,
               response.name
-            );*!/
+            );
             if(!this.returnUrl){
               this.router.navigate(['main']);
             }else{
@@ -120,7 +120,7 @@ export class SignInComponent implements OnInit {
             this.isBusy = false;
             this.hasFailed = true;
           }
-        );*/
+        );
     }else{
       alert('Please enter correct credentials')
       return

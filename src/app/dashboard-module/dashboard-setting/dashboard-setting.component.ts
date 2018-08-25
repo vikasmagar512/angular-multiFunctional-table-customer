@@ -12,6 +12,7 @@ export class DashboardSettingComponent implements OnInit {
   @ViewChild('selectField') elSelectField: ElementRef;
   userList : any = [];
 
+
   selectedUserList : any = [];
   allUsers : any = []
   userList1: Array<SettingOptions> = []
@@ -22,11 +23,15 @@ export class DashboardSettingComponent implements OnInit {
     this.getUserList();
   }
   getUserList(){
-    this._options.currentDashSetting.subscribe(message => {
+
+    this._options.dashSetting.subscribe(message => {
       console.log('message ',message)
       this.optionsSettings = message
       // this.userList = response["data"];
       this.userList = message;
+      this.allUsers =[]
+      this.notSelectedUserList =[]
+      this.selectedUserList =[]
       for(let user of this.userList){
         // var tempUser = new memberUser(user)
         this.allUsers.push(user);
@@ -38,7 +43,7 @@ export class DashboardSettingComponent implements OnInit {
   findField=(allUsers,v: any): any => allUsers.find((f)=>f.name === v)
   findNotSelectedVariable = (notSelectedUserList,nm: string): number =>notSelectedUserList.findIndex((item)=>nm === item.name)
   findSelectedVariable=(selectedUserList,nm: string)=> selectedUserList.findIndex((item)=>nm === item.name)
-   
+
   arrowClick(valueStatus: boolean, all:boolean=false) {
     let option = valueStatus ? this.elField.nativeElement.options : this.elSelectField.nativeElement.options;
     for (let l of option) {
@@ -55,11 +60,14 @@ export class DashboardSettingComponent implements OnInit {
         }
       }
     }
+    let finalArray = [...this.selectedUserList.map((item)=>({...item,selected:true})),...this.notSelectedUserList.map((item)=>({...item,selected:false}))]
+    debugger
+    // this._options.sendSettings(finalArray,1)
   }
 
   //message:string;
   ngOnInit() {
-  
+
   }
 
   /* setDashboardOptions(){

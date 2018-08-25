@@ -15,9 +15,11 @@ import 'rxjs-compat/add/operator/map';
   providedIn: 'root'
 })
 export class dataService implements OnInit {
-
+  dashSetting;
+  notifSetting;
   /* private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable(); */
+
 
   constructor(private http:HttpClient) {
    /*  this.http.get<Asset[]>(API_URL + '/getAssetDetails')
@@ -26,7 +28,15 @@ export class dataService implements OnInit {
       console.log('res is ',res)
       this.assets=res['response'];
     }); */
-   }
+    // dashSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.dashboardOptions);
+    // currentDashSetting=this.dashSetting.asObservable();
+    this.dashSetting = new BehaviorSubject(this.dashboardOptions);
+    this.notifSetting = new BehaviorSubject(this.dashboardOptions);
+
+    // this.notifSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.notificationOptions);
+    // currentNotifSetting=this.notifSetting.asObservable();
+
+  }
   assetCategory = {
     "Coffee_Machine": "Coffee Machine",
     "Printer": "Printer",
@@ -257,11 +267,6 @@ export class dataService implements OnInit {
  ngOnInit(){
   alert('getAssets')
  }
-  dashSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.dashboardOptions);
-  currentDashSetting=this.dashSetting.asObservable();
-  notifSetting: Subject<Array<SettingOptions>> = new BehaviorSubject<Array<SettingOptions>>(this.notificationOptions);
-  currentNotifSetting=this.notifSetting.asObservable();
-
   changeSettings(options,typeOfSetting,isSuccess){
     let k = [...options]
     if(isSuccess){
@@ -290,6 +295,9 @@ export class dataService implements OnInit {
     //   this.changeSettings(options,typeOfSetting,0)
     // }
   }
+  // changeDashboardPreferences(){
+  //   this.filterChange.next(this.dashboardOptions);
+  // }
   getAgreement(){
     // getAgreement(): Observable<Agreement[]> {
     return this.agreements;
@@ -312,7 +320,7 @@ export class dataService implements OnInit {
     return this.assetCategory;
   }
 
-  getNotificationOptions() {
+  /*getNotificationOptions() {
     // return this.notificationOptions;
     return this.currentNotifSetting;
   }
@@ -321,5 +329,5 @@ export class dataService implements OnInit {
     // return this.dashboardOptions;
     return this.currentDashSetting;
   }
-
+*/
 }

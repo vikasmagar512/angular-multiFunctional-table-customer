@@ -22,11 +22,14 @@ export class NotificationSettingComponent implements OnInit {
     this.getUserList();
   }
   getUserList(){
-    this._options.currentNotifSetting.subscribe(message => {
+    this._options.notifSetting.subscribe(message => {
       console.log('message ',message)
       this.optionsSettings = message
       // this.userList = response["data"];
       this.userList = message;
+      this.allUsers =[]
+      this.notSelectedUserList =[]
+      this.selectedUserList =[]
       for(let user of this.userList){
         // var tempUser = new memberUser(user)
         this.allUsers.push(user);
@@ -38,7 +41,7 @@ export class NotificationSettingComponent implements OnInit {
   findField=(allUsers,v: any): any => allUsers.find((f)=>f.name === v)
   findNotSelectedVariable = (notSelectedUserList,nm: string): number =>notSelectedUserList.findIndex((item)=>nm === item.name)
   findSelectedVariable=(selectedUserList,nm: string)=> selectedUserList.findIndex((item)=>nm === item.name)
-   
+
   arrowClick(valueStatus: boolean, all:boolean=false) {
     let option = valueStatus ? this.elField.nativeElement.options : this.elSelectField.nativeElement.options;
     for (let l of option) {
@@ -52,9 +55,12 @@ export class NotificationSettingComponent implements OnInit {
           //left arrow click
           this.notSelectedUserList.push(v);
           this.selectedUserList.splice(this.findSelectedVariable(this.selectedUserList,v.name), 1);
-        } 
+        }
       }
     }
+    let finalArray = [...this.selectedUserList.map((item)=>({...item,selected:true})),...this.notSelectedUserList.map((item)=>({...item,selected:false}))]
+    debugger
+    // this._options.sendSettings(finalArray,0)
   }
   ngOnInit() {  }
 }

@@ -20,9 +20,12 @@ export class ApiService {
     // http://192.168.10.224:8081/bankidauth
     // const url ='http://192.168.10.224:8081/'+'bankidauth'
     let url = API_URL+'/users/signin'
-    if(payload['personalNo']){
-      // url ='http://localhost:8081/api/authenticate'
-      url ='http://192.168.10.224:8081/'+'bankidauth'
+    if(payload['pno']){
+    // if(payload['personalNo']){
+    //   url ='http://localhost:8081/api/authenticate'
+    //   url =API_URL+'/backend/authenticate'
+      url ='/backend/authenticate'
+      // url ='http://192.168.10.224:8081/'+'bankidauth'
     }
     let httpOptions = {
       headers: new HttpHeaders({
@@ -30,8 +33,15 @@ export class ApiService {
       })
     };
     console.log(url)
-    return this.http
+   /* return this.http
       .post(url, payload)
+      //.map(response => {
+      // console.log(response)
+      //return response})
+      .catch(this.handleError);
+*/
+    return this.http
+      .get('/backend/helloSfs',httpOptions)
       //.map(response => {
       // console.log(response)
       //return response})
