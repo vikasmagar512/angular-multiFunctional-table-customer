@@ -52,7 +52,6 @@ export class DetailsComponent implements OnInit {
   }
   assetIdSelected:string;
   openAssetModal(event){
-    // debugger
     // console.log(event)
     // alert(event)
     this.assetIdSelected = event;
@@ -62,7 +61,6 @@ export class DetailsComponent implements OnInit {
 
   agreementIdSelected:string;
   openAgreementModal(event){
-    // debugger
     // console.log(event)
     // alert(event)
     this.agreementIdSelected = event;
@@ -131,6 +129,7 @@ export class DetailsComponent implements OnInit {
         '                <p class="c-white">Terminated</p>\n' +
         '              </div>', */
     }));
+
   }
   public consumptionColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
@@ -153,6 +152,7 @@ export class DetailsComponent implements OnInit {
     {title: 'Location', name: 'location', sort: '', filtering: {filterString: '', placeholder: 'search'},filter:'text'},
     {title: 'Action', className:[ 'text-warning'], name: 'actionAsset',filter:'text'},
   ];
+
   public assetConfig:any = {
     paging: true,
     sorting: {columns: this.assetColumns},

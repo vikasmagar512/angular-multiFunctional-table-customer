@@ -36,22 +36,21 @@
   width: 108%;
   margin-top: 26%;
   box-shadow:5px 20px 45px #b2b0b0, -5px 0 6px #b2b0b0;
-
 }
-
 
 .logo img{
   float: left;
   position: relative;
   left: 68%;
   top: 66px;
-  height: 26%;
-  width: 16%;
+  height: 100px;
+  width: 100px;
 }
 
 .logo h3{
   position: relative;
   float: left;
+
   color: rgb(0, 0, 0);
   left: 50%;
   top: 45%;

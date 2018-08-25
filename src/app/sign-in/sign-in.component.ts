@@ -73,7 +73,6 @@ export class SignInComponent implements OnInit {
 
   public doSignIn() {
     this.showInputErrors = this.defaultSignInMethod ? (this.frm.invalid) : (this.frm1.invalid)
-    debugger
     if(!this.showInputErrors){
 
       // Reset status
@@ -102,7 +101,6 @@ export class SignInComponent implements OnInit {
               response.token,
               response.name
             );*!/
-            debugger
             if(!this.returnUrl){
               this.router.navigate(['main']);
             }else{
@@ -124,7 +122,6 @@ export class SignInComponent implements OnInit {
           }
         );*/
     }else{
-      debugger
       alert('Please enter correct credentials')
       return
     }

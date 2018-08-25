@@ -29,7 +29,6 @@ export class ApiService {
         'Content-Type': 'application/json'
       })
     };
-    debugger
     console.log(url)
     return this.http
       .post(url, payload)

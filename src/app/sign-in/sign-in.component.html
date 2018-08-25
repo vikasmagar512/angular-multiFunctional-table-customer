@@ -87,19 +87,20 @@
 
           <div class="tabcontent" *ngIf="defaultSignInMethod==1">
             <form [formGroup]="frm">
-
-              <span class="glyphicon glyphicon-envelope glyphy"></span>
-              <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
-              <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)">
-
+              <div>
+                <span class="glyphicon glyphicon-envelope glyphy"></span>
+                <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
+                <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)">
+              </div>
               <div *ngIf=" (frm.get('username').invalid && frm.get('username').touched) && emailPasswordFieldGetter.username.errors" class="input-errors mrl clr-red">
                 <div *ngIf="emailPasswordFieldGetter.username.errors.required">Email is required</div>
                 <div *ngIf="emailPasswordFieldGetter.username.errors.email">Email is not valid</div>
             </div>
 
+            <div>
               <span class="glyphicon glyphicon-lock glyphy"></span>
               <input type="password" formControlName="password" class="inputType mar-l mar-t15">
-
+            </div>
               <div *ngIf=" (frm.get('password').invalid && frm.get('password').touched) && emailPasswordFieldGetter.password.errors" class="input-errors mrl clr-red">
                 <div *ngIf="emailPasswordFieldGetter.password.errors.required">password is required</div>
                 <div *ngIf="emailPasswordFieldGetter.password.errors?.minlength">password must be greater than 6 characters</div>

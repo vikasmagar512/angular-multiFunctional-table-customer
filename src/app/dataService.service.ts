@@ -263,7 +263,6 @@ export class dataService implements OnInit {
   currentNotifSetting=this.notifSetting.asObservable();
 
   changeSettings(options,typeOfSetting,isSuccess){
-    /* debugger */
     let k = [...options]
     if(isSuccess){
       if(typeOfSetting===1){
