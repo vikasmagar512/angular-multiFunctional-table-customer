@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
   public hasFailed = false;
   public showInputErrors = false;
   // public now: Date = new Date();
-  public  myMoment;active
+  public  myMoment;
   public returnUrl: string;
   mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
 
@@ -60,8 +60,8 @@ export class SignInComponent implements OnInit {
     this.modalRef = this.modalService.show(template); // {3}
   }
   ngOnInit() {
-    this.defaultSignInMethod = 0;
-    this.myMoment= moment().format("Do MMM YYYY");
+    this.defaultSignInMethod = 0; 
+    this.myMoment= moment().format("Do MMMM YYYY");
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -73,7 +73,7 @@ export class SignInComponent implements OnInit {
 
   public doSignIn() {
     this.showInputErrors = this.defaultSignInMethod ? (this.frm.invalid) : (this.frm1.invalid)
-    if(!this.showInputErrors){
+     if(!this.showInputErrors){
 
       // Reset status
       this.isBusy = true;

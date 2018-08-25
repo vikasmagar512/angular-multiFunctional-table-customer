@@ -13,7 +13,7 @@ export interface Agreement {
 	"dueDate":string;
     "amount":string;
 	"status":string,      
-	"invoiceAddress":string;
+	"invoiceAmount":string;
 	/* "customerAddressNumber": number,
 	"marketProduct":string,
 	"statusCode":string ,

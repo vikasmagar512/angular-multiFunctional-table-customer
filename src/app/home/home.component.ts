@@ -5,6 +5,7 @@ import {ApiService} from '../api.service';
 import {Observable} from 'rxjs/index';
 import {ActivatedRoute, NavigationEnd, Router, UrlSegment} from '@angular/router';
 import 'rxjs-compat/add/operator/filter';
+import { moment } from 'ngx-bootstrap/chronos/test/chain';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit,OnDestroy {
   activeComponent: Number;
   todos:Todo[];
   user:Object;
+  public  myMoment;
   segments: UrlSegment[]
   constructor(private adService: AdService,private api:ApiService, private router:Router,private activatedRoute: ActivatedRoute) {
     this.segments = activatedRoute.snapshot.url;
@@ -26,6 +28,7 @@ export class HomeComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    this.myMoment= moment().format("Do MMMM YYYY");
     this.router.events
       .filter((event: any) => event instanceof NavigationEnd)
       .subscribe((val) => {

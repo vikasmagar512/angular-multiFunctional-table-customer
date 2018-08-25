@@ -213,3 +213,8 @@ tabset.nav-tabs>ul {
 
   background-color:grey !important;
 } */
+
+.modal-header {
+  padding: 0px;
+  border-bottom: 0;
+}

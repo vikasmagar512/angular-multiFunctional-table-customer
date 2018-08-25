@@ -21,14 +21,14 @@
 
           <li class="marR-14 mr-10">
             <a (click)="openModal(template)">
-              <img src="../assets/setting.svg" class="img-responsive rlogo">
+              <img src="../assets/setting.png" class="img-responsive rlogo">
             </a>
           </li>
 
            <li class="nav-item dropdown" style="margin-right: 1px; margin-left: 5px;">
               <span dropdown style="display: block">
                 <a class="nav-link dropdown-toggle mr-lg-2" id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
-                  <img src="../assets/message.svg" class="img-responsive rlogo">
+                  <img src="../assets/message.png" class="img-responsive rlogo">
                 </a>
                 <div class="dropdown-menu notification">
                   <app-notif-pop-upwrapper>
@@ -44,7 +44,7 @@
         </li> -->
          <li (click)="doSignOut()">
           <a href="#" style="padding-left: 8px;">
-            <img src="../assets/logout.svg" class="img-responsive rlogo">
+            <img src="../assets/logout.png" class="img-responsive rlogo">
           </a>
         </li>
       </ul>
@@ -88,15 +88,14 @@
 </ng-template>
 
 <ng-template #storeTemplate>
-  <div class="modal-header">
-    <!-- <h4 class="modal-title pull-left">Forgot Password ?</h4> -->
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">
-        <img src="../assets/cross.svg" class="log">
-      </span>
-    </button>
+  <div class="modal-header"> 
+    <button type="button" class="close pull-right" aria-label="Close">
+        <span aria-hidden="true">
+          <img src="../assets/cross.svg" class="log">
+        </span>
+      </button>   
   </div>
-  <div class="modal-body" style="background-color: #f6f3f3;">
+  <div style="background-color: #f6f3f3;">
     <app-store></app-store>
   </div>
   <!-- <div class="modal-footer">

@@ -102,6 +102,7 @@ export class dataService implements OnInit {
       "category": "Coffee_Machine",
       "name": "Tech Lab Jura E8",
       "status": 0,
+      "quantity":4,
       "location": "Solna",
       "serialno": "CM12190",
       "supplier": "ITS Nordic AB ",
@@ -130,6 +131,7 @@ export class dataService implements OnInit {
       "category": "Printer",
       "name": "Tech Lab Konica Minolta",
       "status": 1,
+      "quantity":1,
       "location": "Solna",
       "serialno": "SR12190",
       "supplier": "ITS Nordic AB",
@@ -150,6 +152,7 @@ export class dataService implements OnInit {
       "category": "Vacuum",
       "name": "Vacuum Cleaner",
       "status": 2,
+      "quantity":2,
       "location": "Solna",
       "serialno": "VC12190",
       "supplier": "ITS Nordic AB ",
@@ -242,7 +245,7 @@ export class dataService implements OnInit {
       "dueDate": '15 May 2018',
       "amount": 'Kr 200',
       "status": 'Paid',
-      "invoiceAddress": 'Solna',
+      "invoiceAmount": 'Kr 2000',
       "assets_covered": ["01", "02"]
     },
     {
@@ -259,7 +262,7 @@ export class dataService implements OnInit {
       "dueDate": '15 June 2018',
       "amount": 'Kr 200',
       "status": 'Paid',
-      "invoiceAddress": 'Solna',
+      "invoiceAmount": 'Kr 5500',
       "assets_covered": ["03"]
     }
   ];

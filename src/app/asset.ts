@@ -5,6 +5,7 @@ export interface Asset {
   "id":string;
   "category": string;
   "name": string;
+  "quantity":number,
   "location": string;
   "serialno": string;
   "supplier":string;

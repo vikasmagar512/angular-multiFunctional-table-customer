@@ -27,8 +27,8 @@
   margin: 10px 0px;
   padding-right: 5px;
 }
-.popover-content {
-  /* padding: 4px 16px; */
+.popover .popover-content {
+  padding: 4px 16px !important;
 }
 
 .feedback-img{
@@ -40,10 +40,22 @@
   padding: 5px;
 
 }
+popover-container{
+  top: 813px !important;
+}
 .msg-img{
     width: 20px;
     display: table;
     /*margin-top: 95px;*/
     float: right;
-  margin-bottom: 10px;
+
+  /* margin-bottom: 10px; */
+}
+/* 
+
+.show{display: block;}
+.hidden{display: none} */
+
+.float-l{
+  float: left;
 }
