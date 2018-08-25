@@ -51,3 +51,11 @@ popover-container{
 
   /* margin-bottom: 10px; */
 }
+/* 
+
+.show{display: block;}
+.hidden{display: none} */
+
+.float-l{
+  float: left;
+}

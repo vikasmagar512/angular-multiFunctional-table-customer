@@ -46,3 +46,21 @@
   .input-group{
     width: 555px !important;
   }
+.modal-body{
+  text-align: center;
+}
+
+.wd-65{
+  width: 65%;
+}
+
+.btn{
+  background-color: rgb(56, 55, 55);
+  padding: 3px 17px;
+  color:#fff;
+}
+
+.btn:hover{
+  background-color: aqua !important;
+  color:white !important;
+}

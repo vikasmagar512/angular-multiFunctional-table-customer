@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
   public hasFailed = false;
   public showInputErrors = false;
   // public now: Date = new Date();
-  public  myMoment;active
+  public  myMoment;
   public returnUrl: string;
   mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
 
@@ -73,8 +73,7 @@ export class SignInComponent implements OnInit {
 
   public doSignIn() {
     this.showInputErrors = this.defaultSignInMethod ? (this.frm.invalid) : (this.frm1.invalid)
-    // debugger
-    if(!this.showInputErrors){
+     if(!this.showInputErrors){
 
       // Reset status
       this.isBusy = true;
@@ -102,7 +101,6 @@ export class SignInComponent implements OnInit {
               response.token,
               response.name
             );*!/
-            debugger
             if(!this.returnUrl){
               this.router.navigate(['main']);
             }else{
@@ -124,7 +122,6 @@ export class SignInComponent implements OnInit {
           }
         );*/
     }else{
-      // debugger
       alert('Please enter correct credentials')
       return
     }

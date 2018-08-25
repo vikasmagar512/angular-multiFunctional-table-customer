@@ -28,7 +28,6 @@ export class AssetComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     // router.events.subscribe((val) => {
     //   this.id = this.route.snapshot.paramMap.get('id');
-    //   debugger
     /*
           if(_location.path() != ''){
             this.routeNow = _location.path();

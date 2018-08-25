@@ -12,7 +12,7 @@
   position: absolute;
   height: 100%;
   /* width: 99%; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .backimg{
@@ -36,32 +36,32 @@
   width: 108%;
   margin-top: 26%;
   box-shadow:5px 20px 45px #b2b0b0, -5px 0 6px #b2b0b0;
-
 }
-
-
-.logo img{
+.logo-div{
   float: left;
   position: relative;
   left: 68%;
   top: 66px;
-  height: 26%;
-  width: 16%;
+
+}
+.logo img{
+  height: 100px;
+  width: 100px;
 }
 
 .logo h3{
-  position: relative;
-  float: left;
+  /* position: relative;
+  float: left; */
   color: rgb(0, 0, 0);
-  left: 50%;
-  top: 45%;
+  margin-top: 10px;
+  font-weight: 600;
   font-size: 21px;
-
 }
 .foot{
   position: absolute;
-  left: 70%;
+  left: 72%;
   top: 466px;
+  font-size: 9px;
 }
 
 .logo span{
@@ -152,11 +152,10 @@
   background-color: #FFFFFE;
   border: none;
   width: 100px;
+  color: #000;
 }
 
-.btn-enable{color: #b9b6b6;}
-
-.btn-disable{color: #000;}
+.btn-style:disabled{color: #b9b6b6;}
 /* .input input[type="button"]{
   text-decoration: none;
   padding: 16px;
@@ -395,3 +394,38 @@ input:focus, button:focus{
   margin-top: -10px;
 }
 */
+/* .modal-fade {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-100px;
+  margin-top:-300px;
+} */
+/* .modal-dialog {
+  vertical-align:middle;
+  margin: 150px auto !important;
+  background-color: rgba(0,0,0,0.5); 
+} */
+
+.modal-dialog.modal-ver{
+  /* width: 100px; */
+  margin: 150px auto !important;
+  background-color: black;
+}
+
+.my-modal {
+  border: solid 4px blue;
+}
+
+.my-modal .modal-header {
+  background-color: lime;
+}
+
+.my-modal .modal-body {
+  background-color: orange;
+}

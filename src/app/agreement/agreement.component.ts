@@ -45,7 +45,7 @@ export class AgreementComponent implements OnInit {
           "id":  asset.id,
           "name":'<a routerLink="main/asset/'+asset.id+'" routerLinkActive="active">'+asset.name+'</a>',
           "location":asset.category,
-          // "quantity": asset.supplier,
+          "quantity": asset.quantity,
           "serialNo": asset.serialno,
           "supplier": asset.supplier,
         });
@@ -55,20 +55,20 @@ export class AgreementComponent implements OnInit {
       this.overDueData  = this.agreements.reduce((acc,agree: Agreement) => {
         return acc.concat({
           "dueDate":agree.dueDate,
+          "invoiceAmount":agree.invoiceAmount,
           "amount":agree.amount,
-          "status":agree.status,
+          // "status":agree.status,
           "invoice": '<span>'+
                         '<img src="../../assets/pdf.svg">'+
-                        '</span>',
-          "invoiceAddress":agree.invoiceAddress
-        });
+                        '</span>'
+            });
     },[]);
   }
 
   public agreementColumns:Array<any> = [
     {title: 'Asset Name', name: 'name', filtering: {filterString: '', placeholder: 'Search'},filter:'text'},
     {title: 'Location', className: ['office-header', 'text-success'], name: 'location', sort: 'asc',filtering: {filterString: '', placeholder: 'search'},filter:'text'},
-    // {title: 'Quantity', name: 'quantity', sort: '', filtering: {filterString: '', placeholder: 'search'},filter:'text'},
+    {title: 'Quantity', name: 'quantity', sort: ''},
     {title: 'Serial No', className: 'text-warning', name: 'serialNo',filtering: {filterString: '', placeholder: 'SearchNo.'},filter:'text'},
     {title: 'Supplier', name: 'supplier',filtering: {filterString: '', placeholder: 'search'},filter:'text'}
   ];
@@ -80,10 +80,11 @@ export class AgreementComponent implements OnInit {
   };
   public overDueColumns:Array<any> = [
     {title: 'Due Date', name: 'dueDate',filter:'text'},
+    {title: 'Invoice Address', name: 'invoiceAmount',filter:'text'},
     {title: 'Open Amount', className: ['office-header', 'text-success'], name: 'amount', sort: 'asc',filter:'text'},
-    {title: 'Status paid/Unpaid', name: 'status', sort: '',filter:'text'},
+    // {title: 'Status paid/Unpaid', name: 'status', sort: '',filter:'text'},
     {title: 'Invoice', className: 'text-warning', name: 'invoice',filter:'text'},
-    {title: 'Invoice Address', name: 'invoiceAddress',filter:'text'}
+    
   ];
   public overDueConfig:any = {
     paging: true,
