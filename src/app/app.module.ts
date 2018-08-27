@@ -97,11 +97,13 @@ const appRoutes: Routes = [
           },*/
           {path: 'asset/:id', component: AssetComponent},
           {path: 'agreementNo/:id', component: AgreementComponent},
+          { path: 'notifications/all',  component:DedicatedNotificationComponent},
+
         ]
       },
       // { path: 'asset/:id',  component:AssetComponent},
       // { path: 'agreementNo/:id',  component:AgreementComponent},
-      { path: 'notifications/all',  component:DedicatedNotificationComponent},
+      // { path: 'notifications/all',  component:DedicatedNotificationComponent},
         // { path: 'store',  component:StoreComponent }
     ]
   },

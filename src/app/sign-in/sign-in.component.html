@@ -70,23 +70,23 @@
             <span> OR </span>
             <button [ngClass]="defaultSignInMethod == 1 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(1)">
               Email & Password</button>
-  
+
             <div class="tabcontent" *ngIf="defaultSignInMethod==0">
               <form [formGroup]="frm1">
                 <input class="inputType mar-l mar-t23" formControlName="personalNumber" placeholder="YYYYDDMMXXXX">
-  
+
                 <div *ngIf="(frm1.get('personalNumber').invalid && frm1.get('personalNumber').touched) && bankIDFieldGetter.personalNumber.errors"
                   class="input-errors mrl clr-red">
                   <div *ngIf="bankIDFieldGetter.personalNumber.errors.required">personalNumber is required</div>
                   <div *ngIf="bankIDFieldGetter.personalNumber.errors?.pattern">personalNumber must be a 12 digit number</div>
                   <!--<div *ngIf="bankIDFieldGetter.personalNumber.errors.minLength">personalNumber min length is 3</div>-->
                   <!--<div *ngIf="bankIDFieldGetter.personalNumber.errors.maxLength">personalNumber exceeds the max length</div>-->
-  
+
                 </div>
               </form>
               <br>
             </div>
-  
+
             <div class="tabcontent" *ngIf="defaultSignInMethod==1">
               <form [formGroup]="frm">
                 <div>
@@ -99,9 +99,9 @@
                 </div>
                 <div *ngIf=" (frm.get('username').invalid && frm.get('username').touched) && emailPasswordFieldGetter.username.errors" class="input-errors mrl clr-red">
                   <div *ngIf="emailPasswordFieldGetter.username.errors.required">Email is required</div>
-                  <div *ngIf="emailPasswordFieldGetter.username.errors.email">Email is not valid</div>
+                  <div *ngIf="emailPasswordFieldGetter.username.errors.pattern">Email is not valid</div>
                 </div>
-  
+
                 <div>
                   <span class="glyphicon glyphicon-lock glyphy"></span>
                   <!-- <span>

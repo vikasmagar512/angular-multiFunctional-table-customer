@@ -14,7 +14,7 @@ export class NotifPopUPWrapperComponent implements OnInit {
   }
 
   viewAll(){
-    this.router.navigate(['main/notifications/all']);
+    this.router.navigate(['/main/home/notifications/all']);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dedicated-notification',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DedicatedNotificationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+
+  goBack() {
+    this.router.navigate(['main/home/dashboard']);
+
   }
 
 }
