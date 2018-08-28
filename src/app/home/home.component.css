@@ -24,7 +24,7 @@
 }
 .btn-div{
   text-align: right;
-  margin: 10px 0px;
+  margin: 10px 0px 20px;
   padding-right: 5px;
 }
 .popover .popover-content {
@@ -51,11 +51,16 @@ popover-container{
 
   /* margin-bottom: 10px; */
 }
-/* 
+/*
 
 .show{display: block;}
 .hidden{display: none} */
 
 .float-l{
   float: left;
+}
+.popup-bottom{
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px;
 }

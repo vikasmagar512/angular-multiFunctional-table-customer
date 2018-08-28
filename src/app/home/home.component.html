@@ -15,7 +15,7 @@
 <div class="container map-sec">
   <div class="top-status">
     <div class="float-l" [ngClass]="(!activeComponent)?'show':'hidden'">
-      <h4 class="fw-600 fsw-16">Last Refreshed:{{myMoment}}</h4>
+      <h4 class="fw-600 fsw-16">Last Refreshed: {{myMoment}}</h4>
     </div>
     <div class="btn-div">
       <button [ngClass]="(!activeComponent)?'bttn active':' bttn'" (click)="loadComponent(0)">
@@ -28,27 +28,29 @@
     <!--<app-ad-banner [ads]="ads" [activeComponent]="activeComponent" class="map"></app-ad-banner>-->
   </router-outlet>
   <!-- feedback popover -->
-  <a [popover]="feedback" placement="right" [outsideClick]="true">
+  <div class="popup-bottom">
+  <a [popover]="feedback" placement="right" [outsideClick]="true" #pop="bs-popover">
     <img src="../assets/feedback-icon.png" class="feedback-img">
   </a>
   <ng-template #feedback>
     <div>
       <!-- <img src="assets/pencil.svg" class="pull-right pop-img"> -->
       <div class=popup-p>
-        <a>
+        <a (click)="pop.hide()">
           <img src="../assets/GreenFace.png" class="feedback-icon cursor">
         </a>
-        <a>
+        <a (click)="pop.hide()">
           <img src="../assets/YellowFace.png" class="feedback-icon  cursor">
         </a>
-        <a>
+        <a (click)="pop.hide()">
           <img src="../assets/RedFace.png" class="feedback-icon  cursor">
         </a>
+
       </div>
     </div>
   </ng-template>
 
-  <a [popover]="message" placement="left" [outsideClick]="true" class="pull-right cursor">
+  <a [popover]="message" placement="left" [outsideClick]="true" class="cursor" #popMessage="bs-popover">
     <img src="../assets/messageIcon.png" class="feedback-img">
   </a>
   <ng-template #message>
@@ -57,11 +59,12 @@
       <div class=popup-p>
         <textarea rows="4" placeholder="Please type in your feedback">
         </textarea>
-        <a style="display: block;">
+        <a style="display: block;" (click)="popMessage.hide()">
           <img src="../assets/message-arrow.png" class="msg-img">
         </a>
         <!-- <img src="../assets/feedback.jpg" style="width:100px;"> -->
       </div>
     </div>
   </ng-template>
+  </div>
 </div>

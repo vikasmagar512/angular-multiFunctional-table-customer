@@ -29,6 +29,7 @@ export class SignInComponent implements OnInit {
   public myMoment;
   public returnUrl: string;
   mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
   constructor(
     private api: ApiService,
@@ -41,7 +42,11 @@ export class SignInComponent implements OnInit {
   ) {
     // this.cookiesEnable = false;
     this.frm = fb.group({
+<<<<<<< HEAD
       username: ['', [Validators.required, Validators.email]],
+=======
+      username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
+>>>>>>> 3ce476c292df7323c65de7dcf89b0561e07b1092
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
     this.frm1 = fb.group({
@@ -66,7 +71,11 @@ export class SignInComponent implements OnInit {
   }
   ngOnInit() {
     this.defaultSignInMethod = 0;
+<<<<<<< HEAD
     this.myMoment = moment().format("Do MMMM YYYY");
+=======
+    this.myMoment= moment().format("Do MMMM YYYY");
+>>>>>>> 3ce476c292df7323c65de7dcf89b0561e07b1092
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';

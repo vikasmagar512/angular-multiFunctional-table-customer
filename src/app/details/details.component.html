@@ -41,7 +41,7 @@
   <div class="col-md-6">
 
     <div class="card">
-      <h3 class="fb-15">Search for Agreement No., Type / Asset</h3>
+      <h3 class="fb-15">Search for Agreement No., Asset Type / Asset</h3>
       <div class="input-group box-border" style="width: 580px;">
         <span class="input-group-addon">
           <img src="../../assets/search.svg" class="wd-28">
@@ -51,7 +51,7 @@
     </div>
 
     <div class="mt113">
-      <h3 class="ml-21 fb-15">Order Status</h3>
+      <h3 class="ml-21 fb-15">Order Details</h3>
       <div class="table-container tb">
         <div class="table-responsive">
           <app-table-demo #consumptionTable [data]="consumptionData" [config]="consumptionConfig" [columns]="consumptionColumns"></app-table-demo>
@@ -81,14 +81,14 @@
       <textarea class="assTemp wd-65" row="5"></textarea>
       <br>
       <br>
-      <input class="btn" type="submit"/>
+      <input class="btn" type="submit" (click)="modalRef.hide()"/>
     </form>
   </div>
   <hr>
   <div class="modal-body" style="background-color: #f6f3f3;">
     <h4>Do it YourSelf</h4>
       <br>
-      <p class="btn">Open up the Manual</p>
+      <p class="btn" (click)="modalRef.hide()">Open up the Manual</p>
    </div>
 
   <div class="modal-footer">
@@ -108,13 +108,13 @@
   <div class="modal-body" style="background-color: #f6f3f3;">
     <h3>Upgrade the contract</h3>
     <br>
-    <input class="btn" type="submit"/>
+    <input class="btn" type="submit" (click)="modalRef.hide()"/>
   </div>
   <hr>
   <div class="modal-body" style="background-color: #f6f3f3;">
     <h3>Terminate the contract</h3>
     <br>
-    <input class="btn" type="submit"/>
+    <input class="btn" type="submit" (click)="modalRef.hide()"/>
   </div>
   <div class="modal-footer">
     <!-- <button type="button" class="btn" (click)="modalRef.hide()">Close</button> -->

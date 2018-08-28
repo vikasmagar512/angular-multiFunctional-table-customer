@@ -46,18 +46,16 @@
  -->
 
 
-<div class="container-fluid">
+ <div class="container-fluid">
   <div class="row section">
     <div class="col-sm-8 col-md-6 col-lg-6 backimg pull-left">
       <img src="../../assets/login image.png" class="img-fluid">
     </div>
-    <div class="col-sm-7 col-md-5 col-lg-5" style="height: 0;">
+    <div class="col-sm-7 col-md-5 col-lg-5">
       <div class="logo">
         <div class="logo-div">
           <img src="../../assets/siemens logo.png">
-          <h3>SFS
-            <span>Connect</span>
-          </h3>
+          <h3>SFS<span>Connect</span></h3>
         </div>
         <h6 class="foot">Powered by SIEMENS SFS</h6>
       </div>
@@ -94,21 +92,21 @@
               <div>
                 <span class="glyphicon glyphicon-envelope glyphy"></span>
                 <!-- <span>
-                      <img src="../../assets/Email.png" class="war-img">
-                  </span> -->
+                    <img src="../../assets/Email.png" class="war-img">
+                </span> -->
                 <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
                 <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)" placeholder="Email Address">
               </div>
               <div *ngIf=" (frm.get('username').invalid && frm.get('username').touched) && emailPasswordFieldGetter.username.errors" class="input-errors mrl clr-red">
                 <div *ngIf="emailPasswordFieldGetter.username.errors.required">Email is required</div>
-                <div *ngIf="emailPasswordFieldGetter.username.errors.email">Email is not valid</div>
+                <div *ngIf="emailPasswordFieldGetter.username.errors.pattern">Email is not valid</div>
               </div>
 
               <div>
                 <span class="glyphicon glyphicon-lock glyphy"></span>
                 <!-- <span>
-                      <img src="../../assets/password.png" class="war-img">
-                  </span> -->
+                    <img src="../../assets/password.png" class="war-img">
+                </span> -->
                 <input type="password" formControlName="password" class="inputType mar-l mar-t15" placeholder="Password">
               </div>
               <div *ngIf=" (frm.get('password').invalid && frm.get('password').touched) && emailPasswordFieldGetter.password.errors" class="input-errors mrl clr-red">
@@ -141,21 +139,19 @@
     </div>
   </div>
 </div>
-
-<app-gdpr></app-gdpr>
-
+<!-- <app-gdpr></app-gdpr> -->
 <ng-template #template>
   <!-- <div class="modal-header">
-      <h4 class="modal-title pull-left">Forgot Password ?</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">
-          <img src="../assets/cross.svg">
-        </span>
-      </button>
-    </div> -->
+    <h4 class="modal-title pull-left">Forgot Password ?</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg">
+      </span>
+    </button>
+  </div> -->
   <!--<div class="modal-body">
-      This is a modal.
-    </div>-->
+    This is a modal.
+  </div>-->
   <div class="modal-body" style="background-color: #f6f3f3;">
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">
@@ -171,6 +167,6 @@
     </div>
   </div>
   <!-- <div class="modal-footer">
-      <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
-    </div>-->
+    <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
+  </div>-->
 </ng-template>
