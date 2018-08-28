@@ -158,13 +158,21 @@
         </span>
       </button>
       <div class="model-pass">
+        <form [formGroup]="forgetPassFrm">
         <img src="../../assets/siemens logo.png" class="wd-10p mar-t20">
         <h6 class="f-sz f-bld">Forget Password ?</h6>
         <h6 class="f-sz">Please enter Email Address to reset the password</h6>
-        <input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">
-        <input type="button" name="" value="Submit" class="btn-fp">
+        <!--<input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">-->
+        <input type="email" class="inp-fb" formControlName="username" (keyup.enter)="keytab($event)" placeholder="Enter Email Address">
+      <div *ngIf=" (frm.get('username').invalid && frm.get('username').touched) && emailPasswordFieldGetter.username.errors" class="input-errors mrl clr-red">
+        <div *ngIf="emailPasswordFieldGetter.username.errors.required">Email is required</div>
+        <div *ngIf="emailPasswordFieldGetter.username.errors.pattern">Email is not valid</div>
       </div>
+        <input type="button" name="" value="Submit" class="btn-fp">
+      </form>
     </div>
+    </div>
+
     <!-- <div class="modal-footer">
       <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
     </div>-->

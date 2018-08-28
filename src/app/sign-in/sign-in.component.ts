@@ -18,6 +18,7 @@ export class SignInComponent implements OnInit {
   public defaultSignInMethod :number;
   public frm: FormGroup;
   public frm1: FormGroup;
+  public forgetPassFrm: FormGroup;
   public isBusy = false;
   public hasFailed = false;
   public showInputErrors = false;
@@ -26,6 +27,7 @@ export class SignInComponent implements OnInit {
   public returnUrl: string;
   // mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
   emailPattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$";
+  // emailPattern="/^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/"
 
   constructor(
     private api: ApiService,
@@ -39,6 +41,9 @@ export class SignInComponent implements OnInit {
     this.frm = fb.group({
       username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+    this.forgetPassFrm = fb.group({
+      username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
     });
     this.frm1 = fb.group({
       personalNumber: ['',[
