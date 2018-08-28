@@ -24,8 +24,8 @@ export class SignInComponent implements OnInit {
   // public now: Date = new Date();
   public  myMoment;
   public returnUrl: string;
-  mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  // mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
+  emailPattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$";
 
   constructor(
     private api: ApiService,
