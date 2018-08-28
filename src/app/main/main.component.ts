@@ -45,7 +45,7 @@ export class MainComponent implements OnInit {
     this.notification=this.notifyService.getNotification();
 
     // this.openModal(this.modalRef)
-  } 
+  }
   doSignOut(){
     this.authService.doSignOut()
   }

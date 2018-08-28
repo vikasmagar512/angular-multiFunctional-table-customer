@@ -511,3 +511,12 @@ button:hover, button:focus{
 .log{
   width: 22px;
 }
+
+.modal.fade {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.modal-dialog {
+  margin: 0;
+}
