@@ -46,101 +46,106 @@
  -->
 
 
- <div class="container-fluid">
-    <div class="row section">
-      <div class="col-sm-8 col-md-6 col-lg-6 backimg pull-left">
-        <img src="../../assets/login image.png" class="img-fluid">
-      </div>
-      <div class="col-sm-7 col-md-5 col-lg-5">
-        <div class="logo">
-          <div class="logo-div">
-            <img src="../../assets/siemens logo.png">
-            <h3>SFS<span>Connect</span></h3>
-          </div>
-          <h6 class="foot">Powered by SIEMENS SFS</h6>
+<div class="container-fluid">
+  <div class="row section">
+    <div class="col-sm-8 col-md-6 col-lg-6 backimg pull-left">
+      <img src="../../assets/login image.png" class="img-fluid">
+    </div>
+    <div class="col-sm-7 col-md-5 col-lg-5" style="height: 0;">
+      <div class="logo">
+        <div class="logo-div">
+          <img src="../../assets/siemens logo.png">
+          <h3>SFS
+            <span>Connect</span>
+          </h3>
         </div>
-        <div class="dataInp">
-          <!-- <p>{{now | date:'longDate'}}</p> -->
-          <p>{{myMoment}}</p>
-          <h1>Hello!</h1>
-          <h3>Welcome to
-            <br>SFSConnect</h3>
-          <div class="input">
-            <button [ngClass]="defaultSignInMethod == 0 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(0)">Mobile Bank ID</button>
-            <span> OR </span>
-            <button [ngClass]="defaultSignInMethod == 1 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(1)">
-              Email & Password</button>
-  
-            <div class="tabcontent" *ngIf="defaultSignInMethod==0">
-              <form [formGroup]="frm1">
-                <input class="inputType mar-l mar-t23" formControlName="personalNumber" placeholder="YYYYDDMMXXXX">
-  
-                <div *ngIf="(frm1.get('personalNumber').invalid && frm1.get('personalNumber').touched) && bankIDFieldGetter.personalNumber.errors"
-                  class="input-errors mrl clr-red">
-                  <div *ngIf="bankIDFieldGetter.personalNumber.errors.required">personalNumber is required</div>
-                  <div *ngIf="bankIDFieldGetter.personalNumber.errors?.pattern">personalNumber must be a 12 digit number</div>
-                  <!--<div *ngIf="bankIDFieldGetter.personalNumber.errors.minLength">personalNumber min length is 3</div>-->
-                  <!--<div *ngIf="bankIDFieldGetter.personalNumber.errors.maxLength">personalNumber exceeds the max length</div>-->
-  
-                </div>
-              </form>
-              <br>
-            </div>
-  
-            <div class="tabcontent" *ngIf="defaultSignInMethod==1">
-              <form [formGroup]="frm">
-                <div>
-                  <span class="glyphicon glyphicon-envelope glyphy"></span>
-                  <!-- <span>
+        <h6 class="foot">Powered by SIEMENS SFS</h6>
+      </div>
+      <div class="dataInp">
+        <!-- <p>{{now | date:'longDate'}}</p> -->
+        <p>{{myMoment}}</p>
+        <h1>Hello!</h1>
+        <h3>Welcome to
+          <br>SFSConnect</h3>
+        <div class="input">
+          <button [ngClass]="defaultSignInMethod == 0 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(0)">Mobile Bank ID</button>
+          <span> OR </span>
+          <button [ngClass]="defaultSignInMethod == 1 ? 'tablink img-rounded active' : 'tablink img-rounded'" (click)="openCity(1)">
+            Email & Password</button>
+
+          <div class="tabcontent" *ngIf="defaultSignInMethod==0">
+            <form [formGroup]="frm1">
+              <input class="inputType mar-l mar-t23" formControlName="personalNumber" placeholder="YYYYDDMMXXXX">
+
+              <div *ngIf="(frm1.get('personalNumber').invalid && frm1.get('personalNumber').touched) && bankIDFieldGetter.personalNumber.errors"
+                class="input-errors mrl clr-red">
+                <div *ngIf="bankIDFieldGetter.personalNumber.errors.required">personalNumber is required</div>
+                <div *ngIf="bankIDFieldGetter.personalNumber.errors?.pattern">personalNumber must be a 12 digit number</div>
+                <!--<div *ngIf="bankIDFieldGetter.personalNumber.errors.minLength">personalNumber min length is 3</div>-->
+                <!--<div *ngIf="bankIDFieldGetter.personalNumber.errors.maxLength">personalNumber exceeds the max length</div>-->
+
+              </div>
+            </form>
+            <br>
+          </div>
+
+          <div class="tabcontent" *ngIf="defaultSignInMethod==1">
+            <form [formGroup]="frm">
+              <div>
+                <span class="glyphicon glyphicon-envelope glyphy"></span>
+                <!-- <span>
                       <img src="../../assets/Email.png" class="war-img">
                   </span> -->
-                  <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
-                  <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)" placeholder="Email Address">
-                </div>
-                <div *ngIf=" (frm.get('username').invalid && frm.get('username').touched) && emailPasswordFieldGetter.username.errors" class="input-errors mrl clr-red">
-                  <div *ngIf="emailPasswordFieldGetter.username.errors.required">Email is required</div>
-                  <div *ngIf="emailPasswordFieldGetter.username.errors.email">Email is not valid</div>
-                </div>
-  
-                <div>
-                  <span class="glyphicon glyphicon-lock glyphy"></span>
-                  <!-- <span>
+                <!-- <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keydown.enter)="takeMeNext()"> -->
+                <input type="email" class="inputType mar-l mar-t23" formControlName="username" (keyup.enter)="keytab($event)" placeholder="Email Address">
+              </div>
+              <div *ngIf=" (frm.get('username').invalid && frm.get('username').touched) && emailPasswordFieldGetter.username.errors" class="input-errors mrl clr-red">
+                <div *ngIf="emailPasswordFieldGetter.username.errors.required">Email is required</div>
+                <div *ngIf="emailPasswordFieldGetter.username.errors.email">Email is not valid</div>
+              </div>
+
+              <div>
+                <span class="glyphicon glyphicon-lock glyphy"></span>
+                <!-- <span>
                       <img src="../../assets/password.png" class="war-img">
                   </span> -->
-                  <input type="password" formControlName="password" class="inputType mar-l mar-t15" placeholder="Password">
-                </div>
-                <div *ngIf=" (frm.get('password').invalid && frm.get('password').touched) && emailPasswordFieldGetter.password.errors" class="input-errors mrl clr-red">
-                  <div *ngIf="emailPasswordFieldGetter.password.errors.required">password is required</div>
-                  <div *ngIf="emailPasswordFieldGetter.password.errors?.minlength">password must be greater than 6 characters</div>
-                </div>
-                <div class="sign-in-error war-div" *ngIf="hasFailed">
-                  <!-- <div class="war-div"> -->
-                  <img src="../../assets/warning.svg" class="war-img">
-                  <span>
-                    <h6 class="war-font">Invalid Credentials</h6>
-                    <h6 class="war-font mar-t">Please enter Correct Credentials</h6>
-                  </span>
-                </div>
-              </form>
-            </div>
-            <div class="log-btn">
-              <!--<input type="button" name="" value="LOGIN" class="img-rounded" onclick="login()">-->
-              <button class="img-rounded btn-style" (click)="doSignIn()" [disabled]="isBusy || (this.defaultSignInMethod ? (this.frm.invalid) : (this.frm1.invalid))">
-                <ng-template [ngIf]="!isBusy">Login</ng-template>
-                <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
-              </button>
-              <div *ngIf="defaultSignInMethod==1" style="margin-top: 8px;">
-                <span class="clr-w mart-10 cursor" (click)="openModal(template)">Forget Password?
+                <input type="password" formControlName="password" class="inputType mar-l mar-t15" placeholder="Password">
+              </div>
+              <div *ngIf=" (frm.get('password').invalid && frm.get('password').touched) && emailPasswordFieldGetter.password.errors" class="input-errors mrl clr-red">
+                <div *ngIf="emailPasswordFieldGetter.password.errors.required">password is required</div>
+                <div *ngIf="emailPasswordFieldGetter.password.errors?.minlength">password must be greater than 6 characters</div>
+              </div>
+              <div class="sign-in-error war-div" *ngIf="hasFailed">
+                <!-- <div class="war-div"> -->
+                <img src="../../assets/warning.svg" class="war-img">
+                <span>
+                  <h6 class="war-font">Invalid Credentials</h6>
+                  <h6 class="war-font mar-t">Please enter Correct Credentials</h6>
                 </span>
               </div>
+            </form>
+          </div>
+          <div class="log-btn">
+            <!--<input type="button" name="" value="LOGIN" class="img-rounded" onclick="login()">-->
+            <button class="img-rounded btn-style" (click)="doSignIn()" [disabled]="isBusy || (this.defaultSignInMethod ? (this.frm.invalid) : (this.frm1.invalid))">
+              <ng-template [ngIf]="!isBusy">Login</ng-template>
+              <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
+            </button>
+            <div *ngIf="defaultSignInMethod==1" style="margin-top: 8px;">
+              <span class="clr-w mart-10 cursor" (click)="openModal(template)">Forget Password?
+              </span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <ng-template #template>
-    <!-- <div class="modal-header">
+</div>
+
+<app-gdpr></app-gdpr>
+
+<ng-template #template>
+  <!-- <div class="modal-header">
       <h4 class="modal-title pull-left">Forgot Password ?</h4>
       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
         <span aria-hidden="true">
@@ -148,24 +153,24 @@
         </span>
       </button>
     </div> -->
-    <!--<div class="modal-body">
+  <!--<div class="modal-body">
       This is a modal.
     </div>-->
-    <div class="modal-body" style="background-color: #f6f3f3;">
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">
-          <img src="../assets/cross.svg" class="log">
-        </span>
-      </button>
-      <div class="model-pass">
-        <img src="../../assets/siemens logo.png" class="wd-10p mar-t20">
-        <h6 class="f-sz f-bld">Forget Password ?</h6>
-        <h6 class="f-sz">Please enter Email Address to reset the password</h6>
-        <input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">
-        <input type="button" name="" value="Submit" class="btn-fp">
-      </div>
+  <div class="modal-body" style="background-color: #f6f3f3;">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">
+        <img src="../assets/cross.svg" class="log">
+      </span>
+    </button>
+    <div class="model-pass">
+      <img src="../../assets/siemens logo.png" class="wd-10p mar-t20">
+      <h6 class="f-sz f-bld">Forget Password ?</h6>
+      <h6 class="f-sz">Please enter Email Address to reset the password</h6>
+      <input type="email" name="" placeholder="Enter Email Address" class="inp-fb" style="text-align: center;">
+      <input type="button" name="" value="Submit" class="btn-fp">
     </div>
-    <!-- <div class="modal-footer">
+  </div>
+  <!-- <div class="modal-footer">
       <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
     </div>-->
-  </ng-template>
+</ng-template>
