@@ -15,7 +15,6 @@ export class DedicatedNotificationComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['main/home/dashboard']);
-
   }
 
 }
