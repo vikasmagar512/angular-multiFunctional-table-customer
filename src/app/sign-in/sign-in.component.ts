@@ -47,7 +47,7 @@ export class SignInComponent implements OnInit {
     // this.cookiesEnable = false;
     this.frm = fb.group({
       username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(2)]]
     });
     this.forgetPassFrm = fb.group({
       username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
