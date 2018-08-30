@@ -40,6 +40,7 @@ import { StoreComponent } from './store/store.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {Ng2TableModule} from 'ng2-table';
   import * as moment from 'moment';
+import { GdprComponent } from './gdpr/gdpr.component';
 /*
 const appRoutes: Routes = [
   {
@@ -164,6 +165,7 @@ const appRoutes: Routes = [
     NavPopUpComponent,
     SettingsComponent,
     StoreComponent,
+    GdprComponent,
   ],
   exports:[],
   entryComponents: [ DetailsComponent,DashboardComponent],

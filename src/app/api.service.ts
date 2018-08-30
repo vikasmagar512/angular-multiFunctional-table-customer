@@ -19,7 +19,8 @@ export class ApiService {
   public signIn(payload) {
     // http://192.168.10.224:8081/bankidauth
     // const url ='http://192.168.10.224:8081/'+'bankidauth'
-    let url = API_URL+'/users/signin'
+    // let url = API_URL+'/users/signin'
+    let url = '/backend/users/signin'
     if(payload['pno']){
     // if(payload['personalNo']){
     //   url ='http://localhost:8081/api/authenticate'
@@ -33,19 +34,19 @@ export class ApiService {
       })
     };
     console.log(url)
-   /* return this.http
+    return this.http
       .post(url, payload)
       //.map(response => {
       // console.log(response)
       //return response})
       .catch(this.handleError);
-*/
-    return this.http
-      .get('/backend/helloSfs',httpOptions)
+    /*return this.http
+      // .get('/backend/helloSfs',httpOptions)
+      .get('/backend/getAllAssetDetails',httpOptions)
       //.map(response => {
       // console.log(response)
       //return response})
-      .catch(this.handleError);
+      .catch(this.handleError);*/
   }
 
   public getAllTodos(): Observable<Todo[]> {
