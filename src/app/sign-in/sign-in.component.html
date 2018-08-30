@@ -111,6 +111,8 @@
                 </div>
                 <div *ngIf=" (frm.get('password').invalid && frm.get('password').touched) && emailPasswordFieldGetter.password.errors" class="input-errors mrl clr-red">
                   <div *ngIf="emailPasswordFieldGetter.password.errors.required">password is required</div>
+                  <!--<div *ngIf="emailPasswordFieldGetter.password.errors.pattern">Not a valid Pasword</div>-->
+
                   <div *ngIf="emailPasswordFieldGetter.password.errors?.minlength">password must be greater than 6 characters</div>
                 </div>
                 <div class="sign-in-error war-div" *ngIf="hasFailed">

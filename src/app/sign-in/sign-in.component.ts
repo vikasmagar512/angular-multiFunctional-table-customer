@@ -26,8 +26,9 @@ export class SignInComponent implements OnInit {
   public  myMoment;
   public returnUrl: string;
   // mobnumPattern = "^((\\+91-?)|0)?[0-9]{6}$";
-  emailPattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$";
+  emailPattern = "^([a-z0-9._%+-]{1})+@[a-z0-9.-]+\\.[a-z]{2,4}$";
   // emailPattern="/^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/"
+  password="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&].{8,}";
 
   constructor(
     private api: ApiService,
@@ -41,6 +42,8 @@ export class SignInComponent implements OnInit {
     this.frm = fb.group({
       username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
+      // password: ['', [Validators.required, Validators.pattern(this.password)]]
+
     });
     this.forgetPassFrm = fb.group({
       username: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
