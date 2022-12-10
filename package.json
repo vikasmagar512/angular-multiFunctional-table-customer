@@ -33,7 +33,7 @@
     "angular-in-memory-web-api": "^0.6.0",
     "angular2-fontawesome": "^5.2.1",
     "angular2-moment": "^1.9.0",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
